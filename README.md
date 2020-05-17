@@ -145,24 +145,27 @@ Please find a few wireframes showing the main page, the Our Team, the signup and
 
 General explanation about design influence on project
 
+##### Logo:
+
 ##### Fonts: 
 
 
-##### Icons: 
-
-
 ##### Colours:
-I
+With a primary audience of men and the website main goal in attracting more users, the keywords which helped me to find the colors were reliability, power, excitement, engagement. The colors chosen will complement each other in achieving this, as well as making the website somehow reflecting the origins of the site owners and reviving their pride.
 
 <div align="center">
     <img src="wireframes/color-palette.png" alt="CorkLagos Venture Brand Colours" aria-label="CorkLagos Venture Brand colours" />
 </div>
 
-- 
+- Eerie Black: #201e1f;
+- Red-Orange (Color Wheel): #ff4000;
+- Antique White: #feefdd;
+- Oxford Blue: #03254e;
+- Melon: #ffb49a;
 
-* Primary:  <strong></strong> 
-* Secondary:  <strong></strong> I chose this as the secondary colour 
-* Tertiary:  <strong></strong> This tertiary colour 
+* Primary:  <strong>Oxford Blue</strong> I chose this as the primary colour as blue's psychological perception is associated with competence, reliability and high quality which is the main message we want to communicate here for our clients and users. The website need to trigger a feeling that the business owners are reliable partners whom they can trust to sell or buy. The color works also perfectly in association with the secondary color, reminding the users the African colors.
+* Secondary:  <strong>Red-Orange (Color Wheel)</strong>I chose this as the secondary colour as red and orange conveys a sense of speed and excitement which can be associated with anything related to car. Also its bright color associated with blue is reminding that the trade is done with Nigeria where the site owners are from. The two colors remind the sun, the spectacular landscapes, the beautiful colors used in native clothes proudly wore by the Nigerians.
+* Tertiary:  <strong>Melon</strong> This tertiary colour will compliment the main orange color and will be used for small parts, such as icons or the text color of box or buttons highlighted by the primary color. This color is also a reminder of the sand hugely present in Africa.
 
 ##### Background:
 
