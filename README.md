@@ -169,9 +169,15 @@ With a primary audience of men and the website main goal in attracting more user
 I used [Hatchful Shopify](https://hatchful.shopify.com/) to find the most suitable logo. With the keywords of the website in my head, I first selected the bold, reliable and energetic visual styles for the logo. I instantly picked one suggestion of logo with the earth and enveloppe going around. See [the original logo](https://raw.githubusercontent.com/mkuti/corklagos-venture/master/static/images/originallogo.png). It looked smart and bold. I changed slightly the style to have the business name outside the icon which gave a more professional look. I also straight away chose to have the contrast between blue and orange, which made me think of the bold colors of Africa.
 
 ##### Fonts: 
+Importing the fonts directly in my css file with the Import Url option.
 
+* Lato
+Simple, professional and elegant without having any spectacular innovative trait matches perfectly the corporate goal of the website. The semi-rounded details of the letters give Lato a feeling of warmth, while the strong structure provides stability and seriousness. The main idea of Lato is classical which will reassure our users when visiting the website.
+- It is used as main font for the body.
 
-
+* Crimson Text
+While Lato is representing the corporate and reliable character of the website, Crimson Text is giving that flash of innovation for small parts of the website without overwhelming the user with a different or unknown style. 
+- It is used for the slogan and any direct messages to the user.
 
 ##### Icons:
 Without flooding too much the website with icons everywhere, I am only mainly using the icons for the categories and brands associated with the product listings so the user can quickly identify the category even if the word itself does not give a meaning.
