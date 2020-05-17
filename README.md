@@ -40,33 +40,37 @@ The website is built for an imaginary venture, formed of 3 different trade men i
 # UX
 ## Strategy plane
 
-### What are the goals and needs of the user?
-
-* 
-
 ### What are the goals and needs of the site owner?
 
-* 
-
-
-[Back to Top](#table-of-contents) 
+The website needs to be very streamline, traditional and classic. After speaking with some clients on both sides, either the site owners or the clients are not very big internet users so are not interested in innovation or images, they're busy and want to go straight to their own particular tasks. 
 
 ### 8. User stories
-Based on the audience we have, giving three different user stories visiting the website and displaying unique expectations.
 
-#### 
-<em> ""</em>
+#### Venture owner 
+1. As a user, I want to have a new online presence.
+2. As a user, I am looking to expand the network and relationship with car dismantlers in Ireland so I can access more spare parts and have a priority on buying.
+3. As a user, I want the online presence to help finding direct buyers in Nigeria to avoid shipping without sale.
+4. As as user, I want to increase the number of dealers in Nigeria who trust my products and services.
+5. As a user, I want to keep track of orders and guarantee a safe record and payment to my clients.
+6. As a user, I want to keep track of my clients, upstream and downstream, so I can directly contact them for new arrivals or needs.
+7. As a user, I want the website to explain our policies and processes to the clients to ensure trust.
 
-#### 
-<em> ""</em>
+#### Irish Car Dismantler (upstream client)
+1. As a user, I am expecting a website where I can upload any new product I have to sell.
+2. As a user, I often have difficulty to sell, so I hope to increase my sales and to reduce the delay of selling.
+3. As a user, I dont like website with too much reading and unclear navigation, I want to go straight to the point and know which section is built for me.
+4. As a user, I would like to know the process and policies of this business so I can trust them in doing business.
+5. As a user, I would like a guarantee that any details I am providing will not be shared but kept on record only for business purposes.
 
-#### 
-<em> "" </em>
-
-####  
-<em> "" </em>
-
-1. 
+#### Nigerian Car Dealer (downstream client)
+1. As a user, I am expecting a website where I can check all the latest available products in one click.
+2. As a user, I want to be taken intuitively to the section built for my purpose.
+3. As a user, I dont like using too much the navbar so I want clear buttons on each page to take me to the next one.
+4. As a user, I would like to know the process and policies of this business so I can trust them in doing business.
+5. As a user, I would like a guarantee that the payment made is safe and is confirmed by an email.
+5. As a user, I would like a guarantee that any details I am providing will not be shared but kept on record only for business purposes.
+6. As a user, I would love to track my order once I've confirmed the purchase.
+7. As a user, I want a clear section which guides me to contact the business for any information.
 
 [Back to Top](#table-of-contents) 
 
