@@ -148,9 +148,8 @@ I inspired myself from general ecommerce websites and did not want to innovate t
 I looked around at different templates and liked the animations suggested on [BootStrapMade Company template](https://bootstrapmade.com/demo/Company/), which I will apply to the display of car parts listing.
 For the team page, I wanted to innovate a little since the few users consulting this page will probably have time to stop and read. With very little content, the idea is to grab the attention of the user and get them to want to read more.
 
-
-
 ##### Logo:
+I used [Hatchful Shopify](https://hatchful.shopify.com/) to find the most suitable logo. With the keywords of the website in my head, I first selected the bold, reliable and energetic visual styles for the logo. I instantly picked one suggestion of logo with the earth and enveloppe going around. See [the original logo](https://raw.githubusercontent.com/mkuti/corklagos-venture/master/images/images/originallogo.png). It looked smart and bold. I changed slightly the style to have the business name outside the icon which gave a more professional look. I also straight away chose to have the contrast between blue and orange, which made me think of the bold colors of Africa.
 
 ##### Fonts: 
 
