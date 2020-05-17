@@ -148,12 +148,6 @@ I inspired myself from general ecommerce websites and did not want to innovate t
 I looked around at different templates and liked the animations suggested on [BootStrapMade Company template](https://bootstrapmade.com/demo/Company/), which I will apply to the display of car parts listing.
 For the team page, I wanted to innovate a little since the few users consulting this page will probably have time to stop and read. With very little content, the idea is to grab the attention of the user and get them to want to read more.
 
-##### Logo:
-I used [Hatchful Shopify](https://hatchful.shopify.com/) to find the most suitable logo. With the keywords of the website in my head, I first selected the bold, reliable and energetic visual styles for the logo. I instantly picked one suggestion of logo with the earth and enveloppe going around. See [the original logo](https://raw.githubusercontent.com/mkuti/corklagos-venture/master/static/images/originallogo.png). It looked smart and bold. I changed slightly the style to have the business name outside the icon which gave a more professional look. I also straight away chose to have the contrast between blue and orange, which made me think of the bold colors of Africa.
-
-##### Fonts: 
-
-
 ##### Colours:
 With a primary audience of men and the website main goal in attracting more users, the keywords which helped me to find the colors were reliability, power, excitement, engagement. The colors chosen will complement each other in achieving this, as well as making the website somehow reflecting the origins of the site owners and reviving their pride.
 
@@ -170,6 +164,17 @@ With a primary audience of men and the website main goal in attracting more user
 * Primary:  <strong>Oxford Blue</strong> I chose this as the primary colour as blue's psychological perception is associated with competence, reliability and high quality which is the main message we want to communicate here for our clients and users. The website need to trigger a feeling that the business owners are reliable partners whom they can trust to sell or buy. The color works also perfectly in association with the secondary color, reminding the users the African colors.
 * Secondary:  <strong>Red-Orange (Color Wheel)</strong>I chose this as the secondary colour as red and orange conveys a sense of speed and excitement which can be associated with anything related to car. Also its bright color associated with blue is reminding that the trade is done with Nigeria where the site owners are from. The two colors remind the sun, the spectacular landscapes, the beautiful colors used in native clothes proudly wore by the Nigerians.
 * Tertiary:  <strong>Melon</strong> This tertiary colour will compliment the main orange color and will be used for small parts, such as icons or the text color of box or buttons highlighted by the primary color. This color is also a reminder of the sand hugely present in Africa.
+
+##### Logo:
+I used [Hatchful Shopify](https://hatchful.shopify.com/) to find the most suitable logo. With the keywords of the website in my head, I first selected the bold, reliable and energetic visual styles for the logo. I instantly picked one suggestion of logo with the earth and enveloppe going around. See [the original logo](https://raw.githubusercontent.com/mkuti/corklagos-venture/master/static/images/originallogo.png). It looked smart and bold. I changed slightly the style to have the business name outside the icon which gave a more professional look. I also straight away chose to have the contrast between blue and orange, which made me think of the bold colors of Africa.
+
+##### Fonts: 
+
+
+
+
+##### Icons:
+Without flooding too much the website with icons everywhere, I am only mainly using the icons for the categories and brands associated with the product listings so the user can quickly identify the category even if the word itself does not give a meaning.
 
 ##### Background:
 
