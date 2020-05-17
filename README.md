@@ -7,7 +7,9 @@
 </div>
 
 CorkLagos Venture was imagined, designed, developed and deployed by MPia Kuti as her final project for the Code Institute Full Stack Web Development diploma.
+I have used the opportunity of the Code Institute Milestone 4 project to build an ecommerce website which could potentially be used by an import/export business known through connections. Many Nigerians living in Ireland engage themselves in an import/export trade between Ireland and their home country. But often without any specific organisation, built network or online presence. They always have to rely on ephemere places where they hope to sell their goods once shipped to Nigeria. With an online presence, they could develop their reliable customer network in Nigeria while also targeting the car dismantlers here in Ireland so goods trade could almost be agreed from distance, saving time and precious funds.
 
+The website is built for an imaginary venture, formed of 3 different trade men in the business for many years. The website would be targeting two sorts of clients, one upstream advertising and selling goods, one downstream scrolling and buying goods before they get shipped. So a masculine audience with an interest in cars and a goal to make money.
 
 ## Table of Contents
 
