@@ -182,9 +182,11 @@ While Lato is representing the corporate and reliable character of the website, 
 ##### Icons:
 Without flooding too much the website with icons everywhere, I am only mainly using the icons for the categories and brands associated with the product listings so the user can quickly identify the category even if the word itself does not give a meaning.
 
-##### Background:
+##### Images:
 
-
+Again, I wanted to have the website as simple and effective as possible so used only a few images.
+I will have a full background image on the home page, slightly faded below the main elements of the page, showing a car dismantled.
+For the listings page, I will have few images representing different categories and which can be changing everytime the user re-open the page.
 
 # Technologies Used: 
 
