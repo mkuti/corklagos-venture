@@ -143,7 +143,12 @@ Please find a few wireframes showing the main page, the Our Team, the signup and
 
 ## Surface plane: Design 
 
-General explanation about design influence on project
+Since design and UX are not my biggest qualities, I often spend time deciding on the right elements which will ensure the website being a success for the site owners and the users.
+I inspired myself from general ecommerce websites and did not want to innovate too much here because we want to attract traditional website users who do not have huge time to spend searching for the exact information. 
+I looked around at different templates and liked the animations suggested on [BootStrapMade Company template](https://bootstrapmade.com/demo/Company/), which I will apply to the display of car parts listing.
+For the team page, I wanted to innovate a little since the few users consulting this page will probably have time to stop and read. With very little content, the idea is to grab the attention of the user and get them to want to read more.
+
+
 
 ##### Logo:
 
