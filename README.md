@@ -61,7 +61,7 @@ Based on the audience we have, giving three different user stories visiting the 
 #### 
 <em> "" </em>
 
-#### Charity X 
+####  
 <em> "" </em>
 
 1. 
@@ -116,11 +116,11 @@ Please find a few wireframes showing the main page, the Our Team, the signup and
 </div>
 
 <div align="center">
-    <img src="wireframes/team-desktop.png" alt="Wireframe of Our Team page on desktop" aria-label="Wireframe of Our Team page on desktop" />
+    <img src="wireframes/account-desktop.png" alt="Wireframe of Account page on desktop" aria-label="Wireframe of Account page on desktop" />
 </div>
 
 <div align="center">
-    <img src="wireframes/team-mobile.png" alt="Wireframe of Our Team page on mobile" aria-label="Wireframe of Our Team page on mobile" />
+    <img src="wireframes/account-mobile.png" alt="Wireframe of Account page on mobile" aria-label="Wireframe of Account page on mobile" />
 </div>
 
 <div align="center">
