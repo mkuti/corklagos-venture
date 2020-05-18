@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mkuti/corklagos-venture.svg?branch=master)](https://travis-ci.org/mkuti/corklagos-venture)
+
 <h1 align="center">
   <a href="" target="_blank"><img src="" target="_blank" alt="Multi Device Mockup"/></a>
 </h1>
