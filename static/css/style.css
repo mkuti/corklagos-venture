@@ -4,7 +4,11 @@
     background-color: #03254e;
 }
 
-.logo {
-    margin: 0;
-    padding: 0;
+#logo-lg {
+    margin: 0 3rem;
+}
+
+.nav-item {
+    padding-top: 50px;
+    margin-right: 3rem;
 }
