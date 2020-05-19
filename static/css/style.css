@@ -1,5 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400;1,600&family=Lato:wght@100;300;400;700&display=swap');
 
+/* general elements styling */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    line-height: 1.15;
+    scroll-behavior: smooth;
+    font-size: 1rem;
+}
+
+body {
+    background-color: #EFEFDD;
+    font-family: "Indie Flower", sans-serif;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+div a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* colors */
+
 .bg-oxford {
     background-color: #03254e;
 }
@@ -12,6 +56,8 @@
     background-color: #ff4000;
 }
 
+/* nav */
+
 #logo-lg {
     margin: 0 3rem;
 }
@@ -19,6 +65,8 @@
 .nav-item {
     padding-top: 50px;
     margin-right: 3rem;
+    color: #ff4000;
+    text-decoration: none;
 }
 
 .fa-road {
