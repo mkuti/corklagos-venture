@@ -154,7 +154,6 @@ Please find a few wireframes showing the main page, the Our Team, the signup and
 Since design and UX are not my biggest qualities, I often spend time deciding on the right elements which will ensure the website being a success for the site owners and the users.
 I inspired myself from general ecommerce websites and did not want to innovate too much here because we want to attract traditional website users who do not have huge time to spend searching for the exact information. 
 I looked around at different templates and liked the animations suggested on [BootStrapMade Company template](https://bootstrapmade.com/demo/Company/), which I will apply to the display of car parts listing.
-For the team page, I wanted to innovate a little since the few users consulting this page will probably have time to stop and read. With very little content, the idea is to grab the attention of the user and get them to want to read more.
 
 ##### Colours:
 With a primary audience of men and the website main goal in attracting more users, the keywords which helped me to find the colors were reliability, power, excitement, engagement. The colors chosen will complement each other in achieving this, as well as making the website somehow reflecting the origins of the site owners and reviving their pride.
@@ -173,19 +172,22 @@ With a primary audience of men and the website main goal in attracting more user
 * Secondary:  <strong>Red-Orange (Color Wheel)</strong>I chose this as the secondary colour as red and orange conveys a sense of speed and excitement which can be associated with anything related to car. Also its bright color associated with blue is reminding that the trade is done with Nigeria where the site owners are from. The two colors remind the sun, the spectacular landscapes, the beautiful colors used in native clothes proudly wore by the Nigerians.
 * Tertiary:  <strong>Melon</strong> This tertiary colour will compliment the main orange color and will be used for small parts, such as icons or the text color of box or buttons highlighted by the primary color. This color is also a reminder of the sand hugely present in Africa.
 
+To add an extra tribal reminder for Africa, took a screenshot of a colorful print and placed it as a vertical banner on the left only for big screen sizes.
+[African print](https://images.fabric.com/images/605/605/0692828.jpg)
+
 ##### Logo:
 I used [Hatchful Shopify](https://hatchful.shopify.com/) to find the most suitable logo. With the keywords of the website in my head, I first selected the bold, reliable and energetic visual styles for the logo. I instantly picked one suggestion of logo with the earth and enveloppe going around. See [the original logo](https://raw.githubusercontent.com/mkuti/corklagos-venture/master/static/images/originallogo.png). It looked smart and bold. I changed slightly the style to have the business name outside the icon which gave a more professional look. I also straight away chose to have the contrast between blue and orange, which made me think of the bold colors of Africa.
 
 ##### Fonts: 
 Importing the fonts directly in my css file with the Import Url option.
 
-* Lato
+__[Lato](http://www.latofonts.com/)__:
 Simple, professional and elegant without having any spectacular innovative trait matches perfectly the corporate goal of the website. The semi-rounded details of the letters give Lato a feeling of warmth, while the strong structure provides stability and seriousness. The main idea of Lato is classical which will reassure our users when visiting the website.
-- It is used as main font for the body.
+It is used as main font for the body.
 
-* Crimson Text
+__[Crimson Text](https://fonts.google.com/specimen/Crimson+Text?preview.text=We%27ll+ship+any+car+parts+you+want!&preview.text_type=custom&sort=popularity&preview.size=24&query=crimson+text)__:
 While Lato is representing the corporate and reliable character of the website, Crimson Text is giving that flash of innovation for small parts of the website without overwhelming the user with a different or unknown style. 
-- It is used for the slogan and any direct messages to the user.
+It is used for the slogan and any direct messages to the user.
 
 ##### Icons:
 Without flooding too much the website with icons everywhere, I am only mainly using the icons for the categories and brands associated with the product listings so the user can quickly identify the category even if the word itself does not give a meaning.
@@ -195,7 +197,7 @@ Without flooding too much the website with icons everywhere, I am only mainly us
 Again, I wanted to have the website as simple and effective as possible so used only a few images.
 I will have a full background image on the home page, slightly faded below the main elements of the page, showing a car dismantled.
 For the listings page, I will have few images representing different categories and which can be changing everytime the user re-open the page.
-[Photo of the car motor](https://www.pexels.com/photo/close-up-photo-of-vehicle-engine-1409999/) by George Sultan from Pexels
+- [Photo of the car motor](https://www.pexels.com/photo/close-up-photo-of-black-and-silver-car-engine-3757226/) by [Hebert Santos](https://www.pexels.com/@hebert-santos-1346254) from Pexels
 
 # Technologies Used: 
 
