@@ -56,6 +56,10 @@ li {
     background-color: #ff4000;
 }
 
+.bg-white {
+    background-color: #feefdd;
+}
+
 /* tribal vertical left banner */
 .tribal {
     float: left;
@@ -87,7 +91,6 @@ li {
     height: 100vh;
     overflow: hidden;
     position: relative;
-    opacity: 0.3;
 }
 
 #home-img .img-container, #home-img .img-item {
@@ -99,4 +102,21 @@ li {
   right: 0;
   left: 0;
   bottom: 0;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.img-item {
+    background-image: url(../images/engine.jpg);
+    opacity: 0.3;
+}
+
+.call-container {
+    width: 450px;
+    height: 300px;
+    border: 5px solid #ff4000;
 }
