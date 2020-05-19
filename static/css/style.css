@@ -60,6 +60,26 @@ li {
     background-color: #feefdd;
 }
 
+.text-oxford {
+    color: #03254e;
+}
+
+.text-wheel {
+    color: #ff4000;
+}
+
+.text-melon {
+    color: #ffb49a;
+}
+
+.text-black {
+    color: #201e1f;
+}
+
+.text-white {
+    color: #feefdd;
+}
+
 /* tribal vertical left banner */
 .tribal {
     float: left;
