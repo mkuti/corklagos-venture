@@ -195,6 +195,7 @@ Without flooding too much the website with icons everywhere, I am only mainly us
 Again, I wanted to have the website as simple and effective as possible so used only a few images.
 I will have a full background image on the home page, slightly faded below the main elements of the page, showing a car dismantled.
 For the listings page, I will have few images representing different categories and which can be changing everytime the user re-open the page.
+[Photo of the car motor](https://www.pexels.com/photo/close-up-photo-of-vehicle-engine-1409999/) by George Sultan from Pexels
 
 # Technologies Used: 
 
