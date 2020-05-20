@@ -175,9 +175,3 @@ call-container .call-content {
     padding-top: 200px;
 }
 }
-
-@media (min-width: 576px) {
-    .call-section {
-    padding-top: 0;
-}
-}
