@@ -146,11 +146,16 @@ li {
     opacity: 0.3;
 }
 
+.call-section {
+    padding-top: 400px;
+}
+
 .call-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 500px;
+    min-width: 300px;
+    max-width: 500px;
     min-height: 300px;
     border: 5px solid #ff4000;
     font-family: "Crimson Text", sans-serif;
@@ -161,4 +166,18 @@ li {
 call-container .call-content {
     font-style: italic;
     font-weight: 600;
+}
+
+/* media queries */
+
+@media (min-width: 375px) {
+    .call-section {
+    padding-top: 200px;
+}
+}
+
+@media (min-width: 576px) {
+    .call-section {
+    padding-top: 0;
+}
 }
