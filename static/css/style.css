@@ -119,7 +119,8 @@ li {
 /* home background image, code inspired from https://bootstrapmade.com/demo/Company/ */
 #home-img {
     width: 100%;
-    height: 100vh;
+    min-height: 90vh;
+    max-height: 300vh;
     overflow: hidden;
     position: relative;
 }
@@ -147,7 +148,7 @@ li {
 }
 
 .call-section {
-    padding-top: 400px;
+    padding-top: 320px;
 }
 
 .call-container {
@@ -160,7 +161,7 @@ li {
     border: 5px solid #ff4000;
     font-family: "Crimson Text", sans-serif;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 call-container .call-content {
@@ -172,6 +173,6 @@ call-container .call-content {
 
 @media (min-width: 375px) {
     .call-section {
-    padding-top: 200px;
+    padding-top: 120px;
 }
 }
