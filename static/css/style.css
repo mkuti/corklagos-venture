@@ -130,7 +130,7 @@ li {
 }
 
 .call-section {
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .call-container {
@@ -149,6 +149,12 @@ li {
 call-container .call-content {
     font-style: italic;
     font-weight: 600;
+}
+
+@media (min-width: 368px){
+    #home-img {
+        height: 110vh;
+    }
 }
 
 @media (min-width: 576px){
