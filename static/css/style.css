@@ -169,6 +169,12 @@ call-container .call-content {
     font-size: 1rem;
 }
 
+.header-footer {
+    font-family: "Crimson Text", sans-serif;
+}
+
+
+
 
 /* media queries */
 
