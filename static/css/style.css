@@ -94,6 +94,11 @@ li {
     margin: 1.5rem;
 }
 
+.btn-contact {
+    font-family: "Crimson Text", sans-serif;
+    font-size: 1.5rem;
+}
+
 /* tribal vertical left banner */
 .tribal {
     float: left;
