@@ -15,6 +15,7 @@ html {
 }
 
 body {
+    
     background-color: #feefdd;
     font-family: "Lato", sans-serif;
 }
@@ -118,37 +119,19 @@ li {
 
 /* home background image, code inspired from https://bootstrapmade.com/demo/Company/ */
 #home-img {
-    width: 100%;
-    min-height: 90vh;
-    max-height: 300vh;
-    overflow: hidden;
-    position: relative;
-}
-
-#home-img .img-container, #home-img .img-item {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-
-.img-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.img-item {
-    background-image: url(../images/engine.jpg);
+	flex-direction: column;
+	justify-content: center;
+    width: 100%;
+	min-height: 350px;
+	height: 150vh;
+	background: url(../images/engine.jpg) no-repeat center center;
+    background-size: cover;
     opacity: 0.3;
 }
 
 .call-section {
-    padding-top: 320px;
+    padding-top: 100px;
 }
 
 .call-container {
@@ -169,10 +152,8 @@ call-container .call-content {
     font-weight: 600;
 }
 
-/* media queries */
-
-@media (min-width: 375px) {
-    .call-section {
-    padding-top: 120px;
-}
+@media (min-width: 375px){
+    #home-img {
+        height: 80vh;
+    }
 }
