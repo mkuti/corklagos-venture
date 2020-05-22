@@ -48,6 +48,10 @@ li {
     list-style-type: none;
 }
 
+.crimson {
+    font-family: "Crimson Text", sans-serif;
+}
+
 /* colors */
 
 .bg-oxford {
@@ -158,6 +162,20 @@ li {
 call-container .call-content {
     font-style: italic;
     font-weight: 600;
+}
+
+.banner-img {
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.banner-attention {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: fit-content;
 }
 
 /* footer */

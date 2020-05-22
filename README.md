@@ -198,6 +198,7 @@ Again, I wanted to have the website as simple and effective as possible so used 
 I will have a full background image on the home page, slightly faded below the main elements of the page, showing a car dismantled.
 For the listings page, I will have few images representing different categories and which can be changing everytime the user re-open the page.
 - [Photo of the car motor](https://www.pexels.com/photo/close-up-photo-of-black-and-silver-car-engine-3757226/) by [Hebert Santos](https://www.pexels.com/@hebert-santos-1346254) from Pexels
+- [Photo of a car engine hose](https://www.pexels.com/photo/automotive-car-engine-hose-42186/) by [mali maeder](https://www.pexels.com/@mali) from Pexels
 
 # Technologies Used: 
 
