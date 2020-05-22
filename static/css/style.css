@@ -114,7 +114,6 @@ li {
 }
 
 .nav-item {
-    padding-top: 50px;
     color: #ff4000;
     text-decoration: none;
 }
@@ -194,5 +193,11 @@ call-container .call-content {
 @media (min-width: 576px){
     #home-img {
         height: 80vh;
+    }
+}
+
+@media (min-width: 992px) {
+    .nav-item {
+    padding-top: 50px;
     }
 }
