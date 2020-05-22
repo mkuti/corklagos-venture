@@ -178,7 +178,9 @@ call-container .call-content {
     font-family: "Crimson Text", sans-serif;
 }
 
-
+.form-field {
+    margin-bottom: 1rem;
+}
 
 
 /* media queries */
