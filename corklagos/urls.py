@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import home
+from listings.views import all_listings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='index')
+    path('', home, name='index'),
+    path('listings', all_listings, name="listings"),
 ]
