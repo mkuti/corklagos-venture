@@ -3,10 +3,33 @@
 
 {% block content %}
 
-<section class="banner">
-    <div class="banner-attention bg-melon text-oxford">
-        <h5 class="crimson">We'll ship any car parts you want!</h5>
+<main class="container-fluid">
+    <div class="row mx-5 my-3">
+        <div class="col-12 col-lg-3 filter-section">
+            <div class="row">
+                <div class="col-6 filter-cat">
+                    <h5 class="filter-header">Filter by category</h5>
+                    <ul class="filter-list form-check mb-3">
+                        <div class="row">
+                            <li class="filter-item">
+                                <input class="form-check-input" type="radio" name="all" id="all" value="all" checked>
+                                <label for="all">See All</label>
+                            </li>
+                        </div>
+                        <div class="row">
+                            <li class="filter-item">
+                                <input class="form-check-input" type="radio" name="engines" id="engines" value="engines">
+                                <label for="engines"><i class="fas fa-tachometer-alt"></i>Engines</label>
+                            </li>
+                        </div>
+                        <li class="filter-item">
+                        
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+</main>
 
 {% endblock %}
