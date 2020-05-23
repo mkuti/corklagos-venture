@@ -182,18 +182,19 @@ call-container .call-content {
 }
 
 .listing-img {
-    background-color: #ff4000;
-    width: 45%;
+    background: url(../images/gear.png) no-repeat center center;
+    background-size: contain;
+    width: 50%;
     height: 200px;
     left: 0;
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .listing-content {
     width: 90%;
     float:right;
-    margin-top: 3rem;
+    margin-top: 5rem;
 }
 
 /* footer */
@@ -228,6 +229,9 @@ call-container .call-content {
 @media (min-width: 576px){
     #home-img {
         height: 80vh;
+    }
+    .listing-img {
+    width: 25%;
     }
 }
 
