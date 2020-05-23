@@ -8,7 +8,7 @@
     <!-- Filter section -->
         <div class="col-12 col-lg-3 filter-section">
             <div class="row">
-                <div class="col-6 filter-cat">
+                <div class="col-6 col-lg-12 filter-cat">
                     <h5 class="filter-header">Filter by category</h5>
                     <div class="filter-list mb-3">
                         <div class="row">
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 filter-brand text-right">
+                <div class="col-6 col-lg-12 filter-brand text-left">
                     <h5 class="filter-header">Filter by brand</h5>
                     <div class="filter-list mb-3">
                         <div class="custom-control custom-radio">
@@ -64,6 +64,7 @@
         </div>
 <!-- Listing section -->
         <div class="col-12 col-lg-9 listing-section pl-2">
+        <!--Listing section on smaller screens where image is floating outside and slightly on top of the container -->
             <div class="listing-item d-block d-lg-none">
                 <div class="listing-content listing-container bg-oxford text-white p-3 text-right">
                     <div class="row">
@@ -92,6 +93,7 @@
                 </div>
                 <div class="listing-img"></div>
             </div>
+            <!--Listing section on larger screens where image is inside the container -->
             <div class="row d-none d-lg-block">
                 <div class="col-12 listing-container my-lg-3">
                     <div class="row">
@@ -127,7 +129,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-lg-9 listing-section pl-2">
+        <div class="col-12 col-lg-9 col-lg-offset-3 listing-section pl-2">
             <div class="listing-item d-block d-lg-none">
                 <div class="listing-img"></div>
                 <div class="listing-content listing-container bg-oxford text-white p-3 text-right">
