@@ -164,8 +164,36 @@ call-container .call-content {
     font-weight: 600;
 }
 
-.banner-attention {
-    width: fit-content;
+/* listings */
+
+.listing-item {
+    position: relative;
+}
+
+.listing-container {
+    width: 100%;
+    height: auto;
+    border: 5px solid #ff4000;
+    background-color: #03254e;
+}
+
+.listing-icon {
+    font-size: 1.5rem;
+}
+
+.listing-img {
+    background-color: #ff4000;
+    width: 45%;
+    height: 200px;
+    left: 0;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.listing-content {
+    width: 90%;
+    float:right;
+    margin-top: 3rem;
 }
 
 /* footer */
@@ -188,7 +216,6 @@ call-container .call-content {
 .form-field {
     margin-bottom: 1rem;
 }
-
 
 /* media queries */
 
