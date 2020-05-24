@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from home.views import home
 from listings.views import all_listings
-from faq.views import faq
+from expertise.views import expertise
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='index'),
     path('listings', all_listings, name="listings"),
-    path('faq', faq, name="faq"),
+    path('expertise', expertise, name="expertise"),
 ]
