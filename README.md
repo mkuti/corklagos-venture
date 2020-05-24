@@ -198,7 +198,10 @@ Again, I wanted to have the website as simple and effective as possible so used 
 I will have a full background image on the home page, slightly faded below the main elements of the page, showing a car dismantled.
 For the listings page, I will have few images representing different categories and which can be changing everytime the user re-open the page.
 - [Photo of the car motor](https://www.pexels.com/photo/close-up-photo-of-black-and-silver-car-engine-3757226/) by [Hebert Santos](https://www.pexels.com/@hebert-santos-1346254) from Pexels
-- [Photo of a car engine hose](https://www.pexels.com/photo/automotive-car-engine-hose-42186/) by [mali maeder](https://www.pexels.com/@mali) from Pexels
+- [Photo of a car engine hose](https://www.pexels.com/photo/automotive-car-engine-hose-42186/) by [Mali Maeder](https://www.pexels.com/@mali) from Pexels
+- [Photo of business man](https://www.pexels.com/photo/greyscale-photo-of-man-wearing-suit-and-fedora-hat-2963033/) by [Malcolm Garret](https://www.pexels.com/@bymalcolmgarret) from Pexels
+- [Photo of business man and woman](https://www.pexels.com/photo/man-and-woman-smiling-inside-building-1367269/) by [Rebrand Cities](https://www.pexels.com/@rebrand-cities-581004) from Pexels
+- [Photo of people at meeting table ](https://www.pexels.com/photo/people-in-a-meeting-1367274/) by [Rebrand Cities](https://www.pexels.com/@rebrand-cities-581004) from Pexels
 
 # Technologies Used: 
 
@@ -206,24 +209,21 @@ For the listings page, I will have few images representing different categories 
 
 - __HTML__ language is used to create the structure of the website and game.
 - __CSS__ language is used to add styling on the structure of the website.
-- __Javascript__ functioning language is used to fetch external data and add interactivity on the website so the game functions based on user's actions
+- __Javascript__ functioning language is used to fetch external data and add interactivity on the website.
 - __Python__ Object-oriented programming and structured programming language which allows smooth communication between the backend and frontend. 
 
 ### Tools & Libraries:
 - [GitPod](gitpod.io) - I used __GitPod__ as my IDE for the development of this website.
 - [jQuery](https://jquery.com/) and [Popper.js](https://popper.js.org/) - The website uses __jQuery__ and __Popper.js__ to bring in Javascript which makes the navbar responsive
--  [Git](https://git-scm.com/)
+- [Git](https://git-scm.com/)
 - [BootstrapCDN](https://www.bootstrapcdn.com/) - The website is using __Bootstrap4__ as the basic structure and grid of the website and to increase the responsiveness of the website.
-- [jQuery](https://jquery.com/) - I used jQuery to avoid repeating same actions on the DOM when buttons were clicked
-- [Flask](https://flask.palletsprojects.com/en/1.1.x/) - I used Flask framework, Jinja templates and Werkzeug to 
-Python werkzeug.check_password_hash()
 - [FontAwesome](https://kit.fontawesome.com/f7e192f540.js) - The website is using __Font Awesome__ to display the social media icons in my footer
 - [Google Fonts](https://fonts.google.com/)- The website uses __Google font__- Url imported in CSS
 - [AutoPrefixer](https://autoprefixer.github.io/) - I have used __AutoPrefixer__ to make sure the css code worked on all browsers
 - [Tiny.jpg](https://tinyjpg.com) - I have used __Tinyjpg__ to compress logo image of the website to increase the website loading on browser
-- [Coolors](https://coolors.co/) - I have used __ColorSpace__ to find matching colors for the website
+- [Coolors](https://coolors.co/) - I have used __Coolors__ to find matching colors for the website
 - [Balsamiq](https://balsamiq.cloud) - I have used __Balsamic__ to build the wireframes which I then exported to the IDE
-- [Favicon converter](https://favicon.io/favicon-converter/) - I used Favicon converter to convert the logo into a favicon which I was able to insert in the asset folder and I tested it to be working
+- [Favicon converter](https://favicon.io/favicon-converter/) - I used Favicon converter to convert the logo into a favicon which I was able to insert in the static folder and I tested it to be working
 - [Sweetalert2](https://sweetalert2.github.io/)
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) Chrome extension to show content structure, margin and paddings and fix any offset
 - [Lunapic](https://www2.lunapic.com/editor/) - to make the logo transparent
