@@ -32,7 +32,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
     <span class="fas fa-road bg-wheel"></span>
   </button>
-
+<!-- Show this only lg screens and up -->
   <div class="collapse navbar-collapse justify-content-around" id="navbarToggle">
 
     <ul class="navbar-nav nav-fill w-100">
@@ -45,15 +45,19 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Spare Parts</a>
       </li>
-       <!-- Show this only lg screens and up -->
       <li class="navbar-brand m-0 d-none d-lg-block">
         <a href=""><img id="logo-lg" src="{% static 'images/logo.png' %}" alt="Logo" width="150" height="100"></a>
       </li>       
+      <!-- If user is not logged in, show login, if logged in, show account -->
       <li class="nav-item">
-        <a class="nav-link" href="#">FAQ</a>
+        <a class="nav-link" href="#">Login</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="#">Account</a>
+      </li> -->
+      <!-- COntact us form is in the footer, user clicking there would scroll screen down -->
+      <li class="nav-item">
+        <a class="nav-link" href="#footer">Contact</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
