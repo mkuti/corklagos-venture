@@ -224,6 +224,10 @@ call-container .call-content {
     background-color: rgba(254,239,221,0.5)
 }
 
+.card-body {
+    height: 100px;
+}
+
 /* footer */
 
 .links-footer {
