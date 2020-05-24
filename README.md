@@ -322,7 +322,7 @@ SECRET_KEY | `<your_secret_key>`
 [Back to Top](#table-of-contents) 
 
 # Credits
-* 
+* [How to css flip card](https://www.w3schools.com/howto/howto_css_flip_card.asp)
 
 # Special thanks
 
