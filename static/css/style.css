@@ -197,6 +197,27 @@ call-container .call-content {
     margin-top: 5rem;
 }
 
+/* expertise page */
+
+.banner {
+    position: relative;
+}
+
+.banner-img {
+    width: 90%;
+    margin-top: 5rem;
+    background: url(../images/business.jpg) no-repeat center center;
+    background-size: cover;
+    height: 40vh;
+    opacity: 0.6;
+}
+
+.slogan {
+    width: 50%;
+    position: absolute;
+    left: 0;
+}
+
 /* footer */
 
 .links-footer {
