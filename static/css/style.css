@@ -204,18 +204,21 @@ call-container .call-content {
 }
 
 .banner-img {
-    width: 90%;
-    margin-top: 5rem;
+    float: right;
+    width: 100%;
     background: url(../images/business.jpg) no-repeat center center;
     background-size: cover;
     height: 40vh;
     opacity: 0.6;
+    padding-bottom: 3rem;
 }
 
 .slogan {
-    width: 50%;
+    padding-top: 0;
+    width: 60%;
     position: absolute;
     left: 0;
+    font-weight: 600;
 }
 
 /* footer */
@@ -253,6 +256,11 @@ call-container .call-content {
     }
     .listing-img {
     width: 25%;
+    }
+    .banner-img {
+        height: 20vh;
+        background-size: contain;
+        float: left;
     }
 }
 
