@@ -201,7 +201,8 @@ For the listings page, I will have few images representing different categories 
 - [Photo of a car engine hose](https://www.pexels.com/photo/automotive-car-engine-hose-42186/) by [Mali Maeder](https://www.pexels.com/@mali) from Pexels
 - [Photo of business man](https://www.pexels.com/photo/greyscale-photo-of-man-wearing-suit-and-fedora-hat-2963033/) by [Malcolm Garret](https://www.pexels.com/@bymalcolmgarret) from Pexels
 - [Photo of business man and woman](https://www.pexels.com/photo/man-and-woman-smiling-inside-building-1367269/) by [Rebrand Cities](https://www.pexels.com/@rebrand-cities-581004) from Pexels
-- [Photo of people at meeting table ](https://www.pexels.com/photo/people-in-a-meeting-1367274/) by [Rebrand Cities](https://www.pexels.com/@rebrand-cities-581004) from Pexels
+- [Photo of cheetah ](https://www.pexels.com/photo/animal-eyes-big-dangerous-87403/) by [Public Domain Pictures](https://www.pexels.com/@public-domain-pictures) from Pexels
+- [Photo of eagle](https://www.pexels.com/photo/flight-bird-beak-eagle-3959918/) by [Frank Cone](https://www.pexels.com/@frank-cone-140140) from Pexels
 
 # Technologies Used: 
 
