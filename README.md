@@ -203,6 +203,7 @@ For the listings page, I will have few images representing different categories 
 - [Photo of business man and woman](https://www.pexels.com/photo/man-and-woman-smiling-inside-building-1367269/) by [Rebrand Cities](https://www.pexels.com/@rebrand-cities-581004) from Pexels
 - [Photo of cheetah ](https://www.pexels.com/photo/animal-eyes-big-dangerous-87403/) by [Public Domain Pictures](https://www.pexels.com/@public-domain-pictures) from Pexels
 - [Photo of eagle](https://www.pexels.com/photo/flight-bird-beak-eagle-3959918/) by [Frank Cone](https://www.pexels.com/@frank-cone-140140) from Pexels
+- [Photo of giraffe](https://www.pexels.com/photo/pattern-formation-wild-animals-south-africa-34098/) by [Pixabay](https://www.pexels.com/@pixabay) from Pexels
 
 # Technologies Used: 
 
