@@ -302,14 +302,14 @@ call-container .call-content {
 .who-card-question, .who-card-reveal {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: auto;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
 
 .who-card-img {
     width: 300px;
-    height: auto;
+    height: 300px;
 }
 
 /* Style the back side */
