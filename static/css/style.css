@@ -275,7 +275,7 @@ call-container .call-content {
     }
 }
 
-
+/* https://www.w3schools.com/howto/howto_css_flip_card.asp */
 .who-card {
   background-color: transparent;
   width: 100%;
@@ -305,6 +305,11 @@ call-container .call-content {
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+}
+
+.who-card-img {
+    width: 300px;
+    height: auto;
 }
 
 /* Style the back side */

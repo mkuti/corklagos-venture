@@ -15,12 +15,12 @@
             </div>
         </div>
     </div>
-<!-- 3 different cards made with Bootstrap class but flippable with JS to reveal the answer to questions -->
+<!-- https://www.w3schools.com/howto/howto_css_flip_card.asp -->
     <div class="row px-4 p-md-5">
         <div class="col-12 col-md-6 col-lg-4 who-card">
             <div class="who-card-contain">
                 <div class="who-card-question">
-                    <img src="{% static 'images/who.jpg' %}" alt="Who?" style="width:300px;height:300px;">
+                    <img class="who-card-img" src="{% static 'images/who.jpg' %}" alt="Who?">
                     <h1 class="text-uppercase text-oxford">Who are we?</h1>
                 </div>
                 <div class="who-card-reveal bg-wheel text-oxford">
@@ -33,7 +33,7 @@
         <div class="col-12 col-md-6 col-lg-4 who-card">
             <div class="who-card-contain">
                 <div class="who-card-question">
-                    <img src="{% static 'images/eagle.jpg' %}" alt="Who?" style="width:300px;height:300px;">
+                    <img class="who-card-img" src="{% static 'images/eagle.jpg' %}" alt="Who?">
                     <h1 class="text-uppercase text-oxford">Who are we?</h1>
                 </div>
                 <div class="who-card-reveal bg-wheel text-oxford">
