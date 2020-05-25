@@ -98,6 +98,10 @@ li {
     margin: 1.5rem;
 }
 
+.btn-home:hover {
+    color: #ffb49a;
+}
+
 .btn-contact {
     font-family: "Crimson Text", sans-serif;
     font-size: 1.5rem;
