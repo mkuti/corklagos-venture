@@ -78,6 +78,10 @@ li {
     color: #ff4000;
 }
 
+.text-wheel:hover {
+    color: #ffb49a;
+}
+
 .text-melon {
     color: #ffb49a;
 }
@@ -92,17 +96,9 @@ li {
 
 /* buttons */
 
-.btn-home {
+.btn-gal {
     font-size: 1.5rem;
     margin: 1.5rem;
-}
-
-.btn-home:hover {
-    color: #ffb49a;
-}
-
-.btn-contact {
-    font-size: 1.5rem;
 }
 
 /* tribal vertical left banner */
