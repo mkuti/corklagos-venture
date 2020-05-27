@@ -232,6 +232,16 @@ call-container .call-content {
     height: 400px;
 }
 
+
+/* login */
+
+.login-form {
+    width: 50%;
+    border: 5px solid #ff4000;
+    background-color: rgba(3,37,78,0.5);
+    color: #ff4000;
+}
+
 /* footer */
 
 .links-footer {
