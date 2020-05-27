@@ -315,14 +315,6 @@ call-container .call-content {
     margin-bottom: 1rem;
 }
 
-/* media queries */
-
-/* @media (min-width: 368px){
-    #home-img {
-        height: 110vh;
-    }
-} */
-
 @media (min-width: 576px){
     #home-img {
         height: 80vh;
