@@ -141,7 +141,6 @@ li {
 	justify-content: center;
     width: 100%;
 	min-height: 350px;
-	height: 150vh;
 	background: url(../images/engine.jpg) no-repeat center center;
     background-size: cover;
 }
@@ -272,6 +271,10 @@ call-container .call-content {
 
 /* login */
 
+.login-content {
+    padding-top: 200px;
+}
+
 .login-form {
     border: 5px solid #03254e;
     background-color: rgba(255,64,0,0.7);
@@ -314,11 +317,11 @@ call-container .call-content {
 
 /* media queries */
 
-@media (min-width: 368px){
+/* @media (min-width: 368px){
     #home-img {
         height: 110vh;
     }
-}
+} */
 
 @media (min-width: 576px){
     #home-img {
