@@ -1,72 +1,85 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-<section id="home-img">
-  <!-- Login form -->
-  <div class="row">
-    <div class="col-12 col-md-6 mx-auto my-auto login-form">
-      <form class="px-4 py-3">
-        <div class="form-group">
-          <label for="exampleDropdownFormEmail1"
-            >Enter your Email address</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleDropdownFormEmail1"
-            placeholder="email@example.com"
-          />
-        </div>
-        <div class="form-group">
-          <label for="exampleDropdownFormPassword1">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleDropdownFormPassword1"
-            placeholder="Password"
-          />
-        </div>
-        <div class="row text-center">
+<section class="pt-5" id="home-img">
+    <!-- Login form -->
+    <div class="row">
+      <div class="col-12 col-md-6 mx-auto my-auto login-form">
+        <form class="px-4 py-3">
+          <div class="form-group">
+            <label for="exampleDropdownFormEmail1"
+              >Enter your Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleDropdownFormEmail1"
+              placeholder="email@example.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleDropdownFormPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleDropdownFormPassword1"
+              placeholder="Password"
+            />
+          </div>
+          <div class="row text-center">
             <div class="col-12">
-                <button type="submit" class="btn btn-home bg-oxford text-wheel">Log in</button>
+              <button type="submit" class="btn btn-home bg-oxford text-wheel">
+                Log in
+              </button>
             </div>
-        </div>
-        
-      </form>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-  <!-- Two separate boxes for register or sign up, like on the home page -->
-  <div class="row pt-md-0 mx-2 call-section justify-content-center align-stretch text-center text-oxford">
-    <div class="col-md-6 mx-xl-2 my-3 register-container">
-      <div class="row">
-        <div class="col-12">
-          <h4 class="call-header text-uppercase">
-            I dismantle cars in Ireland
-          </h4>
+    <!-- Two separate boxes for register or sign up, like on the home page -->
+    <div
+      class="row mx-2 call-section justify-content-center align-stretch text-center text-oxford"
+    >
+      <div class="col-md-6 mx-xl-2 my-3 register-container">
+        <div class="row">
+          <div class="col-12">
+            <h4 class="call-header text-uppercase">
+              I dismantle cars in Ireland
+            </h4>
+          </div>
+          <div class="col-12">
+            <p class="call-content">
+              Become a member and benefit from our popular network so you can
+              sell your spare parts faster?
+            </p>
+          </div>
+          <div class="col-12">
+            <a class="btn btn-home bg-oxford text-wheel text-uppercase" href=""
+              >Register</a
+            >
+          </div>
         </div>
-        <div class="col-12">
-          <p class="call-content">Become a member and benefit from our popular network so you can sell your spare parts faster?</p>
-        </div>
-        <div class="col-12">
-          <a class="btn btn-home bg-oxford text-wheel text-uppercase" href="">Register</a>
+      </div>
+      <div class="col-md-6 mx-xl-2 my-3 register-container">
+        <div class="row">
+          <div class="col-12">
+            <h4 class="call-header text-uppercase">
+              I'm a car dealer in Nigeria
+            </h4>
+          </div>
+          <div class="col-12">
+            <p class="call-content">
+              Get an account so you can start making a list of any interesting
+              products to buy later...
+            </p>
+          </div>
+          <div class="col-12">
+            <a class="btn btn-home bg-oxford text-wheel text-uppercase" href=""
+              >Sign Up</a
+            >
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6 mx-xl-2 my-3 register-container">
-      <div class="row">
-        <div class="col-12">
-          <h4 class="call-header text-uppercase">
-            I'm a car dealer in Nigeria
-          </h4>
-        </div>
-        <div class="col-12">
-          <p class="call-content">Get an account so you can start making a list of any interesting products to buy later...</p>
-        </div>
-        <div class="col-12">
-          <a class="btn btn-home bg-oxford text-wheel text-uppercase" href="">Sign Up</a>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 {% endblock %}
