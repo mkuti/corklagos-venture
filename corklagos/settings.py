@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'home',
     'listings',
     'expertise',
@@ -71,7 +74,8 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',  # required by allauth
+                # allauth templates use the request object
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -86,6 +90,12 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+'''allauth social account app allows users to login
+with social media providers. django.contrib.sites and site_id
+are used by the social account app to create the proper callback URLs
+when connecting via social media accounts.'''
+site_id = 1
 
 WSGI_APPLICATION = 'corklagos.wsgi.application'
 
