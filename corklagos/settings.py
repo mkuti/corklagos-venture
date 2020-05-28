@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'listings',
     'expertise',
     'login',
+    'register'.
 ]
 
 MIDDLEWARE = [
