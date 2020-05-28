@@ -19,11 +19,13 @@ from home.views import home
 from listings.views import all_listings
 from expertise.views import expertise
 from login.views import login
+from register.views import register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='index'),
     path('listings', all_listings, name="listings"),
     path('expertise', expertise, name="expertise"),
-    path('login', login, name='login')
+    path('login', login, name='login'),
+    path('register', register, name='register'),
 ]
