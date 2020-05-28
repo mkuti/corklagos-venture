@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'home',
     'listings',
     'expertise',
-    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -95,7 +94,18 @@ AUTHENTICATION_BACKENDS = [
 with social media providers. django.contrib.sites and site_id
 are used by the social account app to create the proper callback URLs
 when connecting via social media accounts.'''
-site_id = 1
+SITE_ID = 1
+
+# temporarily log confirmation emails on console sent by allauth to any new accounts
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = "/"
 
 WSGI_APPLICATION = 'corklagos.wsgi.application'
 
