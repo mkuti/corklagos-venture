@@ -21,7 +21,7 @@ from expertise.views import expertise
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    path('expertise', include('expertise.urls')),
     path('listings', all_listings, name="listings"),
-    path('expertise', expertise, name="expertise"),
     path('accounts/', include('allauth.urls')),
 ]
