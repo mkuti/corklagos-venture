@@ -10,20 +10,9 @@
         method="POST"
         action="{% url 'account_login' %}">
         {% csrf_token %}
-        <div class="form-group">
-          <label for="exampleDropdownFormEmail1"
-            >Enter your Email address</label>
-          <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com"/>
-        </div>
-        <div class="form-group">
-          <label for="exampleDropdownFormPassword1">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleDropdownFormPassword1"
-            placeholder="Password"
-          />
-        </div>
+        
+                 {{ form.as_p }} 
+           
         <div class="row text-center">
           <div class="col-12">
             <button
