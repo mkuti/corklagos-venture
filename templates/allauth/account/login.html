@@ -8,19 +8,53 @@
       <form
         class="px-4 py-3 login"
         method="POST"
-        action="{% url 'account_login' %}">
+        action="{% url 'account_login' %}"
+      >
         {% csrf_token %}
-        
-                 {{ form.as_p }} 
-           
+        <input
+          type="hidden"
+          name="csrfmiddlewaretoken"
+          value="m0wDE4KuvlsZ62mr8wURzqpr3TLlHw9incbMEEQ0v6tkQVDZFtm4AqCiiC5o2f0u"
+        />
+        <div class="form-group">
+          <label for="id_login">Login:</label>
+          <input
+            type="text"
+            name="login"
+            placeholder="Username or e-mail"
+            autofocus="autofocus"
+            required=""
+            id="id_login"
+          />
+        </div>
+        <div class="form-group">
+          <label for="id_password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required=""
+            id="id_password"
+          />
+        </div>
+
         <div class="row text-center">
           <div class="col-12">
             <button
               type="submit"
-              class="btn btn-gal bg-oxford text-wheel crimson text-uppercase">
+              class="btn btn-gal bg-oxford text-wheel crimson text-uppercase"
+            >
               Log in
             </button>
-            <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <a
+              class="btn btn-gal my-0"
+              href="{% url 'account_reset_password' %}"
+              >{% trans "Forgot Password?" %}</a
+            >
           </div>
         </div>
         {% if redirect_field_value %}
@@ -44,7 +78,9 @@
           </h4>
         </div>
         <div class="col-12">
-          <a class="btn btn-gal bg-oxford text-wheel text-uppercase" href="{{ signup_url }}"
+          <a
+            class="btn btn-gal bg-oxford text-wheel text-uppercase"
+            href="{{ signup_url }}"
             >Register</a
           >
         </div>
