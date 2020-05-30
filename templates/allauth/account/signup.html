@@ -1,29 +1,111 @@
-{% extends "account/base.html" %}
-
-{% load i18n %}
-
-{% block content %}
+{% extends "account/base.html" %} {% load i18n %} {% block content %}
 <section class="pt-5 pt-md-0" id="home-img">
-
   <!-- Login form -->
   <div class="row text-center mx-2">
-  
-    <div class="col-12 col-md-6 mx-auto login-form ">
-    <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+    <div class="col-12 col-md-6 mx-auto login-form">
+      <p>
+        {% blocktrans %}Already have an account? Then please
+        <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+      </p>
       <form
         class="px-4 py-3 signup text-left"
         id="signup_form"
         method="POST"
-        action="{% url 'account_signup' %}">
+        action="{% url 'account_signup' %}"
+      >
         {% csrf_token %}
-        
-                 {{ form.as_p }} 
-           
+
+        <p>
+          <label for="id_business">Please enter your business name:</label>
+          <input
+            class="form-control"
+            type="text"
+            name="business"
+            placeholder="Business name"
+            required=""
+            id="id_business"
+          />
+        </p>
+
+        <p>
+          <label for="id_phone">What is the phone number of your business?</label>
+          <input
+            class="form-control"
+            type="text"
+            name="phone"
+            placeholder="Phone number"
+            required=""
+            id="id_phone"
+          />
+        </p>
+
+
+
+        <p>
+          <label for="id_email">E-mail:</label>
+          <input
+            class="form-control"
+            type="email"
+            name="email"
+            placeholder="E-mail address"
+            required=""
+            id="id_email"
+          />
+        </p>
+        <p>
+          <label for="id_email2">E-mail (again):</label>
+          <input
+            class="form-control"
+            type="email"
+            name="email2"
+            placeholder="E-mail address confirmation"
+            required=""
+            id="id_email2"
+          />
+        </p>
+        <p>
+          <label for="id_username">Username:</label>
+          <input
+            class="form-control"
+            type="text"
+            name="username"
+            placeholder="Username"
+            autofocus="autofocus"
+            minlength="4"
+            maxlength="150"
+            required=""
+            id="id_username"
+          />
+        </p>
+        <p>
+          <label for="id_password1">Password:</label>
+          <input
+            class="form-control"
+            type="password"
+            name="password1"
+            placeholder="Password"
+            required=""
+            id="id_password1"
+          />
+        </p>
+        <p>
+          <label for="id_password2">Password (again):</label>
+          <input
+            class="form-control"
+            type="password"
+            name="password2"
+            placeholder="Password (again)"
+            required=""
+            id="id_password2"
+          />
+        </p>
+
         <div class="row text-center">
           <div class="col-12">
             <button
               type="submit"
-              class="btn btn-gal bg-oxford text-wheel crimson text-uppercase">
+              class="btn btn-gal bg-oxford text-wheel crimson text-uppercase"
+            >
               Register
             </button>
           </div>
