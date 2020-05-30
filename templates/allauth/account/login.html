@@ -11,14 +11,15 @@
         action="{% url 'account_login' %}"
       >
         {% csrf_token %}
-        <input
+        <!-- <input
           type="hidden"
           name="csrfmiddlewaretoken"
           value="m0wDE4KuvlsZ62mr8wURzqpr3TLlHw9incbMEEQ0v6tkQVDZFtm4AqCiiC5o2f0u"
-        />
+        /> -->
         <div class="form-group">
           <label for="id_login">Login:</label>
           <input
+            class="form-control"
             type="text"
             name="login"
             placeholder="Username or e-mail"
@@ -30,6 +31,7 @@
         <div class="form-group">
           <label for="id_password">Password:</label>
           <input
+            class="form-control"
             type="password"
             name="password"
             placeholder="Password"
