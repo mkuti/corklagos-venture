@@ -143,6 +143,12 @@ li {
     padding-top: 50px;
 }
 
+.call-box {
+    border: 5px solid #03254e;
+    background-color: rgba(255,64,0,0.7);
+    color: #feefdd;
+}
+
 .call-container {
     display: flex;
     flex-direction: column;
@@ -150,8 +156,6 @@ li {
     min-width: 300px;
     max-width: 500px;
     min-height: 300px;
-    border: 5px solid #03254e;
-    background-color: rgba(255,64,0,0.7);
     font-weight: 600;
     font-size: 2.5rem;
 }
@@ -258,25 +262,9 @@ li {
 }
 
 
-/* login */
+/* account */
 
-.account-form {
-    border: 5px solid #03254e;
-    background-color: rgba(255,64,0,0.7);
-    color: #feefdd;
-}
 
-.register-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 250px;
-    max-width: 500px;
-    min-height: 300px;
-    border: 5px solid #03254e;
-    background-color: rgba(255,64,0,0.7);
-    color: #feefdd;
-}
 
 /* footer */
 
