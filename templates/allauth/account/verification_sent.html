@@ -5,8 +5,15 @@
 {% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
 
 {% block content %}
-    <h1>{% trans "Verify Your E-mail Address" %}</h1>
 
-    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
-
+    <section class="py-5" id="home-img">
+    <!-- Confirm the password is changed -->
+  <div class="row text-center mx-2">
+    <div class="col-12 col-md-6 mx-auto call-box">
+        <h1>{% trans "Verify Your E-mail Address" %}</h1>
+        <h5>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</h5>
+    </div>
+  </div>
+</section>
+    
 {% endblock %}
