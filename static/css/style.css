@@ -149,6 +149,7 @@ li {
     color: #feefdd;
 }
 
+/* flex and min/max-width required to allow bootstraps columns to work */
 .call-container {
     display: flex;
     flex-direction: column;
