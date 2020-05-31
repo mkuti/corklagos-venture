@@ -4,14 +4,14 @@
 <section class="pt-5 pt-md-0" id="home-img">
   <!-- Login form -->
   <div class="row text-center mx-2">
-    <div class="col-12 col-md-6 mx-auto login-form text-left">
+    <div class="col-12 col-md-6 mx-auto account-form text-left">
       <form
         class="px-4 py-3 login"
         method="POST"
         action="{% url 'account_login' %}"
       >
         {% csrf_token %}
-        
+
         <div class="form-group">
           <label for="id_login">Login:</label>
           <input
