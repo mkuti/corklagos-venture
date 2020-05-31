@@ -2,20 +2,40 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+{% block head_title %}{% trans "Log Out" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
+<section class="py-5" id="home-img">
+  <!-- Confirm Log out -->
+  <div class="row text-center mx-2">
+    <div class="col-12 col-md-6 mx-auto call-box">
+        <h1>{% trans "Log Out" %}</h1>
+        <p>{% trans 'Are you sure you want to sign out?' %}</p>
+        <form
+        class="px-4 py-3 password_reset text-left"
+        method="POST"
+        action="{% url 'account_logout' %}"
+      >
+        {% csrf_token %}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+            {% endif %}
 
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
+        <div class="row text-center">
+          <div class="col-12">
+            <button
+              type="submit"
+              class="btn btn-gal bg-oxford text-wheel crimson text-uppercase"
+            >
+              Log out
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
 
 {% endblock %}
