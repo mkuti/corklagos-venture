@@ -296,8 +296,8 @@ li {
 
 @media (min-width: 576px){
     #home-img {
-        height: 80vh;
-    }
+        min-height: 80vh; 
+    } 
     .listing-img {
         width: 25%;
     }
