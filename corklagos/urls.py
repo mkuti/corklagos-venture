@@ -15,8 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from listings.views import all_listings
-from expertise.views import expertise
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +22,5 @@ urlpatterns = [
     path('expertise', include('expertise.urls')),
     path('listings', include('listings.urls')),
     path('accounts/', include('allauth.urls')),
+    path('dashboard', include('dashboard.urls')),
 ]
