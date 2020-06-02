@@ -65,7 +65,16 @@
       </li>
       {% endif %}
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+        <a class="{% if grand_total %}text-wheel font-weight-bold{% else %}text-melon{% endif %}nav-link" href="#">
+            <div class="text-center">
+                <div><i class="fas fa-shopping-cart"></i></div>
+                <p class="my-0">
+                    {% if grand_total %}
+                    ${{ grand_total|floatformat:2 }}             
+                    {% endif %}
+                </p>
+            </div>
+        </a>
       </li>
     </ul>
   </div>
