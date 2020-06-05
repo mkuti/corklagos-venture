@@ -105,10 +105,12 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
+ACCOUNT_PRESERVE_USERNAME_CASING = False
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/accounts/profile/"
+ACCOUNT_LOGOUT_ON_GET = False
+ACCOUNT_ADAPTER = 'project.users.adapter.MyAccountAdapter'
 
 WSGI_APPLICATION = 'corklagos.wsgi.application'
 
