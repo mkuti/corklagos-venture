@@ -1,8 +1,8 @@
-{% extends "account/base.html" %} {% load i18n %} {% block content %}
-<section class="py-5" id="home-img">
+{% extends "account/base.html" %} {% load i18n %} {% block inner_content  %}
+
   <!-- Sign up form -->
   <div class="row text-center mx-2">
-    <div class="col-12 col-md-6 mx-auto call-box">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto call-box">
       <p>
         {% blocktrans %}Already have an account? Then please
         <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
@@ -27,16 +27,8 @@
             </button>
           </div>
         </div>
-        {% if redirect_field_value %}
-        <input
-          type="hidden"
-          name="{{ redirect_field_name }}"
-          value="{{ redirect_field_value }}"
-        />
-        {% endif %}
       </form>
     </div>
   </div>
-</section>
 
 {% endblock %}

@@ -1,14 +1,12 @@
-{% extends "account/base.html" %} {% load i18n %} {% block content %}
+{% extends "account/base.html" %} {% load i18n %} {% block inner_content %}
 
-<section class="pt-5 pt-md-0" id="home-img">
+
   <!-- Login form -->
 
-<hr>
-<h2 class="text-uppercase mb-4">{% trans "Sign In" %}</h2>
-<hr>
+
 
   <div class="row text-center mx-2">
-    <div class="col-12 col-md-6 mx-auto call-box text-left">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto call-box text-left">
       <form
         class="px-4 py-3 login"
         method="POST"
@@ -49,7 +47,7 @@
   </div>
   <!-- Two separate boxes for register or sign up, like on the home page -->
   <div class="row mx-2 pt-5 justify-content-center text-center text-oxford">
-    <div class="col-md-6 mx-xl-2 my-3 call-box crimson">
+    <div class="col-md-8 col-lg-6 mx-xl-2 my-3 call-box crimson">
       <div class="row">
         <div class="col-12">
           <h4 class="call-header text-uppercase">
