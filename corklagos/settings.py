@@ -111,6 +111,8 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = "/dashboard/"
 ACCOUNT_LOGOUT_ON_GET = False
 
+ACCOUNT_FORMS = {'signup': 'mysite.forms.MyCustomSignupForm'}
+
 WSGI_APPLICATION = 'corklagos.wsgi.application'
 
 
