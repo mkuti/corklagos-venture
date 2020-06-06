@@ -120,6 +120,7 @@ LOGIN_REDIRECT_URL = "/dashboard/"
 ACCOUNT_LOGOUT_ON_GET = False
 
 ACCOUNT_FORMS = {'signup': 'corklagos.forms.CustomSignupForm'}
+ACCOUNT_ADAPTER = "corklagos.adapter.SignupPopulatesUserAdapter"
 
 WSGI_APPLICATION = 'corklagos.wsgi.application'
 
