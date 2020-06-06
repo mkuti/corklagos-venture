@@ -17,16 +17,15 @@ class Profile(models.Model):
     eircode = models.CharField(max_length=20, blank=False)
 
     def __str__(self):
-        return self.username
+        return self.user.username
 
-    @receiver(post_save, sender=User)
-    def create_user_profile(sender, instance, created, **kwargs):
-        '''
-        Connect create_user_profile & save_user_profile methods to User model, whenever a save event occurs
-        '''
-        if created:
-            Profile.objects.create(user=instance)
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    '''
+    Connect create_user_profile & save_user_profile methods to User model, whenever a save event occurs
+    '''
 
-    @receiver(post_save, sender=User)
-    def save_user_profile(sender, instance, **kwargs):
-        instance.profile.save()
+    if created:
+        Profile.objects.create(user=instance)
+    # Existing users: just save the profile
+    instance.profile.save()
