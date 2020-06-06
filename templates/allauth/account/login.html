@@ -2,6 +2,11 @@
 
 <section class="pt-5 pt-md-0" id="home-img">
   <!-- Login form -->
+
+<hr>
+<h2 class="text-uppercase mb-4">{% trans "Sign In" %}</h2>
+<hr>
+
   <div class="row text-center mx-2">
     <div class="col-12 col-md-6 mx-auto call-box text-left">
       <form
@@ -11,29 +16,7 @@
       >
         {% csrf_token %}
 
-        <div class="form-group">
-          <label for="id_login">Login:</label>
-          <input
-            class="form-control"
-            type="text"
-            name="login"
-            placeholder="Username or e-mail"
-            autofocus="autofocus"
-            required=""
-            id="id_login"
-          />
-        </div>
-        <div class="form-group">
-          <label for="id_password">Password:</label>
-          <input
-            class="form-control"
-            type="password"
-            name="password"
-            placeholder="Password"
-            required=""
-            id="id_password"
-          />
-        </div>
+        {{ form|crispy }}
 
         <div class="row text-center">
           <div class="col-12">
