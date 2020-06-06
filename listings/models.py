@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class listing(models.Model):
     name = models.CharField(max_length=254, default='')
