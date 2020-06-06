@@ -16,4 +16,3 @@ class CustomSignupForm(SignupForm):
         user.business_name = self.cleaned_data['business_name']
         user.save()
         return user
-
