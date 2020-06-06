@@ -108,9 +108,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 ACCOUNT_PRESERVE_USERNAME_CASING = False
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = "/accounts/profile/"
+LOGIN_REDIRECT_URL = "/dashboard/"
 ACCOUNT_LOGOUT_ON_GET = False
-ACCOUNT_ADAPTER = 'project.users.adapter.MyAccountAdapter'
 
 WSGI_APPLICATION = 'corklagos.wsgi.application'
 
