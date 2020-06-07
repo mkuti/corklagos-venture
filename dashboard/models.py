@@ -9,7 +9,7 @@ class Profile(models.Model):
     Extending Django User model by adding fields to the user
     '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    business_name = models.TextField(max_length=50, blank=False)
+    business_name = models.CharField(max_length=50, blank=False)
     phone = models.CharField(max_length=20, blank=False)
     street_address = models.CharField(max_length=50, blank=False)
     street_address2 = models.CharField(max_length=50, blank=True)
