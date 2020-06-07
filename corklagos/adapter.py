@@ -1,28 +1,25 @@
 from allauth.account.adapter import DefaultAccountAdapter
-from allauth.account.utils import user_username, user_email, user_field
+
 
 class SignupPopulatesUserAdapter(DefaultAccountAdapter):
-    def save_user(self, request, user, form, commit=True):
+    def save_user(self, request, profile, form, commit=True):
         """
         Saves a new `User` instance using information provided in the
         signup form.
         """
         data = form.cleaned_data
-        business_name = data.get('business_name')
-        phone = data.get('phone')
-        eircode: data.get('eircode')
-        city: data.get('city')
-        street_address: data.get('street_address')
-        street_address2: data.get('street_address2')
-        county: data.get('county')
+        profile.business_name = data.get('business_name')
+        profile.phone = data.get('phone')
+        profile.eircode = data.get('eircode')
+        profile.city = data.get('city')
+        profile.street_address = data.get('street_address')
+        profile.street_address2 = data.get('street_address2')
+        profile.county = data.get('county')
 
-        user_email
-        user_username
         if 'password1' in data:
-            user.set_password(data["password1"])
+            profile.set_password(data['password1'])
         else:
-            user.set_unusable_password()
-        self.populate_username(request, user)
+            profile.set_unusable_password()
         if commit:
-            user.save()
-        return DefaultAccountAdapter.save_user(self, request, user, form)
+            profile.save()
+        return profile
