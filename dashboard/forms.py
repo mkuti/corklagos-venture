@@ -14,16 +14,16 @@ class EditProfileForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)  # call default init method to set form up
         placeholders = {
-            'default_business_name': 'Business Name',
-            'default_phone': 'Phone Number',
-            'default_eircode': 'Eircode',
-            'default_city': 'City',
-            'default_street_address': 'Street Address',
-            'default_street_address2': 'Street Address 2',
-            'default_county': 'County, State or Locality',
+            'business_name': 'Business Name',
+            'phone': 'Phone Number',
+            'eircode': 'Eircode',
+            'city': 'City',
+            'street_address': 'Street Address',
+            'street_address2': 'Street Address 2',
+            'county': 'County, State or Locality',
         }
 
-        self.fields['default_business_name'].widget.attrs['autofocus'] = True  # to force cursor to start in business name field
+        self.fields['business_name'].widget.attrs['autofocus'] = True  # to force cursor to start in business name field
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
