@@ -1,6 +1,7 @@
 from allauth.account.forms import SignupForm
 from django import forms
-# from dashboard.models import Profile
+from django.contrib.auth.models import User
+from dashboard.models import Profile
 
 
 class CustomSignupForm(SignupForm):
@@ -12,7 +13,19 @@ class CustomSignupForm(SignupForm):
     eircode = forms.CharField(max_length=20, label='Eircode')
     county = forms.CharField(max_length=30, label='County')
 
+    class Meta:
+        model = Profile
+        fields = (
+            'business_name',
+            'phone',
+            'street_address',
+            'city', 'eircode',
+            'county',
+            'username',
+            'email',
+            'password1',
+            'password2'
+        )
+
     def signup(self, request, user):
-        user.business_name = self.cleaned_data['business_name']
-        user.save()
-        return user
+        pass
