@@ -12,7 +12,7 @@ class EditProfileForm(forms.ModelForm):
         """
         Adding placeholders and classes
         """
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)  # call default init method to set form up
         placeholders = {
             'default_business_name': 'Business Name',
             'default_phone': 'Phone Number',
@@ -23,6 +23,12 @@ class EditProfileForm(forms.ModelForm):
             'default_county': 'County, State or Locality',
         }
 
+        self.fields['default_business_name'].widget.attrs['autofocus'] = True  # to force cursor to start in business name field
         for field in self.fields:
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+            else:
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'form-control'
             self.fields[field].label = False
