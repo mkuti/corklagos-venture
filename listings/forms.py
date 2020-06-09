@@ -9,7 +9,7 @@ class AddListingForm(forms.ModelForm):
     '''
     class Meta:
         model = Listings
-        fields = '__all__'
+        exclude = ['listing_owner']
 
     def __init__(self, *args, **kwargs):
         """
