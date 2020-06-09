@@ -29,4 +29,4 @@ class Listings(models.Model):
         ordering = ['listing_name']
 
     def __str__(self):
-        return self.name
+        return self.listing_name
