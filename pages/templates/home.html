@@ -14,7 +14,11 @@
                         <p>I have spare parts to sell!</p>
                     </div>
                     <div class="col-12">
+                        {% if user.is_authenticated %}
+                        <a class="btn btn-gal bg-oxford text-wheel text-uppercase" href="{% url 'createlisting' %}">Add a listing</a>
+                        {% else %}
                         <a class="btn btn-gal bg-oxford text-wheel text-uppercase" href="{% url 'account_login' %}">Log In</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
