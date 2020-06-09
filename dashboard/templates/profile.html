@@ -14,17 +14,13 @@
     </div>
     <!-- Listing section -->
     <div class="row mx-md-5 mx-1 my-3">
-        <div class="col-12 col-md-6 col-lg-4 pl-2">
-            <div class="card">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="listing-img"></div>
-                    </div>
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="card-container mb-3 mx-md-3">
+                <div class="card-img-contain">
+                    <img src="{% static '/images/gear.png' %}" alt="...">
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card-header">Name:</div>
-                    </div>
+                <div class="card-body py-0">
+                    <h5 class="card-title">Name:</h5>
                 </div>
                 <div class="row">
                     <div class="col-4 listing-buy">
@@ -40,7 +36,7 @@
     <div class="row mx-4">
         <div class="col-12">
             <form
-                    class="px-4 py-3 add_part text-left"
+                    class="px-md-4 py-3 add_part text-left"
                     method="POST"
                     action=""
                     enctype="multipart/form-data"

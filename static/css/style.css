@@ -194,6 +194,17 @@ li {
     margin-top: 5rem;
 }
 
+.card-container {
+    border: 5px solid #ff4000;
+    background-color: #03254e;
+}
+
+.card-img-contain {
+    position: relative;
+    height: auto;
+    width: auto;
+}
+
 /* expertise page */
 
 .banner {
