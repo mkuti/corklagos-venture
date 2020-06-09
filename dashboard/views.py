@@ -7,7 +7,7 @@ from listings.forms import AddListingForm
 
 # Create your views here.
 @login_required
-def create_or_edit_listing(request, pk=None):
+def createlisting(request, pk=None):
     """ Display the member's profile after login.
     Display current listings
     Render form to add a new listing """
@@ -18,7 +18,7 @@ def create_or_edit_listing(request, pk=None):
         if form.is_valid():
             listing = form.save()
     else:
-        form = AddListingForm(instance=listing)
+        form = AddListingForm()
 
     context = {
         'form': form

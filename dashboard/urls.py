@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import create_or_edit_listing
+from .views import createlisting
 
 urlpatterns = [
-    path('', create_or_edit_listing, name='create_or_edit_listing'),
+    path('', createlisting, name='createlisting'),
 ]
