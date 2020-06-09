@@ -43,120 +43,13 @@
                     class="px-4 py-3 add_part text-left"
                     method="POST"
                     action=""
+                    enctype="multipart/form-data"
                 >
 
                 {% csrf_token %}
                 
-            <div class="row">
-                <div class="col-12 col-lg-6 px-lg-1">
-                
-                <p>
-                    <label for="listing_name">Please provide the name:</label>
-                    <!-- <input
-                    class="form-control"
-                    type="text"
-                    name="listing_name"
-                    required=""
-                    id="listing_name"
-                    /> -->
-                    {{ form.listing_name }}
-                </p>
-            </div>
-            <div class="col-12 col-lg-6">
-                <p>
-                    <label for="listing_price">Please enter the price of the car part (<i class="fas fa-euro-sign"></i>)</label>
-                    <!-- <input
-                    class="form-control"
-                    type="text"
-                    name="listing_price"
-                    required=""
-                    id="listing_price"
-                    /> -->
-                    {{ form.listing_price }}
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <p>
-                    <label for="listing_description">Please provide a brief description of the car part:</label>
-                    <!-- <textarea
-                    class="form-control"
-                    type="text"
-                    name="listing_description"
-                    required=""
-                    id="listing_description"
-                    rows="7" 
-                    maxlength="300"
-                    ></textarea> -->
-                    {{ form.listing_description }}
-                </p>
-            </div>
-            <div class="col-12 col-lg-6">
-                    <h5>Please select the category:</h5>
-                    <div class="row text-center">
-                        <div class="col">
-                            <!-- <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Engines">
-                                <label class="form-check-label" for="inlineRadio1">Engines</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Gear Boxes">
-                                <label class="form-check-label" for="inlineRadio2">Gear Boxes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Lamps">
-                                <label class="form-check-label" for="inlineRadio3">Lamps</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Radiators">
-                                <label class="form-check-label" for="inlineRadio1">Radiators</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="Bumpers">
-                                <label class="form-check-label" for="inlineRadio2">Bumpers</label>
-                            </div> -->
-                            {{ form.listing_category }}
-                        </div>
-                    </div>
-                    <h5>Please select the car brand:</h5>
-                    <div class="row text-center">
-                        <div class="col-12">
-                            <!-- <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="Toyota">
-                                <label class="form-check-label" for="inlineRadio1">Toyota</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="Nissan">
-                                <label class="form-check-label" for="inlineRadio2">Nissan</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="Honda">
-                                <label class="form-check-label" for="inlineRadio3">Honda</label>
-                            </div> -->
-                            {{ form.listing_brand }}
-                        </div>
-                    </div>
-                    <h5>Please upload an image of your product:</h5>
-                    <div class="row text-center">
-                        <div class="col-12">
-                            <!-- <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="Toyota">
-                                <label class="form-check-label" for="inlineRadio1">Toyota</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="Nissan">
-                                <label class="form-check-label" for="inlineRadio2">Nissan</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="Honda">
-                                <label class="form-check-label" for="inlineRadio3">Honda</label>
-                            </div> -->
-                            {{ form.listing_image}}
-                        </div>
-                    </div>
-            </div>
-        </div>
+                {{ form|crispy }}
+          
 
         <div class="row text-center">
           <div class="col-12">
@@ -178,7 +71,6 @@
       </form>
         </div>
         </div>  
-    </div>
 </main>
 
 {% endblock %}
