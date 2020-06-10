@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import createlisting
+from .views import getandcreatelisting
 
 urlpatterns = [
-    path('', createlisting, name='createlisting'),
+    path('', getandcreatelisting, name='createlisting'),
 ]

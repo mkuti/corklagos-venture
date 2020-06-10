@@ -7,20 +7,22 @@ from listings.forms import AddListingForm
 
 # Create your views here.
 @login_required
-def createlisting(request, pk=None):
+def getandcreatelisting(request, pk=None):
     """ Display the member's profile after login.
     Display current listings
     Render form to add a new listing """
-    listing = get_object_or_404(Listings, pk=pk) if pk else None
+    user = request.user
+    user_listings = Listings.objects.filter(listing_owner=user)
 
     if request.method == 'POST':
-        form = AddListingForm(request.POST, request.FILES, instance=listing)
+        form = AddListingForm(request.POST, request.FILES)
         if form.is_valid():
-            listing = form.save()
+            form.save()
     else:
         form = AddListingForm()
 
     context = {
-        'form': form
+        'form': form,
+        'listings': user_listings
     }
     return render(request, 'profile.html', context)
