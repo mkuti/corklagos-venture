@@ -19,7 +19,7 @@ class Listings(models.Model):
         ('honda', 'Honda'),
     ]
 
-    listing_owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    listing_owner = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     listing_name = models.CharField(max_length=50)
     listing_description = models.TextField()
     listing_price = models.CharField(max_length=20)
