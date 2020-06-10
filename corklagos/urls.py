@@ -28,4 +28,6 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
 ]
 
-static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# only add this in when in debug mode
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
