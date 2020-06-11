@@ -109,6 +109,11 @@ li {
     position: fixed;
 }
 
+/* cripsy forms */
+.asteriskField {
+    display: none;
+}
+
 /* nav */
 
 #logo-lg {
