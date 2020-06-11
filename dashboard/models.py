@@ -18,7 +18,7 @@ class Profile(models.Model):
     eircode = models.CharField(max_length=20, blank=False)
 
     def __str__(self):
-        return self.user.username
+        return f'{self.user.username} Profile'
 
 
 @receiver(post_save, sender=User)
