@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<main class="container-fluid">
+    <!-- Page headers -->
+    <div class="row mx-md-5 mx-1 my-3">
+        <div class="col-12 text-uppercase border-bottom">
+            <h1>Welcome back {{ user }}!</h1>
+            <h2>Your current listings:</h2>
+        </div>
+    </div>
+    <!-- Listing section -->
+    
+    <div class="row mx-md-5 mx-1 my-3">
+    {% for listing in listings %}
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="card-container mb-3 mx-md-3">
+                <div class="card-img-contain">
+                    <img src="{{ listing.listing_image.url }}" class="card-img-top card-img" alt="...">
+                </div>
+                <div class="card-body py-0">
+                    <h5 class="card-title text-wheel text-center">{{ listing.listing_name }}</h5>
+                </div>
+                <div class="row text-center">
+                    <div class="col-6 listing-buy">
+                        <a href="#" type="button" class="btn btn-gal bg-wheel py-1 mb-3">Edit</a>
+                    </div>
+                    <div class="col-6 listing-buy">
+                        <a href="#" type="button" class="btn btn-gal bg-wheel py-1 mb-3">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="row mx-md-5 mx-1 my-3">
+        <div class="col-12 text-uppercase border-bottom">
+            <h2>Add a new listing?</h2>
+        </div>
+    </div>
+
+    <div class="row mx-4">
+        <div class="col-12">
+            
+            <form
+                    class="px-md-4 py-3 add_part text-left"
+                    method="POST"
+                    action=""
+                    enctype="multipart/form-data"
+                >
+
+                {% csrf_token %}
+                
+                {{ form|crispy }}
+          
+
+        <div class="row text-center">
+          <div class="col-12">
+            <button
+              type="submit"
+              class="btn btn-gal bg-oxford text-wheel crimson text-uppercase"
+            >
+              Add the listing!
+            </button>
+          </div>
+        </div>
+      </form>
+        </div>
+        </div>  
+</main>
+
+{% endblock %}
