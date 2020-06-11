@@ -13,8 +13,9 @@
         </div>
     </div>
     <!-- Listing section -->
-    {% for listing in listings %}
+    
     <div class="row mx-md-5 mx-1 my-3">
+    {% for listing in listings %}
         <div class="col-6 col-md-4 col-lg-3">
             <div class="card-container mb-3 mx-md-3">
                 <div class="card-img-contain">
@@ -33,8 +34,9 @@
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+    
     <div class="row mx-md-5 mx-1 my-3">
         <div class="col-12 text-uppercase border-bottom">
             <h2>Add a new listing?</h2>
