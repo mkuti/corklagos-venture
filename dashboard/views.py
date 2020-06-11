@@ -1,13 +1,42 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from listings.models import Listings
 from listings.forms import AddListingForm
+from .forms import EditProfileForm
+from .models import Profile
 
 
-# Create your views here.
 @login_required
-def getandcreatelisting(request, pk=None):
+def addprofiledetails(request):
+    """ Welcome the member's profile after register.
+    Render form to add profile details """
+    if request.method == 'POST':
+        profile_form = EditProfileForm(request.POST)
+        if profile_form.is_valid():
+            profile = Profile.objects.create(
+                user=request.user,
+                business_name=profile_form.cleaned_data['business_name'],
+                phone=profile_form.cleaned_data['phone'],
+                eircode=profile_form.cleaned_data['eircode'],
+                city=profile_form.cleaned_data['city'],
+                street_address=profile_form.cleaned_data['street_address'],
+                street_address2=profile_form.cleaned_data['street_address2'],
+                county=profile_form.cleaned_data['county'],
+            )
+            profile.save()
+            return redirect(reverse('getandcreatelisting'))
+    else:
+        profile_form = EditProfileForm()
+
+    context = {
+        'profile_form': profile_form,
+    }
+    return render(request, 'profile.html', context)
+
+
+@login_required
+def getandcreatelisting(request):
     """ Display the member's profile after login.
     Display current listings
     Render form to add a new listing """
@@ -34,4 +63,4 @@ def getandcreatelisting(request, pk=None):
         'form': form,
         'listings': user_listings
     }
-    return render(request, 'profile.html', context)
+    return render(request, 'addlisting.html', context)
