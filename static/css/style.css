@@ -109,7 +109,7 @@ li {
     position: fixed;
 }
 
-/* cripsy forms */
+/* cripsy forms https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=remove%20label_suffix%20on%20required#change-required-fields */
 .asteriskField {
     display: none;
 }
