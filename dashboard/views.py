@@ -17,7 +17,16 @@ def getandcreatelisting(request, pk=None):
     if request.method == 'POST':
         form = AddListingForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            listing = Listings.objects.create(
+                listing_owner=request.user,
+                listing_name=form.cleaned_data['listing_name'],
+                listing_description=form.cleaned_data['listing_description'],
+                listing_price=form.cleaned_data['listing_price'],
+                listing_image=request.FILES['listing_image'],
+                listing_category=form.cleaned_data['listing_category'],
+                listing_brand=form.cleaned_data['listing_brand'],
+            )
+            listing.save()
     else:
         form = AddListingForm()
 
