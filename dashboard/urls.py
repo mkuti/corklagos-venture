@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import getandcreatelisting, addprofiledetails
+from .views import get_and_create_listing, add_profile_details
 
 urlpatterns = [
-    path('', addprofiledetails, name='editprofile'),
-    path('addlisting/', getandcreatelisting, name='addlisting'),
+    path('', add_profile_details, name='editprofile'),
+    path('addlisting/', get_and_create_listing, name='addlisting'),
 ]
