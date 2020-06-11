@@ -8,7 +8,14 @@ class Profile(models.Model):
     '''
     Extending Django User model by adding fields to the user
     '''
+
+    user_type = [
+        ('dismantler', 'Irish dismantler'),
+        ('dealer', 'Car dealer'),
+    ]
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_type = models.CharField(max_length=15, choices=user_type, default='')
     business_name = models.CharField(max_length=50, blank=False)
     phone = models.CharField(max_length=20, blank=False)
     street_address = models.CharField(max_length=50, blank=False)
@@ -19,5 +26,3 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
-
-
