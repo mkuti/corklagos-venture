@@ -8,7 +8,7 @@ from .models import Profile
 
 
 @login_required
-def addprofiledetails(request):
+def add_profile_details(request):
     """ Welcome the member's profile after register.
     Render form to add profile details """
     if request.method == 'POST':
@@ -36,7 +36,70 @@ def addprofiledetails(request):
 
 
 @login_required
-def getandcreatelisting(request):
+def get_and_create_listing(request):
+    """ Display the member's profile after login.
+    Display current listings
+    Render form to add a new listing """
+    user = request.user
+    user_listings = Listings.objects.filter(listing_owner=user)
+
+    if request.method == 'POST':
+        form = AddListingForm(request.POST, request.FILES)
+        if form.is_valid():
+            listing = Listings.objects.create(
+                listing_owner=request.user,
+                listing_name=form.cleaned_data['listing_name'],
+                listing_description=form.cleaned_data['listing_description'],
+                listing_price=form.cleaned_data['listing_price'],
+                listing_image=request.FILES['listing_image'],
+                listing_category=form.cleaned_data['listing_category'],
+                listing_brand=form.cleaned_data['listing_brand'],
+            )
+            listing.save()
+    else:
+        form = AddListingForm()
+
+    context = {
+        'form': form,
+        'listings': user_listings
+    }
+    return render(request, 'addlisting.html', context)
+
+
+@login_required
+def view_listing(request, listing_id):
+    """ Display the member's profile after login.
+    Display current listings
+    Render form to add a new listing """
+    user = request.user
+    user_listings = Listings.objects.filter(listing_owner=user)
+
+    if request.method == 'POST':
+        form = AddListingForm(request.POST, request.FILES)
+        if form.is_valid():
+            listing = Listings.objects.create(
+                listing_owner=request.user,
+                listing_name=form.cleaned_data['listing_name'],
+                listing_description=form.cleaned_data['listing_description'],
+                listing_price=form.cleaned_data['listing_price'],
+                listing_image=request.FILES['listing_image'],
+                listing_category=form.cleaned_data['listing_category'],
+                listing_brand=form.cleaned_data['listing_brand'],
+            )
+            listing.save()
+    else:
+        form = AddListingForm()
+
+    context = {
+        'form': form,
+        'listings': user_listings
+    }
+    return render(request, 'addlisting.html', context)
+
+
+
+@login_required
+def edit_listing(request, listing_id):
     """ Display the member's profile after login.
     Display current listings
     Render form to add a new listing """
