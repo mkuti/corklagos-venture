@@ -15,6 +15,7 @@ class EditProfileForm(forms.ModelForm):
         super().__init__(*args, **kwargs)  # call default init method to set form up
         placeholders = {
             'business_name': 'Please enter your business name',
+            'user_type': 'Please select the type of user',
             'phone': 'Phone Number',
             'eircode': 'Eircode',
             'city': 'City',
