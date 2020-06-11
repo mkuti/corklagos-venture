@@ -25,7 +25,7 @@ def addprofiledetails(request):
                 county=profile_form.cleaned_data['county'],
             )
             profile.save()
-            return redirect(reverse('getandcreatelisting'))
+            return redirect(reverse('addlisting'))
     else:
         profile_form = EditProfileForm()
 
