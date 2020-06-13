@@ -16,26 +16,30 @@
     
     <div class="row mx-md-5 mx-1 my-3">
     {% for listing in listings %}
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="card-container mb-3 mx-md-3">
-                <div class="card-img-contain">
-                    <img src="{{ listing.listing_image.url }}" class="card-img-top card-img" alt="...">
-                </div>
-                <div class="card-body py-0">
-                    <h5 class="card-title text-wheel text-center">{{ listing.listing_name }}</h5>
-                </div>
-                <div class="row text-center">
-                    <div class="col-6 listing-buy">
-                        <a href="{% url 'editlisting' listing.id %}" type="button" class="btn btn-gal bg-wheel py-1 mb-3">Edit</a>
+                <div class="col-12 col-md-6">
+                    <div class="listing-section mx-4 mx-md-2 mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-sm-4">
+                                <img src="{{ listing.listing_image.url }}" class="card-img" alt="{{ listing.listing_image.url }}">
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card-body py-2">
+                                    <h5 class="card-title px-3 text-wheel">{{ listing.listing_name}}</h5>
+                                    <div class="row text-beige text-center">
+                                        <div class="col-6">
+                                            <a href="{% url 'editlisting' listing.id %}" type="button" class="btn btn-gal bg-wheel py-1 mb-3">Edit</a>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="#" type="button" class="btn btn-gal bg-wheel py-1 mb-3">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-6 listing-buy">
-                        <a href="#" type="button" class="btn btn-gal bg-wheel py-1 mb-3">Delete</a>
-                    </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
     
     <div class="row mx-md-5 mx-1 my-3">
         <div class="col-12 text-uppercase border-bottom">
