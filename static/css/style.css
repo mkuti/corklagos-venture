@@ -182,31 +182,18 @@ hr {
     background-clip: border-box;
 }
 
-.listing-container {
-    width: 100%;
-    height: auto;
-    
-}
-
 .listing-price {
     font-size: 1.5rem;
     font-weight: 600;
 }
 
-.listing-img {
-    background: no-repeat center center;
-    background-size: contain;
-    width: 50%;
-    height: 200px;
-    left: 0;
-    position: absolute;
-    opacity: 0.8;
-}
-
 .listing-content {
     width: 90%;
     float:right;
-    margin-top: 5rem;
+}
+
+.card-img {
+    max-height: 190px;
 }
 
 .card-container {
