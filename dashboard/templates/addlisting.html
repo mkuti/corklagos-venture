@@ -15,31 +15,31 @@
     <!-- Listing section -->
     
     <div class="row mx-md-5 mx-1 my-3">
-    {% for listing in listings %}
-                <div class="col-6 col-md-4 col-lg-3 px-1">
-                    <div class="listing-section mx-md-2 mb-3">
-                        <div class="row no-gutters">
-                            <div class="col-12">
-                                <img src="{{ listing.listing_image.url }}" class="card-img" alt="{{ listing.listing_image.url }}">
-                            </div>
-                            <div class="col-12">
-                                <div class="card-body py-2">
-                                    <h5 class="card-title px-3 text-wheel text-uppercase">{{ listing.listing_name}}</h5>
-                                    <div class="row text-beige text-center">
-                                        <div class="col-6">
-                                            <a href="{% url 'editlisting' listing.id %}" type="button" class="btn btn-gal bg-wheel py-1 mb-3">Edit</a>
-                                        </div>
-                                        <div class="col-6">
-                                            <a href="#" type="button" class="btn btn-gal bg-wheel py-1 mb-3">Delete</a>
-                                        </div>
-                                    </div>
+        {% for listing in listings %}
+        <div class="col-6 col-md-4 col-lg-3 px-1">
+            <div class="listing-section mx-md-2 mb-3">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <img src="{{ listing.listing_image.url }}" class="card-img" alt="{{ listing.listing_image.url }}">
+                    </div>
+                    <div class="col-12">
+                        <div class="card-body py-2 text-center">
+                            <h5 class="card-title px-3 text-wheel text-uppercase">{{ listing.listing_name}}</h5>
+                            <div class="row text-beige text-center">
+                                <div class="col-6">
+                                    <a href="{% url 'editlisting' listing.id %}" type="button" class="btn btn-gal bg-wheel py-1 mb-3">Edit</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" type="button" class="btn btn-gal bg-wheel py-1 mb-3">Delete</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+            </div>
         </div>
+        {% endfor %}
+    </div>
     
     <div class="row mx-md-5 mx-1 my-3">
         <div class="col-12 text-uppercase border-bottom">
