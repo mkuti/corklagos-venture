@@ -16,13 +16,13 @@
     
     <div class="row mx-md-5 mx-1 my-3">
     {% for listing in listings %}
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-sm-6 col-md-4">
                     <div class="listing-section mx-4 mx-md-2 mb-3">
                         <div class="row no-gutters">
-                            <div class="col-sm-4">
+                            <div class="col-12">
                                 <img src="{{ listing.listing_image.url }}" class="card-img" alt="{{ listing.listing_image.url }}">
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-12">
                                 <div class="card-body py-2">
                                     <h5 class="card-title px-3 text-wheel text-uppercase">{{ listing.listing_name}}</h5>
                                     <div class="row text-beige text-center">
