@@ -44,23 +44,23 @@ def get_and_create_listing(request):
     user_listings = Listings.objects.filter(listing_owner=user)
 
     if request.method == 'POST':
-        form = AddListingForm(request.POST, request.FILES)
-        if form.is_valid():
+        addform = AddListingForm(request.POST, request.FILES)
+        if addform.is_valid():
             listing = Listings.objects.create(
                 listing_owner=user,
-                listing_name=form.cleaned_data['listing_name'],
-                listing_description=form.cleaned_data['listing_description'],
-                listing_price=form.cleaned_data['listing_price'],
+                listing_name=addform.cleaned_data['listing_name'],
+                listing_description=addform.cleaned_data['listing_description'],
+                listing_price=addform.cleaned_data['listing_price'],
                 listing_image=request.FILES['listing_image'],
-                listing_category=form.cleaned_data['listing_category'],
-                listing_brand=form.cleaned_data['listing_brand'],
+                listing_category=addform.cleaned_data['listing_category'],
+                listing_brand=addform.cleaned_data['listing_brand'],
             )
             listing.save()
     else:
         addform = AddListingForm()
 
     context = {
-        'form': form,
+        'addform': addform,
         'listings': user_listings
     }
     return render(request, 'addlisting.html', context)
