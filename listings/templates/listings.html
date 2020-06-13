@@ -80,12 +80,12 @@
             <div class="row">
             {% for listing in listings %}
                 <div class="col-12">
-                    <div class="listing-section mb-3">
+                    <div class="listing-section mx-2 mb-3">
                         <div class="row no-gutters">
-                            <div class="col-sm-4">
+                            <div class="col-4">
                                 <img src="{{ listing.listing_image.url }}" class="card-img" alt="{{ listing.listing_image.url }}">
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-8">
                                 <div class="card-body">
                                     <h5 class="card-title text-wheel">{{ listing.listing_name}}</h5>
                                     <p class="card-text text-white">{{ listing.listing_description}}</p>
