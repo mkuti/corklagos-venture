@@ -52,6 +52,10 @@ li {
     font-family: "Crimson Text", sans-serif;
 }
 
+hr {
+    width: 300px;
+}
+
 /* colors */
 
 .bg-oxford {
