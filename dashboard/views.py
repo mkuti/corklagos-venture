@@ -86,3 +86,13 @@ def view_and_edit_listing(request, listing_id):
         'listing': listing
     }
     return render(request, 'editlisting.html', context)
+
+
+@login_required
+def delete_listing(request, listing_id):
+    """ Allow user to delete his own listing from the database """
+    listing = get_object_or_404(Listing, pk=listing_id)
+
+    listing.delete()
+
+    return redirect(reverse('addlisting'))
