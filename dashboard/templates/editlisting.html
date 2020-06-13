@@ -12,20 +12,24 @@
         </div>
     </div>
     <!-- Listing section -->
-    
     <div class="row mx-md-5 mx-1 my-3">
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="card-container mb-3 mx-md-3">
-                <div class="card-img-contain">
-                    <img src="{{ listing.listing_image.url }}" class="card-img-top card-img" alt="...">
-                </div>
-                <div class="card-body py-0">
-                    <h5 class="card-title text-wheel text-center">{{ listing.listing_name }}</h5>
-                    <p class="text-beige"> {{ listing.listing_description }}</p>
-                    <p class="text-beige"> {{ listing.listing_price }}<i class="fas fa-euro-sign"></i></p>
+        <div class="col-12 px-1">
+            <div class="listing-section mx-md-2 mb-3">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <img src="{{ listing.listing_image.url }}" class="card-img" alt="{{ listing.listing_image.url }}">
+                    </div>
+                    <div class="col-12">
+                        <div class="card-body p-2">
+                            <h5 class="card-title px-3 text-wheel text-uppercase">{{ listing.listing_name}}</h5>
+                            <p class="text-beige"> {{ listing.listing_description }}</p>
+                            <p class="text-beige"> {{ listing.listing_price }}<i class="fas fa-euro-sign"></i></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        
     </div>
     
     <div class="row mx-md-5 mx-1 my-3">
