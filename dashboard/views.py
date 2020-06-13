@@ -75,9 +75,9 @@ def view_and_edit_listing(request, listing_id):
     listing = get_object_or_404(Listings, pk=listing_id)
 
     if request.method == 'POST':
-        editform = AddListingForm(request.POST, request.FILES)
+        editform = AddListingForm(request.POST, request.FILES, instance=listing)
         if editform.is_valid():
-            editform.save()
+            listing.save()
     else:
         editform = AddListingForm(instance=listing)
 
