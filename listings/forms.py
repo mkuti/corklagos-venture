@@ -1,5 +1,5 @@
 from django import forms
-from .models import Listings
+from .models import Listing
 
 class AddListingForm(forms.ModelForm):
     '''
@@ -8,7 +8,7 @@ class AddListingForm(forms.ModelForm):
     All fields of the model to be used
     '''
     class Meta:
-        model = Listings
+        model = Listing
         exclude = ['listing_owner']
 
     def __init__(self, *args, **kwargs):
