@@ -192,6 +192,10 @@ hr {
     float:right;
 }
 
+.card-body {
+    padding: 0;
+}
+
 .card-img {
     max-height: 190px;
 }
