@@ -57,7 +57,7 @@ def get_and_create_listing(request):
             )
             listing.save()
     else:
-        form = AddListingForm()
+        addform = AddListingForm()
 
     context = {
         'form': form,
@@ -72,27 +72,17 @@ def view_and_edit_listing(request, listing_id):
     Display individual listing details
     Form to edit details if needed
     """
-    user = request.user
     listing = get_object_or_404(Listings, pk=listing_id)
 
     if request.method == 'POST':
-        form = AddListingForm(request.POST, request.FILES)
-        if form.is_valid():
-            listing = Listings.objects.create(
-                listing_owner=user,
-                listing_name=form.cleaned_data['listing_name'],
-                listing_description=form.cleaned_data['listing_description'],
-                listing_price=form.cleaned_data['listing_price'],
-                listing_image=request.FILES['listing_image'],
-                listing_category=form.cleaned_data['listing_category'],
-                listing_brand=form.cleaned_data['listing_brand'],
-            )
-            listing.save()
+        editform = AddListingForm(request.POST, request.FILES)
+        if editform.is_valid():
+            editform.save()
     else:
-        form = AddListingForm()
+        editform = AddListingForm(instance=listing)
 
     context = {
-        'form': form,
+        'editform': editform,
         'listing': listing
     }
     return render(request, 'editlisting.html', context)
