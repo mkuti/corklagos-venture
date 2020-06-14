@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from listings.models import Listing
+from listings.models import Listing, Category
 from listings.forms import AddListingForm
 from .forms import EditProfileForm
 from .models import Profile
@@ -42,6 +42,7 @@ def get_and_create_listing(request):
     Render form to add a new listing """
     user = request.user
     user_listings = Listing.objects.filter(listing_owner=user)
+    categories = Category.objects.all()
 
     if request.method == 'POST':
         addform = AddListingForm(request.POST, request.FILES)
@@ -61,7 +62,8 @@ def get_and_create_listing(request):
 
     context = {
         'addform': addform,
-        'listings': user_listings
+        'listings': user_listings,
+        'categories': categories
     }
     return render(request, 'addlisting.html', context)
 
