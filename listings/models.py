@@ -20,11 +20,11 @@ class Listing(models.Model):
     ]
 
     listing_owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    listing_category = models.CharField(max_length=15, choices=categories, default='')
     listing_name = models.CharField(max_length=50)
     listing_description = models.TextField()
     listing_price = models.CharField(max_length=20)
     listing_image = models.ImageField(upload_to='images')
-    listing_category = models.CharField(max_length=15, choices=categories, default='')
     listing_brand = models.CharField(max_length=10, choices=brands, default='')
 
     class Meta:
