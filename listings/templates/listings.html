@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -20,8 +21,9 @@
                     <div class="row">
                         <div class="col-6 col-lg-12 filter-cat">
                             <h5 class="filter-header">Filter by category</h5>
-                            <div class="filter-list mb-3">
-                                <div class="row">
+                            <form class="filter-list mb-3" action="" method="get">
+                                {{ filter.form|crispy }}
+                                <!-- <div class="row">
                                     <div class="col-12 col-md-6 col-lg-12">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="all" name="customRadio" class="custom-control-input">
@@ -50,8 +52,8 @@
                                             <label class="custom-control-label" for="bumpers"><i class="fas fa-car-crash mr-1"></i>Bumpers</label>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </div> -->
+                            </form>
                         </div>
                         <div class="col-6 col-lg-12 filter-brand text-left">
                             <h5 class="filter-header">Filter by brand</h5>
