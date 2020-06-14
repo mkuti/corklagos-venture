@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'django-filter',
+    'django_filters',
     'pages',
     'listings',
     'dashboard',
