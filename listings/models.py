@@ -2,9 +2,16 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Listing(models.Model):
+from django.db import models
+from django.contrib.auth.models import User
+
+
+class Category(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     categories = [
-        ('', 'See all'),
         ('engines', 'Engines'),
         ('gearboxes', 'Gear Boxes'),
         ('lamps', 'Lamps'),
@@ -12,6 +19,13 @@ class Listing(models.Model):
         ('bumpers', 'Bumpers'),
     ]
 
+    name = models.CharField(max_length=15, choices=categories, default='')
+
+    def __str__(self):
+        return self.name
+
+
+class Listing(models.Model):
     brands = [
         ('', 'See all'),
         ('toyota', 'Toyota'),
@@ -20,7 +34,7 @@ class Listing(models.Model):
     ]
 
     listing_owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    listing_category = models.CharField(max_length=15, choices=categories, default='')
+    listing_category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     listing_name = models.CharField(max_length=50)
     listing_description = models.TextField()
     listing_price = models.CharField(max_length=20)
