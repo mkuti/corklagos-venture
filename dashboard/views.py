@@ -74,6 +74,7 @@ def view_and_edit_listing(request, listing_id):
     Display individual listing details
     Form to edit details if needed
     """
+    categories = Category.objects.all()
     listing = get_object_or_404(Listing, pk=listing_id)
 
     if request.method == 'POST':
@@ -85,7 +86,8 @@ def view_and_edit_listing(request, listing_id):
 
     context = {
         'editform': editform,
-        'listing': listing
+        'listing': listing,
+        'categories': categories
     }
     return render(request, 'editlisting.html', context)
 
