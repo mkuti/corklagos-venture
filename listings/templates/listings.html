@@ -23,36 +23,9 @@
                             <h5 class="filter-header">Filter by category</h5>
                             <form class="filter-list mb-3" action="" method="get">
                                 {{ filter.form|crispy }}
-                                <!-- <div class="row">
-                                    <div class="col-12 col-md-6 col-lg-12">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="all" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="all">See All</label>
-                                        </div>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="engines" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="engines"><i class="fas fa-tachometer-alt mr-1"></i>Engines</label>
-                                        </div>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="gears" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="gears"><i class="fas fa-cogs mr-1"></i>Gear Boxes</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-12">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="lamps" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="lamps"><i class="far fa-lightbulb mr-1"></i>Lamps</label>
-                                        </div>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="radiators" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="radiators"><i class="fas fa-fire mr-1"></i>Radiators</label>
-                                        </div>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="bumpers" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="bumpers"><i class="fas fa-car-crash mr-1"></i>Bumpers</label>
-                                        </div>
-                                    </div>
-                                </div> -->
+                            <div class="col-6">
+                                    <button type="submit" class="btn btn-gal bg-wheel py-1 mb-3">Filter</button>
+                                </div>
                             </form>
                         </div>
                         <div class="col-6 col-lg-12 filter-brand text-left">
@@ -80,7 +53,7 @@
 <!-- Listing section -->
         <div class="col-12 col-lg-9">
             <div class="row mx-md-5">
-            {% for listing in listings %}
+            {% for listing in filter.qs %}
                 <div class="col-12">
                     <div class="listing-section mx-4 mx-md-2 mb-3">
                         <div class="row no-gutters">
