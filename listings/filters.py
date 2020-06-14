@@ -4,9 +4,10 @@ from django import forms
 
 
 class ListingFilter(django_filters.FilterSet):
-    listing_category = django_filters.ModelMultipleChoiceFilter(
+    listing_category = django_filters.ModelChoiceFilter(
         queryset=Category.objects.all(),
-        widget=forms.RadioSelect)
+        widget=forms.RadioSelect,
+        label=None)
 
     class Meta:
         model = Listing
