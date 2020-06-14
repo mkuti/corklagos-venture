@@ -28,9 +28,9 @@ class Category(models.Model):
 class Brand(models.Model):
 
     brands = [
-        ('toyota', 'Toyota'),
-        ('nissan', 'Nissan'),
-        ('honda', 'Honda'),
+        ('Toyota', 'toyota'),
+        ('Nissan', 'nissan'),
+        ('Honda', 'honda'),
     ]
 
     name = models.CharField(max_length=15, choices=brands, null=False)
