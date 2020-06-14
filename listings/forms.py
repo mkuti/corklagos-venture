@@ -1,6 +1,7 @@
 from django import forms
 from .models import Listing
 
+
 class AddListingForm(forms.ModelForm):
     '''
     Form to be displayed for the dismantler user on dashboard
@@ -26,9 +27,9 @@ class AddListingForm(forms.ModelForm):
         }
 
         self.fields['listing_name'].widget.attrs['autofocus'] = True  # to force cursor to start in listing name field
+
         for field in self.fields:
             label = labels[field]
             self.fields[field].widget.attrs['placeholder'] = False
             self.fields[field].label = label
             self.fields[field].widget.attrs['class'] = 'form-control'
-
