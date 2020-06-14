@@ -25,22 +25,30 @@ class Category(models.Model):
         return self.name
 
 
-class Listing(models.Model):
+class Brand(models.Model):
+
     brands = [
-        ('', 'See all'),
         ('toyota', 'Toyota'),
         ('nissan', 'Nissan'),
         ('honda', 'Honda'),
     ]
 
+    name = models.CharField(max_length=15, choices=brands, null=False)
+
+    def __str__(self):
+        return self.name
+
+
+
+class Listing(models.Model):
     listing_owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     listing_category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    listing_brand = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True)
     listing_name = models.CharField(max_length=50)
     listing_description = models.TextField()
     listing_price = models.CharField(max_length=20)
     listing_image = models.ImageField(upload_to='images')
-    listing_brand = models.CharField(max_length=10, choices=brands, default='')
-
+    
     class Meta:
         ordering = ['listing_name']
 
