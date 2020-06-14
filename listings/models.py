@@ -12,14 +12,14 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     categories = [
-        ('engines', 'Engines'),
-        ('gearboxes', 'Gear Boxes'),
-        ('lamps', 'Lamps'),
+        ('Engines', 'engines'),
+        ('Gear Boxes', 'gearboxes'),
+        ('Lamps', 'lamps'),
         ('Radiators', 'radiators'),
-        ('bumpers', 'Bumpers'),
+        ('Bumpers', 'bumpers'),
     ]
 
-    name = models.CharField(max_length=15, choices=categories, default='')
+    name = models.CharField(max_length=15, choices=categories, null=False)
 
     def __str__(self):
         return self.name
