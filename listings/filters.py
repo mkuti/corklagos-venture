@@ -8,12 +8,12 @@ class ListingFilter(django_filters.FilterSet):
         queryset=Category.objects.all(),
         widget=forms.RadioSelect,
         empty_label="All",
-        label=None)
+        label='')
     listing_brand = django_filters.ModelChoiceFilter(
         queryset=Brand.objects.all(),
         widget=forms.RadioSelect,
         empty_label="All",
-        label=None)
+        label='')
 
     class Meta:
         model = Listing
