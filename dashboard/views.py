@@ -25,6 +25,7 @@ def add_profile_details(request):
                 county=profile_form.cleaned_data['county'],
             )
             profile.save()
+            messages.success(request, 'Your profile has been saved')
             return redirect(reverse('addlisting'))
     else:
         profile_form = EditProfileForm()
@@ -57,6 +58,7 @@ def get_and_create_listing(request):
                 listing_brand=addform.cleaned_data['listing_brand'],
             )
             listing.save()
+            messages.success(request, 'Thank you. We have recorded your new listing')
     else:
         addform = AddListingForm()
 
@@ -81,6 +83,7 @@ def view_and_edit_listing(request, listing_id):
         editform = AddListingForm(request.POST, request.FILES, instance=listing)
         if editform.is_valid():
             listing.save()
+            messages.success(request, 'Thank you. Your listing has been updated')
     else:
         editform = AddListingForm(instance=listing)
 
@@ -98,5 +101,6 @@ def delete_listing(request, listing_id):
     listing = get_object_or_404(Listing, pk=listing_id)
 
     listing.delete()
+    messages.success(request, 'Your listing has been removed from the database.')
 
     return redirect(reverse('addlisting'))
