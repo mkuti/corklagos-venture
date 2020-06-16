@@ -21,7 +21,7 @@ def add_to_bag(request, listing_id):
     if request.user.is_authenticated:
         bag[listing_id] = listing_quantity
         request.session['bag'] = bag
+        messages.success(request, 'We have added the listing to your bag')
+        return redirect(reverse('listings'))
     messages.error(request, 'Please log in to buy a listing')
     return redirect(reverse('login'))
-
-    return redirect(reverse('listings'))
