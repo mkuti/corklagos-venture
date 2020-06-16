@@ -26,6 +26,7 @@ urlpatterns = [
     path('listings', include('listings.urls')),
     path('accounts/', include('allauth.urls')),
     path('dashboard/', include('dashboard.urls')),
+    path('bag/', include('bag.urls')),
 ]
 
 # only add this in when in debug mode
