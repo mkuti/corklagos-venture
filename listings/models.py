@@ -45,9 +45,9 @@ class Listing(models.Model):
     listing_brand = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True)
     listing_name = models.CharField(max_length=50)
     listing_description = models.TextField()
-    listing_price = models.CharField(max_length=20)
+    listing_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     listing_image = models.ImageField(upload_to='images')
-    
+
     class Meta:
         ordering = ['listing_name']
 

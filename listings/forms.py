@@ -20,7 +20,7 @@ class AddListingForm(forms.ModelForm):
         labels = {
             'listing_name': 'Please provide the name:',
             'listing_description': 'Please provide a brief description of the car part:',
-            'listing_price': 'Please enter the price of the car part (€)',
+            'listing_price': 'Please enter the price of the car part',
             'listing_image': 'Please upload an image of your product:',
             'listing_category': 'Please select the category:',
             'listing_brand': 'Please select the brand:',
