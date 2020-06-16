@@ -55,7 +55,7 @@
                                         <div class="col-4 listing-price">
                                             <p>{{ listing.listing_price}} <i class="fas fa-euro-sign"></i></p>
                                         </div>
-                                        <form action="" method="POST">
+                                        <form action="{% url 'add_to_bag' listing.id %}" method="POST">
                                             {% csrf_token %}
                                             <div class="col-6 mt-1 listing-buy">
                                                 <input type="submit" class="btn bg-wheel py-1 mb-3" value="Add to Bag">
