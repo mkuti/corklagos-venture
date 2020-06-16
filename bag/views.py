@@ -25,4 +25,4 @@ def add_to_bag(request, listing_id):
         messages.success(request, 'We have added the listing to your bag')
         return redirect(redirect_url)
     messages.error(request, 'Please log in to buy a listing')
-    return redirect(reverse('login'))
+    return redirect(reverse('account_login'))
