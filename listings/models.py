@@ -39,7 +39,6 @@ class Brand(models.Model):
         return self.name
 
 
-
 class Listing(models.Model):
     listing_owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     listing_category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
