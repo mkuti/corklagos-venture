@@ -4,6 +4,7 @@ from django.conf import settings
 
 
 def bag_content(request):
+
     total = 0
     bag_items = []
     product_count = 0
