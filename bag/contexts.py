@@ -9,8 +9,8 @@ def bag_content(request):
     product_count = 0
 
     context = {
-        total,
-        bag_items,
-        product_count
+        "total": total,
+        "bag_items": bag_items,
+        "product_count": product_count,
     }
-    return {context}
+    return(context)
