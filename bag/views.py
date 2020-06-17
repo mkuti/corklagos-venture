@@ -10,7 +10,7 @@ def add_to_bag(request, listing_id):
     '''
     If user is not logged in, redirect to login page.
     Setting quantity of item to 1 as one single item available.
-    Check if bag exists, if not create it.
+    Getting bag if already exists or initializing it to empty dictionary
     Add listing ID with its fixed quantity
     Store bag in current user session
     Redirect to listings when listing added
