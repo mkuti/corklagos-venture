@@ -3,7 +3,18 @@
 {% block content %}
     <section class="py-5" id="home-img">
         <div class="overlay"></div>
-        
+
+        {% if messages %}
+        <div>
+            <strong>Messages:</strong>
+            <ul>
+                {% for message in messages %}
+                <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
                 <div class="allauth-form-inner-content">
                     {% block inner_content %}
                     {% endblock %}
