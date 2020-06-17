@@ -16,23 +16,55 @@
     
     <div class="row mx-md-5 mx-1 my-3">
         {% if bag_items %}
-        <div class="table"></div>
-        {% else %}
-        <div class="col-12 col-md-8 col-lg-6 mx-auto call-box text-left">
-            <p class="text-oxford">Your bag is empty</p>
-            <div class="row text-center">
-                <div class="col-12">
-                    <a
-                    href="{% url 'listings' %}"
-                    class="btn btn-gal bg-oxford text-wheel crimson text-uppercase"
-                    >
-                    Shop more...
-                    </a>
+            {% for item in bag_items %}
+            <div class="col-12">
+                <div class="listing-section mx-4 mx-md-2 mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-sm-4">
+                            <img src="{{ item.listing.listing_image.url }}" class="card-img" alt="{{ item.listing.listing_image.url }}">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body py-2">
+                                <h5 class="card-title px-3 text-wheel text-uppercase">{{ item.listing.listing_name}}</h5>
+                                <p class="card-text px-3 text-beige">{{ item.listing.listing_description}}</p>
+                                <div class="row text-beige text-center">
+                                    <div class="col-4 listing-price">
+                                        <p>{{ item.listing.listing_price}}<i class="fas fa-euro-sign"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        {% endif %}
+            {% endfor %}
+            {% else %}
+            <div class="col-12 col-md-8 col-lg-6 mx-auto call-box text-left">
+                <p class="text-oxford">Your bag is empty</p>
+                <div class="row text-center">
+                    <div class="col-12">
+                        <a
+                        href="{% url 'listings' %}"
+                        class="btn btn-gal bg-oxford text-wheel crimson text-uppercase"
+                        >
+                        Shop more...
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
     </div>
+    <div class="row text-right mr-3">
+        <div class="col-12">
+            <h1>Total: {{ total }}<i class="fas fa-euro-sign"></i></h1>
+        </div>
+        <div class="col-12">
+            <a href="" class="btn bg-wheel py-1 mb-3" role="button">CheckOut</a>
+        </div>
+        
+        
+    </div>
+
 </main>
 
 {% endblock %}
