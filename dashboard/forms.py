@@ -22,6 +22,7 @@ class EditProfileForm(forms.ModelForm):
             'street_address': 'Street Address',
             'street_address2': 'Street Address 2',
             'county': 'County',
+            'country': 'Country'
         }
 
         self.fields['business_name'].widget.attrs['autofocus'] = True  # to force cursor to start in business name field
