@@ -17,7 +17,7 @@ class EditProfileForm(forms.ModelForm):
             'business_name': 'Please enter your business name',
             'user_type': 'Please select the type of user',
             'phone': 'Phone Number',
-            'eircode': 'Eircode',
+            'postcode': 'Postcode',
             'city': 'City',
             'street_address': 'Street Address',
             'street_address2': 'Street Address 2',
