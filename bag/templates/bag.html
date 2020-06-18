@@ -31,7 +31,7 @@
                                     <div class="col-4 listing-price">
                                         <p>{{ item.listing.listing_price}}<i class="fas fa-euro-sign"></i></p>
                                     </div>
-                                    <form action="" method="POST">
+                                    <form action="{% url 'remove_from_bag' item.listing_id %}" method="POST">
                                             {% csrf_token %}
                                             <div class="col-6 mt-1 listing-buy">
                                                 <input type="submit" class="btn bg-wheel py-1 mb-3" value="Remove from Bag">
@@ -69,5 +69,28 @@
         </div>
     </div>
  </main>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+<script type="text/javascript">
+
+// Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+    
+</script>
 
 {% endblock %}
