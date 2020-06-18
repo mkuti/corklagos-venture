@@ -27,6 +27,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('bag/', include('bag.urls')),
+    path('checkout/', include('checkout.urls')),
 ]
 
 # only add this in when in debug mode
