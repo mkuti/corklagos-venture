@@ -16,6 +16,7 @@ def add_profile_details(request):
         if profile_form.is_valid():
             profile = Profile.objects.create(
                 user=request.user,
+                user_type=profile_form.cleaned_data['user_type'],
                 business_name=profile_form.cleaned_data['business_name'],
                 phone=profile_form.cleaned_data['phone'],
                 eircode=profile_form.cleaned_data['eircode'],
