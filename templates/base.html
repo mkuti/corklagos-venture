@@ -20,6 +20,11 @@
 <!-- link to my css file comes after to make sure it render over bootstrap style -->
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"/>
 
+{% block corejs %}
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    
+{% endblock %}
+
 <title>CorkLagos Venture</title>
 </head>
 <body>
