@@ -26,3 +26,14 @@ def add_to_bag(request, listing_id):
         return redirect(redirect_url)
     messages.error(request, 'Please log in to buy a listing')
     return redirect(reverse('account_login'))
+
+
+def remove_from_bag(request, listing_id):
+    """Remove the listing from the shopping bag"""
+
+    bag = request.session.get('bag', {})
+
+    bag.pop(listing_id)
+    messages.success(request, 'We have removed the listing from your bag')
+    request.session['bag'] = bag
+    return redirect(reverse('view_bag'))
