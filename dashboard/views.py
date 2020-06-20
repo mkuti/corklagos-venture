@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 from listings.models import Listing, Category
 from listings.forms import AddListingForm
 from .forms import EditProfileForm
@@ -11,23 +12,35 @@ from .models import Profile
 def add_profile_details(request):
     """ Welcome the member's profile after register.
     Render form to add profile details """
+
     if request.method == 'POST':
-        profile_form = EditProfileForm(request.POST)
-        if profile_form.is_valid():
-            profile = Profile.objects.create(
-                user=request.user,
-                user_type=profile_form.cleaned_data['user_type'],
-                business_name=profile_form.cleaned_data['business_name'],
-                phone=profile_form.cleaned_data['phone'],
-                eircode=profile_form.cleaned_data['eircode'],
-                city=profile_form.cleaned_data['city'],
-                street_address=profile_form.cleaned_data['street_address'],
-                street_address2=profile_form.cleaned_data['street_address2'],
-                county=profile_form.cleaned_data['county'],
-            )
-            profile.save()
-            messages.success(request, 'Your profile has been saved')
+        try:
+            profile = Profile.objects.get(user=request.user)
+            edit_profile = EditProfileForm(request.POST, instance=profile)
+            if edit_profile.is_valid():
+                profile.save()
+                messages.success(request, 'Your profile has been updated')
+        except ObjectDoesNotExist:
+            profile_form = EditProfileForm(request.POST)
+            if profile_form.is_valid():
+                profile = Profile.objects.create(
+                    user=request.user,
+                    user_type=profile_form.cleaned_data['user_type'],
+                    business_name=profile_form.cleaned_data['business_name'],
+                    phone=profile_form.cleaned_data['phone'],
+                    postcode=profile_form.cleaned_data['postcode'],
+                    city=profile_form.cleaned_data['city'],
+                    street_address=profile_form.cleaned_data['street_address'],
+                    street_address2=profile_form.cleaned_data['street_address2'],
+                    county=profile_form.cleaned_data['county'],
+                    country=profile_form.cleaned_data['country'],
+                )
+                profile.save()
+                messages.success(request, 'Your profile has been saved')
+        if request.POST['user_type'] == 'Irish Dismantler':
             return redirect(reverse('addlisting'))
+        else:
+            return redirect(reverse('listings'))
     else:
         profile_form = EditProfileForm()
 
