@@ -11,7 +11,13 @@ from .models import Profile
 @login_required
 def add_profile_details(request):
     """ Welcome the member's profile after register.
-    Render form to add profile details """
+    1. On post, try to confirm if profile exists for user logged in.
+    If profile, use instance of profile to save the existing profile details.
+    Except profile object does not exist, create new profile.
+    2. On get, try to confirm if profile exists for user logged in.
+    If profile, render form with existing details to edit.
+    Except profile object does not exist, render blank form.
+    """
 
     if request.method == 'POST':
         try:
@@ -20,6 +26,10 @@ def add_profile_details(request):
             if edit_profile.is_valid():
                 profile.save()
                 messages.success(request, 'Your profile has been updated')
+                if profile.user_type == 'Irish dismantler':
+                    return redirect(reverse('addlisting'))
+                else:
+                    return redirect(reverse('listings'))
         except ObjectDoesNotExist:
             profile_form = EditProfileForm(request.POST)
             if profile_form.is_valid():
@@ -37,10 +47,10 @@ def add_profile_details(request):
                 )
                 profile.save()
                 messages.success(request, 'Your profile has been saved')
-        if profile.user_type == 'Irish dismantler':
-            return redirect(reverse('addlisting'))
-        else:
-            return redirect(reverse('listings'))
+                if profile.user_type == 'Irish dismantler':
+                    return redirect(reverse('addlisting'))
+                else:
+                    return redirect(reverse('listings'))
     else:
         try:
             profile = Profile.objects.get(user=request.user)
