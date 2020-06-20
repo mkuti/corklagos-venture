@@ -13,38 +13,42 @@
         </div>
     </div>
     
-    <div class="row mx-4">
-        <div class="col-12">
-            <form
-                class="px-md-4 py-3 add_part text-left"
-                method="POST"
-                action="">
-                {% csrf_token %}
-                
-                <div id="div_id_user_type" class="form-group"> 
-                    {{ profile_form.user_type|as_crispy_field }}
-                </div>
-                <div id="div_id_business_name" class="form-group">
-                    {{ profile_form.business_name|as_crispy_field }}
-                </div>
-                <div id="div_id_street_address" class="form-group">
-                    {{ profile_form.street_address|as_crispy_field}}
-                </div>
-                <div id="div_id_street_address2" class="form-group">
-                    {{ profile_form.street_address2|as_crispy_field}}
-                </div>
-                <div id="div_id_city" class="form-group">
-                    {{ profile_form.city|as_crispy_field}}
-                </div>
-                <div id="div_id_eircode" class="form-group">
-                    {{ profile_form.postcode|as_crispy_field}}
-                </div>
-                <div id="div_id_country" class="form-group">
-                    {{ profile_form.country|as_crispy_field}}
-                </div>
-            </form>
+    <form
+        role="form"
+        class="row py-3 mx-5"
+        method="POST"
+        action="">
+            {% csrf_token %}
+        <div class="form-group col-md-6 px-1">
+        
+            
+            <div id="div_id_user_type" class="form-group"> 
+                {{ profile_form.user_type|as_crispy_field }}
+            </div>
+            <div id="div_id_business_name" class="form-group">
+                {{ profile_form.business_name|as_crispy_field }}
+            </div>
+            <div id="div_id_street_address" class="form-group">
+                {{ profile_form.street_address|as_crispy_field}}
+            </div>
+            <div id="div_id_street_address2" class="form-group">
+                {{ profile_form.street_address2|as_crispy_field}}
+            </div>
+            <div id="div_id_city" class="form-group">
+                {{ profile_form.city|as_crispy_field}}
+            </div>
+            <div id="div_id_eircode" class="form-group">
+                {{ profile_form.postcode|as_crispy_field}}
+            </div>
+            <div id="div_id_country" class="form-group">
+                {{ profile_form.country|as_crispy_field}}
+            </div>
+        
         </div>
-    </div>  
+        <div class="form-group col-md-6 px-1">
+            {{ payment_form|crispy}}
+        </div>
+    </form>  
     
     <div class="row text-right mr-5 my-5">
         <div class="col-12">
