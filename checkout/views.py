@@ -19,7 +19,7 @@ def checkout_details(request):
     and display details of profile on OrderForm.
     If not, OrderForm is displayed blank to fill.
     Import MakePaymentForm and added as argument.
-    On post, if forms are valid, save() with commit=False, 
+    On post, if forms are valid, save() with commit=False,
     which creates a new order
     Getting bag if already exists or initializing it to empty dictionary
     Via the cart_items, we get listing id which gives us Listing information
@@ -56,7 +56,8 @@ def checkout_details(request):
 
     context = {
         'order_form': order_form,
-        'payment_form': payment_form
+        'payment_form': payment_form,
+        'publishable': settings.STRIPE_PUBLISHABLE}
     }
 
     return render(request, 'checkout.html', context)
