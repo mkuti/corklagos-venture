@@ -25,8 +25,11 @@ def checkout_details(request):
     except ObjectDoesNotExist:
         profile_form = EditProfileForm()
 
+    payment_form = MakePaymentForm()
+
     context = {
         'profile_form': profile_form,
+        'payment_form': payment_form
     }
 
     return render(request, 'checkout.html', context)
