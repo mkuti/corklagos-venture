@@ -1,10 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.core.exceptions import ObjectDoesNotExist
 from dashboard.forms import EditProfileForm
 from dashboard.models import Profile
 
 
 def checkout_details(request):
-    profile_form = EditProfileForm()
+    '''
+    If user has profile, get profile instance
+    and display details on profile form.
+    '''
+    try:
+        profile = Profile.objects.get(user=request.user)
+        profile_form = EditProfileForm(instance=profile)
+    except ObjectDoesNotExist:
+        profile_form = EditProfileForm()
 
     context = {
         'profile_form': profile_form,
