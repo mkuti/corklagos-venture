@@ -1,7 +1,16 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from dashboard.forms import EditProfileForm
 from dashboard.models import Profile
+from .forms import MakePaymentForm
+from .models import OrderLineItem
+from django.conf import settings
+from django.utils import timezone
+import stripe
+
+
+stripe_api_key = settings.STRIPE_SECRET
 
 
 def checkout_details(request):
@@ -21,3 +30,5 @@ def checkout_details(request):
     }
 
     return render(request, 'checkout.html', context)
+
+ 
