@@ -37,7 +37,7 @@ def add_profile_details(request):
                 )
                 profile.save()
                 messages.success(request, 'Your profile has been saved')
-        if request.POST['user_type'] == 'Irish Dismantler':
+        if profile.user_type == 'Irish dismantler':
             return redirect(reverse('addlisting'))
         else:
             return redirect(reverse('listings'))
