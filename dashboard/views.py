@@ -42,7 +42,11 @@ def add_profile_details(request):
         else:
             return redirect(reverse('listings'))
     else:
-        profile_form = EditProfileForm()
+        try:
+            profile = Profile.objects.get(user=request.user)
+            profile_form = EditProfileForm(instance=profile)
+        except ObjectDoesNotExist:
+            profile_form = EditProfileForm()
 
     context = {
         'profile_form': profile_form,
