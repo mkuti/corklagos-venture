@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="py-5" id="home-img">
+    <!-- Confirm the payment is confirmed and we have sent them an email -->
+  <div class="row text-center mx-2">
+    <div class="col-12 col-md-6 mx-auto call-box">
+        <h1>Your payment is successful.</h1>
+        <h1>Thank you for shopping with us.</h1>
+        <h5>We have sent you an e-mail with the details of your order which should be shipping within the next few weeks.</h5>
+        <a href="{% url 'listings' %}" class="btn bg-wheel py-1 mb-3" role="button">Go back to our latest listings.</a>
+    </div>
+  </div>
+</section>
+    
+{% endblock %}
