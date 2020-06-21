@@ -11,7 +11,7 @@ class MakePaymentForm(forms.Form):
     stripe_id is created automatically and hidden from customer
     '''
     MONTH_CHOICES = [(i, i) for i in range(1, 12)]
-    YEAR_CHOICES = [(i, i) for i in range(2017, 2036)]
+    YEAR_CHOICES = [(i, i) for i in range(2020, 2036)]
 
     credit_card_number = forms.CharField(
         label='Credit card number',
