@@ -1,12 +1,13 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import messages
+from django.conf import settings
+from django.utils import timezone
 from dashboard.models import Profile
 from listings.models import Listing
 from .forms import MakePaymentForm, OrderForm
 from .models import OrderLineItem, Order
-from django.conf import settings
-from django.utils import timezone
 import stripe
 
 
@@ -45,6 +46,29 @@ def checkout_details(request):
                     quantity=listing_quantity
                 )
                 order_line_item.save()
+
+            try:
+                customer = stripe.Charge.create(
+                    # total multiplied by 100 as Stripe uses cents
+                    amount=int(total * 100),
+                    currency="EUR",
+                    # who the payment came from on Stripe dashboard
+                    description=request.user.email,
+                    card=payment_form.cleaned_data['stripe_id']
+                )
+            except stripe.error.CardError:
+                messages.error(request, 'Your card was declined!')
+
+            if customer.paid:
+                messages.error(request, 'You have successfully paid')
+                request.session['bag'] = {}
+                return redirect(reverse('listings'))
+            else:
+                messages.error(request, "Unable to take payment")
+
+        else:
+            print(payment_form.errors)
+            messages.error(request, "We were unable to take a payment with that card!")
 
     try:
         profile = Profile.objects.get(user=request.user)
