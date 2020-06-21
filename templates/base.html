@@ -20,14 +20,6 @@
 <!-- link to my css file comes after to make sure it render over bootstrap style -->
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"/>
 
-{% block corejs %}
-     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!-- stripe.js -->
-    <script src="https://js.stripe.com/v3/"></script>
-{% endblock %}
-
-
-
 <title>CorkLagos Venture</title>
 </head>
 <body>
@@ -55,5 +47,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+{% block corejs %}
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- stripe.js -->
+{% endblock %}
+
+{% block head_js %}
+{% endblock head_js %}
+
 </body>
 </html>
