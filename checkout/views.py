@@ -6,6 +6,7 @@ from django.conf import settings
 from django.utils import timezone
 from dashboard.models import Profile
 from listings.models import Listing
+from bag.contexts import bag_content
 from .forms import MakePaymentForm, OrderForm
 from .models import OrderLineItem, Order
 import stripe
@@ -16,6 +17,8 @@ stripe.api_key = settings.STRIPE_SECRET
 
 def checkout_details(request):
     '''
+    If user manages to type url to access checkout
+    and bag does not yet exist in session, redirect to view_bag.
     If user has profile, get profile instance
     and display details of profile on OrderForm.
     If not, OrderForm is displayed blank to fill.
@@ -26,6 +29,9 @@ def checkout_details(request):
     Via the cart_items, we get listing id which gives us Listing information
     One line item to resume the order which we save
     '''
+    if not request.session.get('bag'):
+        return redirect(reverse('view_bag'))
+
     if request.method == "POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
@@ -62,7 +68,7 @@ def checkout_details(request):
             if customer.paid:
                 messages.error(request, 'You have successfully paid')
                 request.session['bag'] = {}
-                return redirect(reverse('listings'))
+                return render(request, 'payment_confirmed.html')
             else:
                 messages.error(request, "Unable to take payment")
 
