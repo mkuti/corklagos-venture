@@ -48,7 +48,15 @@ def checkout_details(request):
 
     try:
         profile = Profile.objects.get(user=request.user)
-        order_form = OrderForm(instance=profile)
+        print(profile.business_name)
+        order_form = OrderForm(initial={
+            'full_name': profile.business_name,
+            'street_address': profile.street_address,
+            'street_address2': profile.street_address2,
+            'postcode': profile.postcode,
+            'city': profile.city,
+            'country': profile.country
+        })
     except ObjectDoesNotExist:
         order_form = OrderForm()
 
@@ -57,9 +65,7 @@ def checkout_details(request):
     context = {
         'order_form': order_form,
         'payment_form': payment_form,
-        'publishable': settings.STRIPE_PUBLISHABLE}
+        'publishable': settings.STRIPE_PUBLISHABLE
     }
 
     return render(request, 'checkout.html', context)
-
- 
