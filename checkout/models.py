@@ -43,5 +43,5 @@ class OrderLineItem(models.Model):
         '''
         return "{0} {1} @ {2}".format(
             self.quantity,
-            self.listing.name,
-            self.listing.price)
+            self.listing.listing_name,
+            self.listing.listing_price)
