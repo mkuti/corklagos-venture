@@ -11,7 +11,7 @@ from .models import OrderLineItem, Order
 import stripe
 
 
-stripe_api_key = settings.STRIPE_SECRET
+stripe.api_key = settings.STRIPE_SECRET
 
 
 def checkout_details(request):
