@@ -35,7 +35,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'https://corklagos-venture.herokuapp.com/'
+    'corklagos-venture.herokuapp.com'
     ]
 
 
