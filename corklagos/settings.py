@@ -33,7 +33,10 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = [
+    'localhost',
+    'https://corklagos-venture.herokuapp.com/'
+    ]
 
 
 # Application definition
@@ -191,5 +194,7 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Stripe configuration
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+
