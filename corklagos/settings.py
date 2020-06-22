@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_filters',
     'crispy_forms',
+    'storages',
 
     'pages',
     'listings',
