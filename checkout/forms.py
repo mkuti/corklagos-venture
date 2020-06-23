@@ -41,7 +41,7 @@ class OrderForm(forms.ModelForm):
         super().__init__(*args, **kwargs)  # call default init method to set form up
         labels = {
             'full_name': 'Please enter the name on the card',
-            'street_address1': 'Street Address',
+            'street_address': 'Street Address',
             'street_address2': 'Street Address (optional)',
             'postcode': 'Postcode',
             'city': 'City',

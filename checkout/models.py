@@ -10,7 +10,7 @@ class Order(models.Model):
     as normal billing details but also a date field for the date of the order.
     '''
     full_name = models.CharField(max_length=50, blank=False)
-    street_address1 = models.CharField(max_length=40, blank=False)
+    street_address = models.CharField(max_length=40, blank=False)
     street_address2 = models.CharField(max_length=40, blank=True)
     postcode = models.CharField(max_length=20, blank=True)
     city = models.CharField(max_length=40, blank=False)
