@@ -1,5 +1,5 @@
 from django.db import models
-from dashboard.models import Profile
+from django.contrib.auth.models import User
 from listings.models import Listing
 
 
@@ -9,6 +9,11 @@ class Order(models.Model):
     from a customer which will go into database
     as normal billing details but also a date field for the date of the order.
     '''
+    user = models.ForeignKey(
+        User,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL)
     full_name = models.CharField(max_length=50, blank=False)
     street_address = models.CharField(max_length=40, blank=False)
     street_address2 = models.CharField(max_length=40, blank=True)
