@@ -5,8 +5,8 @@ from django.contrib import messages
 from django.conf import settings
 from django.utils import timezone
 from dashboard.models import Profile
+from dashboard.forms import EditProfileForm
 from listings.models import Listing
-from bag.contexts import bag_content
 from .forms import MakePaymentForm, OrderForm
 from .models import OrderLineItem, Order
 import stripe
@@ -40,6 +40,24 @@ def checkout_details(request):
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.save()
+
+            try:
+                profile = Profile.objects.get(user=request.user)
+                edit_profile = OrderForm(request.POST, instance=profile)
+                if edit_profile.is_valid():
+                    profile.save()
+            except ObjectDoesNotExist:
+                profile_form = OrderForm(request.POST)
+                if profile_form.is_valid():
+                    profile = Profile.objects.create(
+                        user=request.user,
+                        postcode=profile_form.cleaned_data['postcode'],
+                        city=profile_form.cleaned_data['city'],
+                        street_address=profile_form.cleaned_data['street_address'],
+                        street_address2=profile_form.cleaned_data['street_address2'],
+                        country=profile_form.cleaned_data['country'],
+                    )
+                    profile.save()
 
             bag = request.session.get('bag', {})
             total = 0
