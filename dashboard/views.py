@@ -4,8 +4,27 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from listings.models import Listing, Category
 from listings.forms import AddListingForm
+from checkout.models import Order
 from .forms import EditProfileForm
 from .models import Profile
+
+
+@login_required
+def dashboard(request):
+    '''
+    Simple view for dashboard with two buttons
+    to redirect to edit profile or add listing'''
+    profile = Profile.objects.get(user=request.user)
+    user_orders = Order.objects.get(user=request.user)
+    print(profile)
+    print(user_orders)
+
+    context = {
+        'profile': profile,
+        'user_orders': user_orders
+    }
+
+    return render(request, 'dashboard.html', context)
 
 
 @login_required
