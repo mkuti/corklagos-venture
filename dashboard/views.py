@@ -16,6 +16,8 @@ def dashboard(request):
     to redirect to edit profile or add listing'''
     user = request.user
     previous_orders = user.orders.all()
+    for order in previous_orders:
+        print(order)
 
     try:
         profile = Profile.objects.get(user=request.user)
