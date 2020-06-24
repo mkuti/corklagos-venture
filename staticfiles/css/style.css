@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400;1,600&family=Lato:wght@100;300;400;700&display=swap');
+
+/* general elements styling */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    line-height: 1.15;
+    scroll-behavior: smooth;
+    font-size: 1rem;
+}
+
+body {
+    
+    background-color: #feefdd;
+    font-family: "Lato", sans-serif;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    margin: 0;
+    padding: 0;
+}
+
+div a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+li {
+    list-style-type: none;
+}
+
+.crimson {
+    font-family: "Crimson Text", sans-serif;
+}
+
+hr {
+    width: 300px;
+}
+
+/* colors */
+
+.bg-oxford {
+    background-color: #03254e;
+}
+
+.bg-melon {
+    background-color: #ffb49a;
+}
+
+.bg-wheel {
+    background-color: #ff4000;
+}
+
+.bg-white {
+    background-color: #feefdd;
+}
+
+.text-oxford {
+    color: #03254e;
+}
+
+.text-wheel {
+    color: #ff4000;
+}
+
+.text-wheel:hover {
+    color: #ffb49a;
+}
+
+.text-melon {
+    color: #ffb49a;
+}
+
+.text-black {
+    color: #201e1f;
+}
+
+.text-beige {
+    color: #feefdd;
+}
+
+/* buttons */
+
+.btn-gal {
+    font-size: 1.5rem;
+    font-family: "Crimson Text", sans-serif;
+    padding: 2px;
+}
+
+.btn-head {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+/* tribal vertical left banner */
+.tribal {
+    float: left;
+    width: 30px;
+    height: 100vh;
+    position: fixed;
+}
+
+/* cripsy forms https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=remove%20label_suffix%20on%20required#change-required-fields */
+.asteriskField {
+    display: none;
+}
+
+/* nav */
+
+#logo-lg {
+    margin: 0 3rem;
+}
+
+.nav-item {
+    color: #ff4000;
+    text-decoration: none;
+}
+
+.nav-item a:hover{
+    color: #ffb49a;
+}
+
+.fa-road {
+    font-size: 3rem;
+}
+
+/* home background image, code inspired from https://bootstrapmade.com/demo/Company/ */
+#home-img {
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+    width: 100%;
+	min-height: 350px;
+	background: url(../images/engine.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.call-section {
+    padding-top: 50px;
+}
+
+.call-box {
+    border: 5px solid #03254e;
+    background-color: rgba(255,64,0,0.7);
+    color: #feefdd;
+}
+
+/* flex and min/max-width required to allow bootstraps columns to work */
+.call-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 300px;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+/* listings */
+
+.listing-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    border: 5px solid #ff4000;
+    background-color: #03254e;
+    background-clip: border-box;
+}
+
+.listing-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-img {
+    height: 190px;
+}
+
+.card-container {
+    border: 5px solid #ff4000;
+    background-color: #03254e;
+}
+
+.card-img-contain {
+    position: relative;
+    height: auto;
+    width: auto;
+}
+
+/* expertise page */
+
+.banner {
+    position: relative;
+}
+
+/* https://css-tricks.com/snippets/css/flip-an-image/ */
+.banner-img {
+    float: right;
+    width: 70%;
+    background: url(../images/business.jpg) no-repeat center center;
+    background-size: cover;
+    transform: scaleX(-1);
+    height: 40vh;
+    opacity: 0.6;
+    padding-bottom: 3rem;
+}
+
+.slogan {
+    padding-top: 0;
+    width: 60%;
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+    background-color: rgba(254,239,221,0.5)
+}
+
+/* https://www.w3schools.com/howto/howto_css_flip_card.asp */
+.who-card {
+  background-color: transparent;
+  width: 100%;
+  height: 400px;
+  perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.who-card-contain {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Changed the flip to vertical to make it unique from copied code when you move the mouse over the flip box container */
+.who-card:hover .who-card-contain {
+  transform: rotateX(180deg);
+}
+
+.who-card-reveal {
+  transform: rotateX(180deg);
+}
+
+/* Position the front and back side */
+.who-card-question, .who-card-reveal {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.who-card-img {
+    width: 300px;
+    height: 300px;
+}
+
+
+/* footer */
+
+.links-footer {
+    margin: 0;
+    padding: 0;
+}
+
+.links-item {
+    text-align: left;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-field {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 576px){
+    #home-img {
+        min-height: 80vh; 
+    } 
+    .listing-img {
+        width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    .nav-item {
+        padding-top: 50px;
+    }
+    .slogan {
+        width: 30%;
+    }
+}
