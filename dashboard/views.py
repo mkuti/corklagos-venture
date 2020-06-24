@@ -14,17 +14,23 @@ def dashboard(request):
     '''
     Simple view for dashboard with two buttons
     to redirect to edit profile or add listing'''
-    profile = Profile.objects.get(user=request.user)
-    user_orders = Order.objects.get(user=request.user)
-    print(profile)
-    print(user_orders)
+    user = request.user
+    previous_orders = user.orders.all()
 
-    context = {
-        'profile': profile,
-        'user_orders': user_orders
-    }
+    try:
+        profile = Profile.objects.get(user=request.user)
+        user_type = profile.user_type
+        print(user_type)
 
-    return render(request, 'dashboard.html', context)
+        context = {
+            'user_type': user_type,
+            'previous_orders': previous_orders,
+        }
+
+        return render(request, 'dashboard.html', context)
+
+    except Profile.DoesNotExist:
+        return redirect(reverse('editprofile'))
 
 
 @login_required
