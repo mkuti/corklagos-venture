@@ -8,6 +8,8 @@ class Order(models.Model):
     All the fields required
     from a customer which will go into database
     as normal billing details but also a date field for the date of the order.
+    Add user field as a foreign key which would be associated with his orders.
+    Any order associated can be called user.orders
     '''
     user = models.ForeignKey(
         User,
