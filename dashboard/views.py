@@ -53,7 +53,7 @@ def add_profile_details(request):
             if edit_profile.is_valid():
                 profile.save()
                 messages.success(request, 'Your profile has been updated')
-                if profile.user_type == 'Irish dismantler':
+                if profile.user_type == 'dismantler':
                     return redirect(reverse('addlisting'))
                 else:
                     return redirect(reverse('listings'))
@@ -74,7 +74,8 @@ def add_profile_details(request):
                 )
                 profile.save()
                 messages.success(request, 'Your profile has been saved')
-                if profile.user_type == 'Irish dismantler':
+                if profile.user_type == 'dismantler':
+                    print(profile.user_type)
                     return redirect(reverse('addlisting'))
                 else:
                     return redirect(reverse('listings'))
