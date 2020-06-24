@@ -4,69 +4,76 @@
 {% block content %}
 
 <main class="container-fluid">
-    <!-- Page headers -->
-    <div class="row mx-md-5 mx-1 my-3">
-        <div class="col-12 col-md-6 text-uppercase text-center">
-            <h1>Your listing details</h1>
-            <hr>
+    <div class="row mx-md-5 mx-1 my-3 text-center">
+        <div class="col-12">
+            <a href="{% url 'addlisting' %}" type="button" class="btn btn-gal bg-wheel py-1 mb-3">View all listings</a>
         </div>
     </div>
-    <!-- Listing section -->
+    <!-- Page headers -->
     <div class="row mx-md-5 mx-1 my-3">
-        <div class="col-12 col-md-46 col-lg-4 px-1">
-            <div class="listing-section mx-md-2 mb-3">
-                <div class="row no-gutters">
-                    <div class="col-sm-4">
-                        <img src="{{ listing.listing_image.url }}" class="card-img" alt="{{ listing.listing_image.url }}">
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="card-body text-center p-2">
-                            <h5 class="card-title px-3 text-wheel text-uppercase">{{ listing.listing_name}}</h5>
-                            <p class="text-beige text-left"> {{ listing.listing_description }}</p>
-                            <p class="text-beige"> {{ listing.listing_price }}<i class="fas fa-euro-sign"></i></p>
+        <div class="col-12 col-md-4">
+            <div class="row">
+                <div class="col-12 text-uppercase text-center">
+                    <h1>Your listing details</h1>
+                    <hr>
+                </div>
+            </div>
+            <!-- Listing section -->
+            <div class="row text-center">
+                <div class="col-10 col-sm-6 col-md-12 col-lg-10 col-xl-8  px-1">
+                    <div class="listing-section mx-md-2 mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-12">
+                                <img src="{{ listing.listing_image.url }}" class="card-img" alt="{{ listing.listing_image.url }}">
+                            </div>
+                            <div class="col-12">
+                                <div class="card-body text-center p-2">
+                                    <h5 class="card-title px-3 text-wheel text-uppercase">{{ listing.listing_name}}</h5>
+                                    <p class="text-beige text-left"> {{ listing.listing_description }}</p>
+                                    <p class="text-beige"> {{ listing.listing_price }}<i class="fas fa-euro-sign"></i></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-    </div>
-    
-    <div class="row mx-md-5 mx-1 my-3">
-        <div class="col-12 col-md-6 text-uppercase text-center">
-            <h2>Edit your listing?</h2>
-            <hr>
-        </div>
-    </div>
+        <div class="col-12 col-md-8">
+            <div class="row">
+                <div class="col-12 text-uppercase text-center">
+                    <h1>Edit your listing?</h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="row mx-4">
+                <div class="col-12">
+                    <form
+                        class="px-md-4 py-3 add_part text-left"
+                        method="POST"
+                        action=""
+                        enctype="multipart/form-data"
+                    >
 
-    <div class="row mx-4">
-        <div class="col-12">
-            
-            <form
-                    class="px-md-4 py-3 add_part text-left"
-                    method="POST"
-                    action=""
-                    enctype="multipart/form-data"
-                >
-
-                {% csrf_token %}
-                
-                {{ editform|crispy }}
+                        {% csrf_token %}
+                        
+                        {{ editform|crispy }}
           
 
-        <div class="row text-center">
-          <div class="col-12">
-            <button
-              type="submit"
-              class="btn btn-gal bg-oxford text-wheel crimson text-uppercase"
-            >
-              Edit
-            </button>
-          </div>
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <button
+                                    type="submit"
+                                    class="btn btn-gal bg-oxford text-wheel crimson text-uppercase"
+                                    >
+                                    Edit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>  
         </div>
-      </form>
-        </div>
-        </div>  
+    </div>
 </main>
 
 {% endblock %}
