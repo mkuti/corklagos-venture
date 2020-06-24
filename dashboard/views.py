@@ -140,6 +140,7 @@ def view_and_edit_listing(request, listing_id):
         if editform.is_valid():
             listing.save()
             messages.success(request, 'Thank you. Your listing has been updated')
+            return redirect(reverse('addlisting'))
     else:
         editform = AddListingForm(instance=listing)
 
