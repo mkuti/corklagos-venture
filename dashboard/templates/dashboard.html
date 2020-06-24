@@ -17,7 +17,12 @@
             <a class="btn btn-head bg-oxford text-wheel text-uppercase" href="{% url 'addlisting' %}">Add a new listing</a>
         </div>
          {% else %}
-         <!-- show previous orders if user is car dealer with a button to update profile-->
+         {% for order in previous_orders %}
+         {{ order.full_name }}
+         {% for order_details in order.lineitems.all %}
+         {{ order_details }}
+         {% endfor %}
+         {% endfor %}
         {% endif %}
     </div>        
 </section>
