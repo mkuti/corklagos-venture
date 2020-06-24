@@ -57,10 +57,21 @@
                     action=""
                     enctype="multipart/form-data"
                 >
-
+                <div class="row">
+                    <div class="col-12 col-md-6 px-3">
+                        {{ addform.listing_category|as_crispy_field }}
+                        {{ addform.listing_brand|as_crispy_field }}
+                        {{ addform.listing_name|as_crispy_field }}
+                        {{ addform.listing_price|as_crispy_field }}
+                        {{ addform.listing_image|as_crispy_field }}
+                    </div>
+                    <div class="col-12 col-md-6">
+                        {{ addform.listing_description|as_crispy_field }}
+                    </div>
+                </div>
                 {% csrf_token %}
                 
-                {{ addform|crispy }}
+                
           
 
         <div class="row text-center">
