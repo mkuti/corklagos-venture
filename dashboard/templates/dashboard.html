@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+<section id="home-img">    
+    <div class="row pt-md-0 call-section call-box justify-content-center text-center text-oxford">
+        <div class="col-12 text-uppercase">
+            <h1>Welcome back {{ user }}</h1>
+            <hr>
+        </div>
+        {% if user_type == 'dismantler' %}
+        <div class="col-6-md mx-md-5 my-3 crimson">
+            <a class="btn btn-head bg-oxford text-wheel text-uppercase" href="{% url 'editprofile' %}">View and edit your business details</a>                  
+        </div>
+        <div class="col-6-md mx-md-5 my-3 crimson">
+            <a class="btn btn-head bg-oxford text-wheel text-uppercase" href="{% url 'addlisting' %}">Add a new listing</a>
+        </div>
+         {% else %}
+         <!-- show previous orders if user is car dealer with a button to update profile-->
+        {% endif %}
+    </div>        
+</section>
+
+{% endblock %}
