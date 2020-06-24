@@ -13,7 +13,8 @@ class Order(models.Model):
         User,
         null=True,
         blank=True,
-        on_delete=models.SET_NULL)
+        on_delete=models.SET_NULL,
+        related_name='orders')
     full_name = models.CharField(max_length=50, blank=False)
     street_address = models.CharField(max_length=40, blank=False)
     street_address2 = models.CharField(max_length=40, blank=True)
