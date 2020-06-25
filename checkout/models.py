@@ -24,6 +24,7 @@ class Order(models.Model):
     city = models.CharField(max_length=40, blank=False)
     country = models.CharField(max_length=40, blank=False)
     date = models.DateField()
+    total = models.IntegerField(blank=False, null=True)
 
     def __str__(self):
         '''
