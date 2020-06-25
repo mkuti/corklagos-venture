@@ -32,7 +32,7 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         # include all fields except for date since added automatically
-        exclude = ['date', 'user']
+        exclude = ['date', 'user', 'total']
 
     def __init__(self, *args, **kwargs):
         """
