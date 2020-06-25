@@ -103,7 +103,7 @@ hr {
 .btn-gal {
     font-size: 1.5rem;
     font-family: "Crimson Text", sans-serif;
-    padding: 2px;
+    padding: 0.5rem;
 }
 
 .btn-head {
@@ -133,6 +133,7 @@ hr {
 .nav-item {
     color: #ff4000;
     text-decoration: none;
+    font-size: 1.3rem;
 }
 
 .nav-item a:hover{
