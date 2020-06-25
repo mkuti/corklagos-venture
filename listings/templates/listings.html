@@ -57,7 +57,7 @@
                                         <form action="{% url 'add_to_bag' listing.id %}" method="POST">
                                             {% csrf_token %}
                                             <div class="col-6 mt-1 listing-buy">
-                                                <input type="submit" class="btn bg-wheel py-1 mb-3" value="Add to Bag">
+                                                <input type="submit" class="btn btn-gal bg-wheel py-1 mb-3" value="Add to Bag">
                                             </div>
                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                         </form>
