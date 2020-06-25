@@ -51,7 +51,7 @@
                                     <h5 class="card-title px-3 text-wheel text-uppercase">{{ listing.listing_name}}</h5>
                                     <p class="card-text px-3 text-beige">{{ listing.listing_description}}</p>
                                     <div class="row text-beige text-center">
-                                        <div class="col-4 listing-price">
+                                        <div class="col-6 listing-price">
                                             <p>{{ listing.listing_price}}<i class="fas fa-euro-sign"></i></p>
                                         </div>
                                         <form action="{% url 'add_to_bag' listing.id %}" method="POST">
