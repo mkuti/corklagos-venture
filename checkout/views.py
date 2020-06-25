@@ -39,6 +39,7 @@ def checkout_details(request):
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
             order.date = timezone.now()
+            order.user = request.user
             order.save()
 
             try:
@@ -67,8 +68,10 @@ def checkout_details(request):
                 order_line_item = OrderLineItem(
                     order=order,
                     listing=listing,
-                    quantity=listing_quantity
+                    quantity=listing_quantity,
                 )
+                order.total = total
+                order.save()
                 order_line_item.save()
 
             try:
