@@ -40,7 +40,11 @@ class OrderLineItem(models.Model):
     including the listing information from model imported from listings.models
     including the quantity
     '''
-    order = models.ForeignKey(Order, null=False, on_delete=models.CASCADE)
+    order = models.ForeignKey(
+        Order,
+        null=False,
+        on_delete=models.CASCADE,
+        related_name='orderitems')
     listing = models.ForeignKey(Listing, null=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(blank=False)
 
