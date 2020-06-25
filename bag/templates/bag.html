@@ -27,15 +27,15 @@
                             <h5 class="card-title px-3 text-wheel text-uppercase">{{ item.listing.listing_name}}</h5>
                             <p class="card-text px-3 text-beige">{{ item.listing.listing_description}}</p>
                             <div class="row text-beige text-center">
-                                <div class="col-4 listing-price">
+                                <div class="col-6 listing-price">
                                     <p>{{ item.listing.listing_price}}<i class="fas fa-euro-sign"></i></p>
                                 </div>
                                 <form action="{% url 'remove_from_bag' item.listing_id %}" method="POST">
-                                        {% csrf_token %}
-                                        <div class="col-6 mt-1 listing-buy">
-                                            <input type="submit" class="btn bg-wheel py-1 mb-3" value="Remove from Bag">
-                                        </div>
-                                    </form>
+                                    {% csrf_token %}
+                                    <div class="col-6 mt-1 listing-buy">
+                                        <input type="submit" class="btn bg-wheel py-1 mb-3" value="Remove">
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
