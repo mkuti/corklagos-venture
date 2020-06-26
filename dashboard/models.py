@@ -20,10 +20,10 @@ class Profile(models.Model):
     phone = models.CharField(max_length=20, blank=False)
     street_address = models.CharField(max_length=50, blank=False)
     street_address2 = models.CharField(max_length=50, blank=True)
+    postcode = models.CharField(max_length=20, blank=True)
     city = models.CharField(max_length=30, blank=False)
     county = models.CharField(max_length=30, blank=True)
     country = models.CharField(max_length=30, blank=True)
-    postcode = models.CharField(max_length=20, blank=True)
 
     def __str__(self):
         return f'{self.user.username} Profile'
