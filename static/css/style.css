@@ -127,7 +127,7 @@ hr {
 /* nav */
 
 #logo-lg {
-    margin: 0 3rem;
+    margin: 0 3rem 0;
 }
 
 .nav-item {
@@ -310,7 +310,7 @@ hr {
 
 @media (min-width: 992px) {
     .nav-item {
-        padding-top: 50px;
+        padding-top: 30px;
     }
     .slogan {
         width: 30%;
