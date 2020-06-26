@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator
 from django.contrib.auth.models import User
 
 
@@ -7,7 +8,9 @@ from django.contrib.auth.models import User
 
 
 class Category(models.Model):
-
+    '''
+    Setting all categories which are related to the Listing model.
+    '''
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -26,7 +29,9 @@ class Category(models.Model):
 
 
 class Brand(models.Model):
-
+    '''
+    Setting all brands which are related to the Listing model.
+    '''
     brands = [
         ('Toyota', 'toyota'),
         ('Nissan', 'nissan'),
@@ -40,12 +45,34 @@ class Brand(models.Model):
 
 
 class Listing(models.Model):
-    listing_owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    listing_category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
-    listing_brand = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True)
+    '''
+    Including 3 fields related to other models.
+    User who owns the listing.
+    Category in which listing belongs.
+    Brand of the listing.
+    Added a validator on the listing price to avoid negative price.
+    Ordering alphabetically the listings by name.
+    '''
+    listing_owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        null=True)
+    listing_category = models.ForeignKey(
+        Category,
+        on_delete=models.SET_NULL,
+        null=True)
+    listing_brand = models.ForeignKey(
+        Brand,
+        on_delete=models.SET_NULL,
+        null=True)
     listing_name = models.CharField(max_length=50)
     listing_description = models.TextField()
-    listing_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    listing_price = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=True,
+        blank=True,
+        validators=[MinValueValidator(20.00)])
     listing_image = models.ImageField(upload_to='images')
 
     class Meta:
