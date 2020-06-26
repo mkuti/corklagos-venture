@@ -31,7 +31,21 @@
 
                 {% csrf_token %}
                 
-                {{ profile_form|crispy }}
+                <div class="row">
+                    <div class="col-12 col-md-6 px-md-3">
+                        {{ profile_form.user_type|as_crispy_field }}
+                        {{ profile_form.business_name|as_crispy_field }}
+                        {{ profile_form.phone|as_crispy_field }}
+                        {{ profile_form.street_address|as_crispy_field }}
+                        {{ profile_form.street_address2|as_crispy_field }}
+                    </div>
+                    <div class="col-12 col-md-6 px-md-3">
+                        {{ profile_form.postcode|as_crispy_field }}
+                        {{ profile_form.city|as_crispy_field }}
+                        {{ profile_form.county|as_crispy_field }}
+                        {{ profile_form.country|as_crispy_field }}
+                    </div>
+                </div>
 
                 <div class="row text-center">
                     <div class="col-12">
