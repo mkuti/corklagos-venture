@@ -91,36 +91,52 @@ def add_profile_details(request):
 
 @login_required
 def get_and_create_listing(request):
-    """ Display the member's profile after login.
+    """
+    Only after login.
+    Redirect user who are car dealers to dashboard.
+    Redirect users without profile to edit profile 
     Display current listings
-    Render form to add a new listing """
+    Render form to add a new listing only for dismantlers."""
     user = request.user
     user_listings = Listing.objects.filter(listing_owner=user)
     categories = Category.objects.all()
 
-    if request.method == 'POST':
-        addform = AddListingForm(request.POST, request.FILES)
-        if addform.is_valid():
-            listing = Listing.objects.create(
-                listing_owner=user,
-                listing_name=addform.cleaned_data['listing_name'],
-                listing_description=addform.cleaned_data['listing_description'],
-                listing_price=addform.cleaned_data['listing_price'],
-                listing_image=request.FILES['listing_image'],
-                listing_category=addform.cleaned_data['listing_category'],
-                listing_brand=addform.cleaned_data['listing_brand'],
-            )
-            listing.save()
-            messages.success(request, 'Thank you. We have recorded your new listing')
-    else:
-        addform = AddListingForm()
+    try:
+        profile = Profile.objects.get(user=request.user)
+        user_type = profile.user_type
 
-    context = {
-        'addform': addform,
-        'listings': user_listings,
-        'categories': categories
-    }
-    return render(request, 'addlisting.html', context)
+        if user_type == 'dealer':
+            messages.error(
+                request,
+                'You do not have the correct profile to add a listing')
+            return redirect(reverse('dashboard'))
+
+        if request.method == 'POST':
+            addform = AddListingForm(request.POST, request.FILES)
+            if addform.is_valid():
+                listing = Listing.objects.create(
+                    listing_owner=user,
+                    listing_name=addform.cleaned_data['listing_name'],
+                    listing_description=addform.cleaned_data['listing_description'],
+                    listing_price=addform.cleaned_data['listing_price'],
+                    listing_image=request.FILES['listing_image'],
+                    listing_category=addform.cleaned_data['listing_category'],
+                    listing_brand=addform.cleaned_data['listing_brand'],
+                )
+                listing.save()
+                messages.success(request, 'Thank you. We have recorded your new listing')
+        else:
+            addform = AddListingForm()
+
+        context = {
+            'addform': addform,
+            'listings': user_listings,
+            'categories': categories
+        }
+        return render(request, 'addlisting.html', context)
+
+    except Profile.DoesNotExist:
+        return redirect(reverse('editprofile'))
 
 
 @login_required
