@@ -9,9 +9,11 @@
         <div class="col-12 col-md-8 text-uppercase border-bottom">
             <h1>Welcome {{ user }}</h1>
         </div>
+        {% if profile.user_type == 'dismantler' %}
         <div class="col-12 col-md-4">
             <a class="btn btn-gal bg-oxford text-wheel text-uppercase" href="{% url 'addlisting' %}">Add a new listing</a>
         </div>
+        {% endif %}
     </div>
         
     <div class="row mx-md-5 mx-1 my-3">
