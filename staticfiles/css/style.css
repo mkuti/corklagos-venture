@@ -87,10 +87,6 @@ hr {
     color: #ff4000;
 }
 
-.text-wheel:hover {
-    color: #ffb49a;
-}
-
 .text-melon {
     color: #ffb49a;
 }
@@ -109,6 +105,25 @@ hr {
     font-size: 1.5rem;
     font-family: "Crimson Text", sans-serif;
     padding: 0.5rem;
+}
+
+.btn-oxford {
+    background-color: #03254e;
+    color: #ff4000;
+}
+
+.btn-oxford:hover {
+    color: #ffb49a;
+}
+
+.btn-wheel {
+    background-color: #ff4000;
+    color: #03254e;
+}
+
+.btn-wheel:hover {
+    background-color: #03254e;
+    color: #ff4000;
 }
 
 .btn-head {
