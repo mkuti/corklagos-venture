@@ -70,8 +70,6 @@ class Listing(models.Model):
     listing_price = models.DecimalField(
         max_digits=6,
         decimal_places=2,
-        null=True,
-        blank=True,
         validators=[MinValueValidator(20.00)])
     listing_image = models.ImageField(upload_to='images')
 
