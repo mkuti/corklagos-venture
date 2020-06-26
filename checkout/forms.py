@@ -1,5 +1,5 @@
 from django import forms
-from .models import OrderLineItem, Order
+from .models import Order
 
 
 class MakePaymentForm(forms.Form):
@@ -38,7 +38,8 @@ class OrderForm(forms.ModelForm):
         """
         Adding labels and classes
         """
-        super().__init__(*args, **kwargs)  # call default init method to set form up
+        super().__init__(*args, **kwargs)
+        # call default init method to set form up
         labels = {
             'full_name': 'Please enter the name on the card',
             'street_address': 'Street Address',
