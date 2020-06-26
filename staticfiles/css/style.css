@@ -273,6 +273,7 @@ hr {
   height: auto;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+  padding: 1.5rem;
 }
 
 .who-card-img {
