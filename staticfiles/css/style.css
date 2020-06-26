@@ -15,9 +15,14 @@ html {
 }
 
 body {
-    
     background-color: #feefdd;
     font-family: "Lato", sans-serif;
+    border: 22px solid transparent;
+    border-image: url(https://corklagos.s3.amazonaws.com/static/images/tribal.png) 33%;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    border-image-repeat: repeat;
 }
 
 .container-fluid {
@@ -111,14 +116,6 @@ hr {
     padding: 1rem;
 }
 
-/* tribal vertical left banner */
-.tribal {
-    float: left;
-    width: 30px;
-    height: 100vh;
-    position: fixed;
-}
-
 /* cripsy forms https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=remove%20label_suffix%20on%20required#change-required-fields */
 .asteriskField {
     display: none;
@@ -127,7 +124,7 @@ hr {
 /* nav */
 
 #logo-lg {
-    margin: 0 3rem;
+    margin: 0 3rem 0;
 }
 
 .nav-item {
@@ -310,7 +307,7 @@ hr {
 
 @media (min-width: 992px) {
     .nav-item {
-        padding-top: 50px;
+        padding-top: 30px;
     }
     .slogan {
         width: 30%;
