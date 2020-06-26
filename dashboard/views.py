@@ -22,6 +22,7 @@ def dashboard(request):
         user_type = profile.user_type
 
         context = {
+            'profile': profile,
             'user_type': user_type,
             'previous_orders': previous_orders,
         }
