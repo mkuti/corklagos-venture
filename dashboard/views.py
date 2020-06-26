@@ -85,6 +85,7 @@ def add_profile_details(request):
             profile_form = EditProfileForm()
 
     context = {
+        'profile': profile,
         'profile_form': profile_form,
     }
     return render(request, 'profile.html', context)
