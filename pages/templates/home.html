@@ -14,13 +14,7 @@
                         <p>I have spare parts to sell!</p>
                     </div>
                     <div class="col-12">
-                        {% if user.is_authenticated and user.profile %}
-                        <a class="btn btn-gal bg-oxford text-wheel text-uppercase" href="{% url 'addlisting' %}">Add a listing</a>
-                        {% elif user != user.profile %}
-                        <a class="btn btn-gal bg-oxford text-wheel text-uppercase" href="{% url 'editprofile'%}">Provide your business details</a>
-                        {% else %}
-                        <a class="btn btn-gal bg-oxford text-wheel text-uppercase" href="{% url 'account_login' %}">Log In</a>
-                        {% endif %}
+                        <a class="btn btn-gal bg-oxford text-wheel text-uppercase" href="{% url 'addlisting' %}">Register to sell</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +27,7 @@
                         <p>What parts can I get shipped?</p>
                     </div>
                     <div class="col-12">
-                        <a class="btn btn-gal bg-oxford text-wheel text-uppercase" href="{% url 'listings' %}">Check the latest</a>
+                        <a class="btn btn-gal bg-oxford text-wheel text-uppercase" href="{% url 'listings' %}">Check our lates products</a>
                     </div>
                 </div>
             </div>
