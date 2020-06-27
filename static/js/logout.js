@@ -1,18 +1,16 @@
-const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 const logoutbtn = document.getElementById("logoutbtn");
+const logouturl = `${window.origin}/accounts/logout/`
 
-const request = new Request(
-    `${window.origin}/accounts/logout/`,
-    {headers: {'X-CSRFToken': csrftoken}}
-);
-
-logoutbtn.addEventListener("click", function(e){
-    e.preventDefault();
-    fetch(request, {
+logoutbtn.addEventListener("click", function(){
+    fetch(logouturl, {
+        headers: {'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value},
         method: 'POST',
-        mode: 'same-origin'  
-    }).then(function(response) {
-        console.log(response)
+        mode: 'same-origin',
+    }).then(function(response){
+    }).then(() => {
+        location.reload();
+    }).catch((err) => {
+        console.log(err);
+    });
 });
 
-});
