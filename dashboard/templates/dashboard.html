@@ -30,7 +30,7 @@
          {% else %}
          <div class="col-12">
             <div class="row mx-md-5 mx-1 my-3">
-                <div class="col-12 text-uppercase text-wheel text-center">
+                <div class="col-12 text-uppercase text-oxford bg-wheel text-center">
                     <h2>Your past orders:</h2>
                     <hr>
                 </div>
@@ -43,7 +43,7 @@
                     <div class="listing-section mx-md-2 mb-3">
                         <div class="row no-gutters">
                             <div class="col-12">
-                                <h5 class="card-title px-3 text-wheel text-uppercase">{{ order.date }}</h5>
+                                <h5 class="card-title px-3 text-wheel text-uppercase">{{ order.date }}: {{ order.id }}</h5>
                             </div>
                             {% for item in order.orderitems.all %}
                             <table class="table table-borderless">
