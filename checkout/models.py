@@ -35,7 +35,10 @@ class Order(models.Model):
         Returns summary of the order
         format injecting information into a string
         '''
-        return "{0}-{1}-{2}". format(self.id, self.date, self.full_name)
+        return "{0}-{1}-{2}". format(
+            self.order_number,
+            self.date,
+            self.full_name)
 
 
 class OrderLineItem(models.Model):
@@ -50,7 +53,10 @@ class OrderLineItem(models.Model):
         null=False,
         on_delete=models.CASCADE,
         related_name='orderitems')
-    listing = models.ForeignKey(Listing, null=False, on_delete=models.CASCADE)
+    listing = models.ForeignKey(
+        Listing,
+        null=False,
+        on_delete=models.CASCADE)
     quantity = models.IntegerField(blank=False)
 
     def __str__(self):
