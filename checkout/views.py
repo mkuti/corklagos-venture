@@ -4,17 +4,19 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.conf import settings
 from django.utils import timezone
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 from dashboard.models import Profile
-from dashboard.forms import EditProfileForm
 from listings.models import Listing
 from .forms import MakePaymentForm, OrderForm
-from .models import OrderLineItem, Order
+from .models import OrderLineItem
 import stripe
 
 
 stripe.api_key = settings.STRIPE_SECRET
 
 
+@login_required
 def checkout_details(request):
     '''
     If user manages to type url to access checkout
@@ -54,8 +56,10 @@ def checkout_details(request):
                         user=request.user,
                         postcode=profile_form.cleaned_data['postcode'],
                         city=profile_form.cleaned_data['city'],
-                        street_address=profile_form.cleaned_data['street_address'],
-                        street_address2=profile_form.cleaned_data['street_address2'],
+                        street_address=profile_form.cleaned_data[
+                            'street_address'],
+                        street_address2=profile_form.cleaned_data[
+                            'street_address2'],
                         country=profile_form.cleaned_data['country'],
                     )
                     profile.save()
@@ -89,13 +93,29 @@ def checkout_details(request):
             if customer.paid:
                 messages.error(request, 'You have successfully paid')
                 request.session['bag'] = {}
+                send_mail(
+                    subject=render_to_string(
+                        'checkout/confirmation_emails/email_subject.txt',
+                        {'order': order}),
+                    body=render_to_string(
+                        'checkout/confirmation_emails/email_body.txt',
+                        {
+                            'order': order,
+                            'contact_email': settings.DEFAULT_FROM_EMAIL}
+                    ),
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[request.user.email],
+                    fail_silently=False,
+                )
                 return render(request, 'payment_confirmed.html')
             else:
                 messages.error(request, "Unable to take payment")
 
         else:
             print(payment_form.errors)
-            messages.error(request, "We were unable to take a payment with that card!")
+            messages.error(
+                request,
+                "We were unable to take a payment with that card!")
 
     try:
         profile = Profile.objects.get(user=request.user)
