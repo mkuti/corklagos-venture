@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 from django.contrib.auth.models import User
 from listings.models import Listing
 
@@ -25,6 +26,9 @@ class Order(models.Model):
     country = models.CharField(max_length=40, blank=False)
     date = models.DateField()
     total = models.IntegerField(blank=False, null=True)
+    order_number = models.UUIDField(
+        default=uuid.uuid4,
+        editable=False)
 
     def __str__(self):
         '''
