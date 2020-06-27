@@ -38,7 +38,7 @@
       <li class="nav-item">
         <a type="submit" class="nav-link" id="logoutbtn">Log Out</a>
       </li>
-      <form style="display: none;" method="post" action="{% url 'account_logout' %}">
+      <form style="display: none;" method="post" action="">
         {% csrf_token %}
         <input type="hidden" name="next" value="{% url 'home' %}"/>
     </form>
@@ -65,7 +65,9 @@
 </nav>
 
 {% endblock %}
-
+ 
+{% if user.is_authenticated %}
 {% block postloadjs %}
     <script src="{% static 'js/logout.js' %}"></script>
 {% endblock %}
+{% endif %}
