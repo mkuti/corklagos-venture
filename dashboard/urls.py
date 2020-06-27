@@ -4,7 +4,7 @@ from .views import (
     add_profile_details,
     get_and_create_listing,
     view_and_edit_listing,
-    delete_listing
+    delete_listing,
 )
 
 urlpatterns = [
