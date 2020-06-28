@@ -35,11 +35,12 @@
 <!-- Nav -->
 {% include 'components/nav.html' %}
 
+<!-- messages -->
 {% if messages %}
         <div class="alert alert-success">
             <div class="messages">
                 {% for message in messages %}
-                    {{ message }}
+                    <script>alert("{{ message }}")</script>
                 {% endfor %}
             </div>
         </div>
