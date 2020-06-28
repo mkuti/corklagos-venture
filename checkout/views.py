@@ -77,6 +77,7 @@ def checkout_details(request):
                 order.total = total
                 order.save()
                 order_line_item.save()
+                listing.is_active = False
 
             try:
                 customer = stripe.Charge.create(
@@ -95,10 +96,10 @@ def checkout_details(request):
                 request.session['bag'] = {}
                 send_mail(
                     subject=render_to_string(
-                        'checkout/confirmation_emails/email_subject.txt',
+                        'confirm_email/email_subject.txt',
                         {'order': order}),
-                    body=render_to_string(
-                        'checkout/confirmation_emails/email_body.txt',
+                    message=render_to_string(
+                        'confirm_email/email_body.txt',
                         {
                             'order': order,
                             'contact_email': settings.DEFAULT_FROM_EMAIL}
