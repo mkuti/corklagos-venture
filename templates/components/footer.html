@@ -1,4 +1,5 @@
 {% block footer %}
+{% load static %}
 
 <section id="footer" class="footer">
     <div class="container-fluid">
@@ -42,15 +43,16 @@
                 <h3 class="text-uppercase crimson">Send us a message</h3>
                 <p>We will try to respond to your message within the next 48hours. Thank you for your trust.</p>
                 <div class="row text-left">
-                    <form class="col-12 my-1 needs-validation contact-form">
-                        <input type="text" name="name" id="fullname" class="form-control form-field" placeholder="Your Name" required/>
-                        <input type="email" class="form-control form-field" id="email" placeholder="Your Email" required/>
-                        <input type="text" id="subject" placeholder="Subject" class="form-field" required/>
-                        <textarea rows="5" name="querydetails" id="querydetails" class="form-control" placeholder="Your message" required>
+                    <form class="col-12 my-1 needs-validation contact-form" id="contact-form">
+                        <input type="hidden" name="contact_number">
+                        <input type="text" name="user_name" class="form-control form-field" placeholder="Your Name" required/>
+                        <input type="email" class="form-control form-field" name="user_email" placeholder="Your Email" required/>
+                        <input type="text" class="form-control form-field" name="subject" placeholder="Subject" required/>
+                        <textarea rows="5" name="message" id="querydetails" class="form-control" placeholder="Your message" required>
                         </textarea>
                         <div class="form-row text-center">
                             <div class="col">
-                                <button type="submit" class="btn bg-melon text-oxford btn-gal crimson my-2">Send message</button>
+                                <input type="submit" value="Send" class="btn bg-melon text-oxford btn-gal crimson my-2">
                             </div>
                         </div>
                     </form>
@@ -66,3 +68,7 @@
 </section>
 
 {% endblock %}
+
+{% block postloadjs %}
+    <script src="{% static 'js/contactform.js' %}"></script>
+{% endblock%}
