@@ -65,6 +65,7 @@ class Listing(models.Model):
         Brand,
         on_delete=models.SET_NULL,
         null=True)
+    is_active = models.BooleanField(null=False, blank=False, default=True)
     listing_name = models.CharField(max_length=50)
     listing_description = models.TextField()
     listing_price = models.DecimalField(
