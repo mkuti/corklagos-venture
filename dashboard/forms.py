@@ -11,8 +11,9 @@ class EditProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         """
         Adding placeholders and classes
+        Call default init method to set form up
         """
-        super().__init__(*args, **kwargs)  # call default init method to set form up
+        super().__init__(*args, **kwargs)
         placeholders = {
             'business_name': 'Please enter your business name',
             'user_type': 'Please select the type of user',
@@ -25,7 +26,8 @@ class EditProfileForm(forms.ModelForm):
             'country': 'Country'
         }
 
-        self.fields['business_name'].widget.attrs['autofocus'] = True  # to force cursor to start in business name field
+        # to force cursor to start in business name field
+        self.fields['business_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = False
