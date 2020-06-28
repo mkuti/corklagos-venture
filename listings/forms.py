@@ -16,17 +16,18 @@ class AddListingForm(forms.ModelForm):
         """
         Adding placeholders and classes
         """
-        super().__init__(*args, **kwargs)  # call default init method to set form up
+        super().__init__(*args, **kwargs)
         labels = {
             'listing_name': 'Please provide the name:',
-            'listing_description': 'Please provide a brief description of the car part:',
+            'listing_description':
+            'Please provide a brief description of the car part:',
             'listing_price': 'Please enter the price of the car part',
             'listing_image': 'Please upload an image of your product:',
             'listing_category': 'Please select the category:',
             'listing_brand': 'Please select the brand:',
         }
 
-        self.fields['listing_name'].widget.attrs['autofocus'] = True  # to force cursor to start in listing name field
+        self.fields['listing_name'].widget.attrs['autofocus'] = True
 
         for field in self.fields:
             label = labels[field]
