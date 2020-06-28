@@ -136,6 +136,10 @@ hr {
     display: none;
 }
 
+.invalid-feedback {
+    color: inherit;
+}
+
 /* nav */
 
 #logo-lg {
