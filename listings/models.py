@@ -3,10 +3,6 @@ from django.core.validators import MinValueValidator
 from django.contrib.auth.models import User
 
 
-from django.db import models
-from django.contrib.auth.models import User
-
-
 class Category(models.Model):
     '''
     Setting all categories which are related to the Listing model.

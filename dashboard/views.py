@@ -1,10 +1,9 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from listings.models import Listing, Category
 from listings.forms import AddListingForm
-from checkout.models import Order
 from .forms import EditProfileForm
 from .models import Profile
 
@@ -66,7 +65,8 @@ def add_profile_details(request):
                     postcode=profile_form.cleaned_data['postcode'],
                     city=profile_form.cleaned_data['city'],
                     street_address=profile_form.cleaned_data['street_address'],
-                    street_address2=profile_form.cleaned_data['street_address2'],
+                    street_address2=profile_form.cleaned_data[
+                        'street_address2'],
                     county=profile_form.cleaned_data['county'],
                     country=profile_form.cleaned_data['country'],
                 )
@@ -99,7 +99,7 @@ def get_and_create_listing(request):
     """
     Only after login.
     Redirect user who are car dealers to dashboard.
-    Redirect users without profile to edit profile 
+    Redirect users without profile to edit profile
     Display current listings
     Render form to add a new listing only for dismantlers."""
     user = request.user
@@ -122,14 +122,17 @@ def get_and_create_listing(request):
                 listing = Listing.objects.create(
                     listing_owner=user,
                     listing_name=addform.cleaned_data['listing_name'],
-                    listing_description=addform.cleaned_data['listing_description'],
+                    listing_description=addform.cleaned_data[
+                        'listing_description'],
                     listing_price=addform.cleaned_data['listing_price'],
                     listing_image=request.FILES['listing_image'],
                     listing_category=addform.cleaned_data['listing_category'],
                     listing_brand=addform.cleaned_data['listing_brand'],
                 )
                 listing.save()
-                messages.success(request, 'Thank you. We have recorded your new listing')
+                messages.success(
+                    request,
+                    'Thank you. We have recorded your new listing')
         else:
             addform = AddListingForm()
 
@@ -154,10 +157,15 @@ def view_and_edit_listing(request, listing_id):
     listing = get_object_or_404(Listing, pk=listing_id)
 
     if request.method == 'POST':
-        editform = AddListingForm(request.POST, request.FILES, instance=listing)
+        editform = AddListingForm(
+            request.POST,
+            request.FILES,
+            instance=listing)
         if editform.is_valid():
             listing.save()
-            messages.success(request, 'Thank you. Your listing has been updated')
+            messages.success(
+                request,
+                'Thank you. Your listing has been updated')
             return redirect(reverse('addlisting'))
     else:
         editform = AddListingForm(instance=listing)
@@ -176,6 +184,8 @@ def delete_listing(request, listing_id):
     listing = get_object_or_404(Listing, pk=listing_id)
 
     listing.delete()
-    messages.success(request, 'Your listing has been removed from the database.')
+    messages.success(
+        request,
+        'Your listing has been removed from the database.')
 
     return redirect(reverse('addlisting'))
