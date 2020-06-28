@@ -1,0 +1,16 @@
+Hello {{ order.full_name }}!
+
+Thank you for shopping with us. We have received your payment. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: ${{ order.total }}
+
+If you have any questions regarding this order, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order and we hope you continue to shop with us.
+
+Regards,
+
+CorkLagos
