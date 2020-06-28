@@ -8,8 +8,28 @@ const message = document.getElementById('jsmessage')
  */
 contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                emailjs.sendForm('contact_service', 'contact_form', this);
-                alert("Your email has been sent")
-                location.reload()
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                .then(function(response) {
+                    Swal.fire({
+                    title: "Your email has been sent!",
+                    icon: "success",
+                    timer: 500,
+                    allowEscapeKey: false,
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                }).then((result) => {
+                    window.location.replace("/")
+                })
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    Swal.fire({
+                    title: "Something did not go right, please try again.",
+                    icon: "error",
+                    timer: 500,
+                    allowEscapeKey: false,
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                })
+                });
             });
     
