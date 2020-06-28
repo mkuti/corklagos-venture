@@ -22,12 +22,12 @@ from pages.views import home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"),
-    path('pages/', include('pages.urls', namespace='pages')),
-    path('listings', include('listings.urls', namespace='listings')),
-    path('accounts/', include('allauth.urls', namespace='accounts')),
-    path('dashboard/', include('dashboard.urls', namespace='dashboard')),
-    path('bag/', include('bag.urls', namespace='bag')),
-    path('checkout/', include('checkout.urls', namespace='checkout')),
+    path('pages/', include('pages.urls')),
+    path('listings', include('listings.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('dashboard/', include('dashboard.urls')),
+    path('bag/', include('bag.urls')),
+    path('checkout/', include('checkout.urls')),
 ]
 
 # only add this in when in debug mode
