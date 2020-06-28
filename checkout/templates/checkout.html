@@ -14,6 +14,14 @@
 {% block content %}
 
 <main class="container-fluid">
+    <div class="row text-right mr-5 my-5">
+        <div class="col-12">
+            <h1>Total: {{ total }}<i class="fas fa-euro-sign"></i></h1>
+        </div>
+        <div class="col-12">
+            <a href="{% url 'view_bag' %}" class="btn btn-gal btn-wheel py-1 mb-3" role="button">Edit bag</a>
+        </div>
+    </div>
     <!-- Page headers -->
     <div class="row mx-md-5 mx-1 my-3">
         <div class="col-12 text-uppercase text-center">
@@ -43,15 +51,6 @@
             <input class="btn btn-gal btn-wheel py-1 mb-3" id="submit_payment_btn" name="commit" type="submit" value="Pay">
         </div>
     </form>  
-    
-    <div class="row text-right mr-5 my-5">
-        <div class="col-12">
-            <h1>Total: {{ total }}<i class="fas fa-euro-sign"></i></h1>
-        </div>
-        <div class="col-12">
-            <a href="{% url 'view_bag' %}" class="btn btn-gal btn-wheel py-1 mb-3" role="button">Edit bag</a>
-        </div>
-    </div>
  </main>
 
 {% endblock %}
