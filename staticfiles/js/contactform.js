@@ -1,12 +1,15 @@
 const contactForm = document.getElementById('contact-form')
 console.log(contactForm)
+const message = document.getElementById('jsmessage')
 
-contactForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate the contact number value
-                this.contact_number.value = Math.random() * 100000 | 0;
+/**
+ * Add event listener to send email via emailjs when contactform is submitted
+ * @event submit on input with type submit of the form
+ */
+contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
                 emailjs.sendForm('contact_service', 'contact_form', this);
-                alert("Your mail is sent!");
+                alert("Your email has been sent")
                 location.reload()
             });
     
