@@ -7,7 +7,6 @@ from .views import (
     delete_listing,
 )
 
-app_name = 'dashboard'
 urlpatterns = [
     path(
         '',
