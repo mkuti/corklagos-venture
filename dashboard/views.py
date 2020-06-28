@@ -81,13 +81,16 @@ def add_profile_details(request):
         try:
             profile = Profile.objects.get(user=request.user)
             profile_form = EditProfileForm(instance=profile)
+            context = {
+                'profile': profile,
+                'profile_form': profile_form,
+            }
         except ObjectDoesNotExist:
             profile_form = EditProfileForm()
+            context = {
+                'profile_form': profile_form,
+            }
 
-    context = {
-        'profile': profile,
-        'profile_form': profile_form,
-    }
     return render(request, 'profile.html', context)
 
 
