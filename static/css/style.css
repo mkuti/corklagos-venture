@@ -160,6 +160,10 @@ hr {
     font-size: 3rem;
 }
 
+#logoutbtn {
+    cursor: pointer;
+}
+
 /* home background image, code inspired from https://bootstrapmade.com/demo/Company/ */
 #home-img {
     display: flex;
