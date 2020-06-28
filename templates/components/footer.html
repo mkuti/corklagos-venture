@@ -46,7 +46,7 @@
                     <form class="col-12 my-1 needs-validation contact-form" id="contact-form">
                         <input type="hidden" name="contact_number">
                         <input type="text" name="user_name" class="form-control form-field" placeholder="Your Name" required/>
-                        <input type="email" class="form-control form-field" name="user_email" placeholder="Your Email" required/>
+                        <input type="email" class="form-control form-field" name="user_email" placeholder="Your Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
                         <input type="text" class="form-control form-field" name="subject" placeholder="Subject" required/>
                         <textarea rows="5" name="message" id="querydetails" class="form-control" placeholder="Your message" required>
                         </textarea>
