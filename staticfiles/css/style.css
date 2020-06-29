@@ -282,11 +282,11 @@ hr {
 
 /* Changed the flip to vertical to make it unique from copied code when you move the mouse over the flip box container */
 .who-card:hover .who-card-contain {
-  transform: rotateX(180deg);
+  transform: rotateY(180deg);
 }
 
 .who-card-reveal {
-  transform: rotateX(180deg);
+  transform: rotateY(180deg);
 }
 
 /* Position the front and back side */
@@ -296,7 +296,7 @@ hr {
   height: auto;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .who-card-img {
