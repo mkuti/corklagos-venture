@@ -47,8 +47,10 @@
             {{ payment_form|crispy }}
         </div>
         {% csrf_token %}
-        <div class="form-group px-1">
-            <input class="btn btn-gal btn-wheel py-1 mb-3" id="submit_payment_btn" name="commit" type="submit" value="Pay">
+        <div class="row text-right">
+            <div class="form-group px-1 mx-right">
+                <input class="btn btn-gal btn-wheel py-1 mb-3" id="submit_payment_btn" name="commit" type="submit" value="Submit your payment!">
+        </div>
         </div>
     </form>  
  </main>
