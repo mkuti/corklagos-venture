@@ -24,17 +24,17 @@ class Category(models.Model):
         return self.name
 
 
-class Brand(models.Model):
+class Make(models.Model):
     '''
     Setting all brands which are related to the Listing model.
     '''
-    brands = [
+    makes = [
         ('Toyota', 'toyota'),
         ('Nissan', 'nissan'),
         ('Honda', 'honda'),
     ]
 
-    name = models.CharField(max_length=15, choices=brands, null=False)
+    name = models.CharField(max_length=15, choices=makes, null=False)
 
     def __str__(self):
         return self.name
@@ -45,7 +45,7 @@ class Listing(models.Model):
     Including 3 fields related to other models.
     User who owns the listing.
     Category in which listing belongs.
-    Brand of the listing.
+    Make of the listing.
     Added a validator on the listing price to avoid negative price.
     Ordering alphabetically the listings by name.
     '''
@@ -57,8 +57,8 @@ class Listing(models.Model):
         Category,
         on_delete=models.SET_NULL,
         null=True)
-    listing_brand = models.ForeignKey(
-        Brand,
+    listing_make = models.ForeignKey(
+        Make,
         on_delete=models.SET_NULL,
         null=True)
     is_active = models.BooleanField(null=False, blank=False, default=True)

@@ -24,7 +24,7 @@ class AddListingForm(forms.ModelForm):
             'listing_price': 'Please enter the price of the car part',
             'listing_image': 'Please upload an image of your product:',
             'listing_category': 'Please select the category:',
-            'listing_brand': 'Please select the brand:',
+            'listing_make': 'Please select the make:',
         }
 
         self.fields['listing_name'].widget.attrs['autofocus'] = True
