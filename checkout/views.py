@@ -77,7 +77,6 @@ def checkout_details(request):
                 order.total = total
                 order.save()
                 order_line_item.save()
-                listing.is_active = False
 
             try:
                 customer = stripe.Charge.create(
@@ -94,6 +93,8 @@ def checkout_details(request):
             if customer.paid:
                 messages.error(request, 'You have successfully paid')
                 request.session['bag'] = {}
+                listing.is_active = False
+                listing.save()
                 send_mail(
                     subject=render_to_string(
                         'confirm_email/email_subject.txt',
