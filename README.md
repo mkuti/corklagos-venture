@@ -96,7 +96,8 @@ The website needs to be very streamline, traditional and classic. After speaking
 
 ### 1. Existing Features:
 #### Features which appear on every page:
-___Feature 1 - Navbar__
+
+__Feature 1: Navbar__
 - The navbar provides the user a quick way to navigate around the website. 
 - With the logo in the middle which redirects to home page if user is not logged in and to listings if user is logged in.
 - At first, when user is not authenticated, the navbar show login and register nav-items. Once logged in, the user will be presented a dashboard and logout nav-items.
@@ -105,16 +106,27 @@ ___Feature 1 - Navbar__
 - The same shopping bag changes color if listings added and also shows the current total of the bag, with the sumn incrementing when user adds more items.
 - Each nav-item brings the user to other pages.
 - Home nav-item disappear once user is logged in.
-__Feature 2 - Footer__
+
+__Feature 2: Footer__
 - For adding an easier navigation and to match the current trend of most commercial websites, we've added the same links as the navbar.
 - A contact form can be filled by user with his contact details, a subject and a message and will be sent to the business owner via emailjs.
 - A bottom banner explains to user that the website is designed for educational purpose.
-__Feature 3 - African print left banner__
-Since the business owners' country of origin and the purpose of the website is to trade with an African country and maybe more, we have added an African print as a left border which shows on every page and every screens. Its colors match perfectly the rest of the website and logo.
+
+__Feature 3: African print left banner__
+- Since the business owners' country of origin and the purpose of the website is to trade with an African country and maybe more, we have added an African print as a left border which shows on every page and every screens. Its colors match perfectly the rest of the website and logo.
 
 #### Features on expertise page:
-__Feature 3__ 
-* Feature 4 - 
+__Feature 4: Photo and pitch__
+- Photo shows modern business team, professional but smiling, ready to support their clients.
+- Pitch or slogan confirms the commitment, purpose and availability, reminding the users that the business is about an international trade. It also reassure the users of their engagement towards both sides of the business which is unique in the trade. 
+
+__Feature 5: Flipping cards__
+-  Unique way to introduce the abilities of a business by revealing those behind iconic animals from the African continent. 
+- The idea is to attract the eyes and catch the attention of the user by only showing the content behind photos.
+- A leopard with fierce and determined eyes which can reassure the users of the expertise and impressive goals of expansion displayed by the business.
+- An eagle, showing the flexibility and connection of the business going beyond lands.
+- Giraffes inviting the users to participate in this goal of expansion and network.
+
 * Feature 5 - 
 * Feature 6 - 
 * Feature 7 - 
