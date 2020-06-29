@@ -16,9 +16,9 @@ With an online presence, they could develop their reliable customer network in N
 
 The website is built for this venture, formed of 3 different trade men in the business for many years. The website is targeting two sorts of clients, one upstream advertising and selling goods, one downstream scrolling and buying goods before they get shipped. So a masculine audience with an interest in cars and a goal to make money.
 
-### For the purpose of testing the website
+### Note to Assessors:
 
-First, I have created a special superused with only-read priviledges to view the django-admin if needed.
+First, to enable assessment of the backend/admin side of the app (if needed), a 'staff' account with read-only privileges has been created:
 username: viewadmin
 password: testadmin789
 
