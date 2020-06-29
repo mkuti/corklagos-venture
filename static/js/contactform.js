@@ -1,6 +1,5 @@
 const contactForm = document.getElementById('contact-form')
 console.log(contactForm)
-const message = document.getElementById('jsmessage')
 
 /**
  * Add event listener to send email via emailjs when contactform is submitted
