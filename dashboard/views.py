@@ -127,7 +127,7 @@ def get_and_create_listing(request):
                     listing_price=addform.cleaned_data['listing_price'],
                     listing_image=request.FILES['listing_image'],
                     listing_category=addform.cleaned_data['listing_category'],
-                    listing_brand=addform.cleaned_data['listing_brand'],
+                    listing_make=addform.cleaned_data['listing_make'],
                 )
                 listing.save()
                 messages.success(
