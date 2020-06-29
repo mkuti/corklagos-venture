@@ -35,47 +35,56 @@ I also tested the website on Safari via an iMac with a very big screen, on an iP
 ## Issues found and solved
 
 ### 1. 
-* __Issue__: Navbar and login button: A slack user gave feedback that takes a while to figure out that the icon below the Member Page was to log in.  or log out. Was advised to add a text.
-* __Fix__: Added login or logout next to the icon   
-* __Verdict__: Looks better and clearer in Navbar
+* __Issue__: Probably less an issue than a failed attempt to customise the signup form and the user model so the user has a profile created when signing up with more details than the regular Django-allauth signup form. I searched and started to implement a custom model with adapter, a custom signup form which was working but could not save the details of the profile when user created. After spending much time on it and seeking help from Slack and Tutor Support, decided to go with the easier method of redirecting the user to create a profile after they have already signed up.
+* __Fix__: Created a new app called dashboard where the user is redirected to add his business details after confirming his email address (redirect is configurated in settings.py with ```ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = '/dashboard/')```).
+* __Verdict__: Although it takes three steps rather than one, the user can get a profile created which is associated with the user model by a OneToOneField. 
+* __Future fix__: After project's evaluation, will come back to this and try to have a customised user model with a custom signup form.
 
 ### 2. 
-* __Issue__: When going to login page, the console threw an error.
-```Uncaught TypeError: Cannot set property 'onchange' of null```. The filter function attached to an eventhandler was looking for the searchbar which was no longer on the page
-* __Fix__: Created separated js file for filter functionality and added an if statement on base.html to render only that js script when home page is active
-* __Verdict__: No more console error
+* __Issue__: Non-nullable field and default value for ForeignKey ```You are trying to add a non-nullable field new_field to ... without a default. We can't do that (the database needs something to populate existing rows).```. 
+* __Fix__: Found beginning of explanation [here](https://stackoverflow.com/questions/26185687/you-are-trying-to-add-a-non-nullable-field-new-field-to-userprofile-without-a) and with the help of [Chris Z.](https://github.com/ckz8780) on Slack, I found out that it was easier to add ```null=True``` when migrating to avoid this error. Because I had set a wrong default in "makemigrations", I had to cancel the previous migrations so ```python3 manage.py migrate``` would work.
+* __Verdict__: Managed to migrate the models with ForeignKey without any further issue.
 
 ### 3. 
-* __Issue__: On other pages than home page, the background image took too much space which means had to scroll down to go to login form or register form
-* __Fix__: Added attribute of active='home' for the python home function. It means I could use this attribute inside an if statement with jinja template. 
-```{% if active == 'home'%}``` which means a different template for a smaller version of image would be included on the base depending of the home page being active or not
-* __Verdict__: Image is still nicely displayed but with a smaller height and no attention text
+* __Issue__: Implementing the filter on listings page. I was stuck for a few hours, trying to understand how to use a queryset to filter the listings with category and car make. I could get the categories and makes to render and did try to set up a filter in my views but did not filter any results when testing it.
+* __Fix__: After searching more, found the django-filter package and a great article explaining its features, followed the documentation and created a filters.py in my listings app to implement filter and have a for loop with queryset (qs) argument on the html template to show listings depending of the filter queried.
+*__Resources__: 
+- [Django-Filter documentation](https://django-filter.readthedocs.io/en/stable/index.html)
+- [Simple is better than complex](https://simpleisbetterthancomplex.com/tutorial/2016/11/28/how-to-filter-querysets-dynamically.html)
+* __Verdict__: Filters listings by category or car make. I would like to make it even better by removing the button.
 
 ### 4. 
-* __Issue__: Feedback from another Slack user about footer not being centered on smaller screens
-* __Fix__: Added text-center class on div of footer
-* __Verdict__: Footer is nicely centered on smaller screens too
+* __Issue__: Format of the django-filter fields not looking great.
+* __Fix__: 
+- Specify the type of format for the filter: specifically ```widget=forms.RadioSelect```
+- Render the filter form by field so I could control the classes and the bootstrap columns using ```{{ filter.form.listing_category|as_crispy_field }}```
+- Removed the automatic label from django-filter: ```label=''```
+*__Resources__: 
+- [Add custom css class to Django-filter fields](https://stackoverflow.com/questions/50175858/django-add-atributes-to-filter-fields)
+- [Render filter.form as field](https://django-crispy-forms.readthedocs.io/en/latest/api_templatetags.html)
+- [Removing label for form](https://django-filter.readthedocs.io/en/stable/ref/filters.html?highlight=label#label)
+* __Verdict__: Filter feature fits the rest of the website design.
 
 ### 5. 
-* __Issue__: Feedback from Slack users, friend and mentor about one banner image I had created with different text bubbles and images. It was too overloaded with content and not really responsive
-* __Fix__: On suggestion of mentor, found a nice and quiet background image to match thematic and put on top a transparent logo and spinner menu to make the first view of the website very minimalist but effective
-* __Verdict__: Output of the home page and all pages is now very pleasant and most people have given very positive feedback on the UI of website
+* __Issue__: Add to bag template tag causing error: ```Argument ‘’ is not accepted```.
+* __Fix__: Changed listing_id to listing.id as listing_id does not exist as I could see in print().
+* __Verdict__: Listing gets added to the bag without error.
 
 ### 6. 
-* __Issue__: Not really an issue but a need to quickly send item owner from the card itself. I was advised to use mailto as it is fast and I did not have enough time to implement any other complex feature
-* __Fix__: Added user_email on insert function to MongoDB when an item is created or updated. Added jinja template inside the mailto href with the item.item_contact so website user can be redirected to their email tool to send an email.
-```<a href="mailto:{{item.item_contact}}"```
-* __Verdict__: It worked perfectly
+* __Issue__: Login url for redirect causing error.
+* __Fix__: Go to [allauth doc](https://django-allauth.readthedocs.io/en/latest/views.html?highlight=login%20url#login-account-login) and found the correct name: ```account_login```.
+* __Verdict__: Redirect works.
 
 ### 7. 
-* __Issue__: Edit button showing on the website user's items when he was logged in and on the home page. It meant that the edit button would not show on any other items and it made the cards height different which did not look good.
-* __Fix__: Added ```{% if active == 'account'%}``` for the edit button to show on cards which template is included on both home and account page. 
-* __Verdict__: It avoided me hard coding twice the cards template. The cards now are nicely rendered
+* __Issue__: On bag/contexts.py, error: "unsupported operand type(s) for +=: 'int' and 'str'" when adding to bag.
+* __Fix__: Found [here](https://stackoverflow.com/questions/2376464/typeerror-unsupported-operand-types-for-str-and-int) a beginning of solution. Confirmed that listing_quantity was int. Remembered that listing_price was not using decimal field
+Changed to decimal field and worked.
+* __Verdict__: Adding to bag is successful.
 
 ### 8. 
-* __Issue__: Item description of cards would not collapse when filtered items were displayed from the searchbar
-* __Fix__: Nested collapsible event into a function so I can call it back inside the filtered functionality
-* __Verdict__: All cards are now collapsing correclty, on home page, account page and when filtered items displayed
+* __Issue__: Item list not showing on bag.html inside the loop.
+* __Fix__: Investigate result of bag_items only by printing in terminal inside views.py. Checked again the contexts.py and see how listing object could be accessed. After iterating bag_items and setting variable of item, need to call the actual object before calling its attributes: ```{{ item.listing.listing_price}}```.
+* __Verdict__: Could see the listings in the bag template.
 
 ### 9. 
 * __Issue__: Item description of cards would not collapse when filtered items were displayed from the searchbar
