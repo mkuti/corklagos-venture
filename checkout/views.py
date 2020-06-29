@@ -67,58 +67,51 @@ def checkout_details(request):
             bag = request.session.get('bag', {})
             total = 0
             for listing_id, listing_quantity in bag.items():
-                try:
-                    listing = get_object_or_404(Listing, pk=listing_id)
-                    total += listing_quantity * listing.listing_price
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        listing=listing,
-                        quantity=listing_quantity,
-                    )
-                    order.total = total
-                    order.save()
-                    order_line_item.save()
+                listing = get_object_or_404(Listing, pk=listing_id)
+                total += listing_quantity * listing.listing_price
+                order_line_item = OrderLineItem(
+                    order=order,
+                    listing=listing,
+                    quantity=listing_quantity,
+                )
+                order_line_item.save()
 
-                    try:
-                        customer = stripe.Charge.create(
-                            amount=int(total * 100),
-                            currency="EUR",
-                            description=request.user.email,
-                            card=payment_form.cleaned_data['stripe_id']
-                        )
-                    except stripe.error.CardError:
-                        messages.error(request, 'Your card was declined!')
+            order.total = total
+            order.save()
 
-                    if customer.paid:
-                        messages.error(request, 'You have successfully paid')
-                        request.session['bag'] = {}
-                        listing.is_active = False
-                        listing.save()
-                        send_mail(
-                            subject=render_to_string(
-                                'confirm_email/email_subject.txt',
-                                {'order': order}),
-                            message=render_to_string(
-                                'confirm_email/email_body.txt',
-                                {
-                                    'order': order,
-                                    'contact_email':
-                                    settings.DEFAULT_FROM_EMAIL}
-                            ),
-                            from_email=settings.DEFAULT_FROM_EMAIL,
-                            recipient_list=[request.user.email],
-                            fail_silently=False,
-                        )
-                        return render(request, 'payment_confirmed.html')
-                    else:
-                        messages.error(request, "Unable to take payment")
+            try:
+                customer = stripe.Charge.create(
+                    amount=int(total * 100),
+                    currency="EUR",
+                    description=request.user.email,
+                    card=payment_form.cleaned_data['stripe_id']
+                )
+            except stripe.error.CardError:
+                messages.error(request, 'Your card was declined!')
 
-                except Listing.DoesNotExist:
-                    messages.error(
-                        request,
-                        'This listing is no longer available.')
-                    order.delete()
-                    return redirect(reverse('bag'))
+            if customer.paid:
+                messages.error(request, 'You have successfully paid')
+                request.session['bag'] = {}
+                listing.is_active = False
+                listing.save()
+                send_mail(
+                    subject=render_to_string(
+                        'confirm_email/email_subject.txt',
+                        {'order': order}),
+                    message=render_to_string(
+                        'confirm_email/email_body.txt',
+                        {
+                            'order': order,
+                            'contact_email':
+                            settings.DEFAULT_FROM_EMAIL}
+                    ),
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[request.user.email],
+                    fail_silently=False,
+                )
+                return render(request, 'payment_confirmed.html')
+            else:
+                messages.error(request, "Unable to take payment")
 
         else:
             print(payment_form.errors)
@@ -128,7 +121,6 @@ def checkout_details(request):
 
     try:
         profile = Profile.objects.get(user=request.user)
-        print(profile.business_name)
         order_form = OrderForm(initial={
             'full_name': profile.business_name,
             'street_address': profile.street_address,
