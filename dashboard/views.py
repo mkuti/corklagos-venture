@@ -133,6 +133,7 @@ def get_and_create_listing(request):
                 messages.success(
                     request,
                     'Thank you. We have recorded your new listing')
+                addform = AddListingForm()
         else:
             addform = AddListingForm()
 
