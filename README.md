@@ -19,6 +19,7 @@ The website is built for this venture, formed of 3 different trade men in the bu
 ### Note to Assessors:
 
 First, to enable assessment of the backend/admin side of the app (if needed), a 'staff' account with read-only privileges has been created:
+
 username: viewadmin
 password: testadmin789
 
@@ -94,9 +95,25 @@ The website needs to be very streamline, traditional and classic. After speaking
 ## Scope plane: How?
 
 ### 1. Existing Features:
-* Feature 1 - 
-* Feature 2 - 
-* Feature 3 - 
+#### Features which appear on every page:
+___Feature 1 - Navbar__
+- The navbar provides the user a quick way to navigate around the website. 
+- With the logo in the middle which redirects to home page if user is not logged in and to listings if user is logged in.
+- At first, when user is not authenticated, the navbar show login and register nav-items. Once logged in, the user will be presented a dashboard and logout nav-items.
+- Logout button logs out the user by simply clicking on the button with a POST request sent to Django using Javascript.
+- The shopping bag appears with same color as the other nav-items when empty.
+- The same shopping bag changes color if listings added and also shows the current total of the bag, with the sumn incrementing when user adds more items.
+- Each nav-item brings the user to other pages.
+- Home nav-item disappear once user is logged in.
+__Feature 2 - Footer__
+- For adding an easier navigation and to match the current trend of most commercial websites, we've added the same links as the navbar.
+- A contact form can be filled by user with his contact details, a subject and a message and will be sent to the business owner via emailjs.
+- A bottom banner explains to user that the website is designed for educational purpose.
+__Feature 3 - African print left banner__
+Since the business owners' country of origin and the purpose of the website is to trade with an African country and maybe more, we have added an African print as a left border which shows on every page and every screens. Its colors match perfectly the rest of the website and logo.
+
+#### Features on expertise page:
+__Feature 3__ 
 * Feature 4 - 
 * Feature 5 - 
 * Feature 6 - 
