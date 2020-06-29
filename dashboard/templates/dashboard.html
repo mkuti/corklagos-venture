@@ -37,27 +37,34 @@
             </div>
          </div>
          <div class="col-12">
-            <div class="row mx-md-5 mx-1 my-3">
+            <div class="row text-center">
                 {% for order in previous_orders %}
-                <div class="col-12 px-1">
+                <div class="col-12 col-md-4 px-2">
                     <div class="listing-section mx-md-2 mb-3">
                         <div class="row no-gutters">
                             <div class="col-12">
-                                <h5 class="card-title px-3 text-wheel text-uppercase">{{ order.order_number|truncatechars:10}}: {{ order.date }}</h5>
+                                <h5 class="card-title px-3 text-wheel text-uppercase">{{ order.date }}</h5>
+                                <h5 class="card-title px-3 text-wheel text-uppercase">Order {{ order.order_number|truncatechars:10}}</h5>
                             </div>
                             {% for item in order.orderitems.all %}
-                            <table class="table table-borderless">
-                                
-                                <td>
-                                    <p class="card-title text-beige px-3 text-uppercase">{{ item.listing.listing_name }}</p>
-                                </td>
-                                <td>
-                                    <p class="text-beige text-left"> {{ item.listing.listing_brand }}</p>
-                                </td>
-                                <td>
-                                    <p class="text-beige"> {{ item.listing.listing_price }}<i class="fas fa-euro-sign"></i></p>
-                                </td>
-                            </table>
+                            <div class="col-12">
+                                <div class="row no-gutters">
+                                    <div class="col-6">
+                                        <p class="text-wheel text-uppercase">
+                                            {{ item.listing.listing_name }}
+                                        </p>
+                                    </div>
+                                    <div class="col-3">
+                                        <p class="text-beige text-left"> {{ item.listing.listing_make }}</p>
+                                    </div>
+                                    <div class="col-3">
+                                        <p class="text-beige">
+                                            {{ item.listing.listing_price }}
+                                            <i class="fas fa-euro-sign"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                             {% endfor %}
                             <div class="col-12">
                                 <h5 class="card-title px-3 text-wheel text-uppercase">Total: €{{ order.total }}</h5>
