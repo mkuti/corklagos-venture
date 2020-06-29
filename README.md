@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/mkuti/corklagos-venture.svg?branch=master)](https://travis-ci.org/mkuti/corklagos-venture)
 
 <h1 align="center">
-  <a href="https://corklagos-venture.herokuapp.com/" target="_blank"><img src="https://ibb.co/GxQT4mB"><img src="https://i.ibb.co/X2x8rHN/Screenshot-2020-06-29-at-2-58-53-PM.png" alt="Multi Device Mockup"/></a>
+  <a href="https://corklagos-venture.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/X2x8rHN/Screenshot-2020-06-29-at-2-58-53-PM.png" alt="Multi Device Mockup"/></a>
 </h1>
 
 <div align="center">
