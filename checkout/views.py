@@ -67,16 +67,23 @@ def checkout_details(request):
             bag = request.session.get('bag', {})
             total = 0
             for listing_id, listing_quantity in bag.items():
-                listing = get_object_or_404(Listing, pk=listing_id)
-                total += listing_quantity * listing.listing_price
-                order_line_item = OrderLineItem(
-                    order=order,
-                    listing=listing,
-                    quantity=listing_quantity,
-                )
-                order.total = total
-                order.save()
-                order_line_item.save()
+                try:
+                    listing = get_object_or_404(Listing, pk=listing_id)
+                    total += listing_quantity * listing.listing_price
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        listing=listing,
+                        quantity=listing_quantity,
+                    )
+                    order.total = total
+                    order.save()
+                    order_line_item.save()
+                except Listing.DoesNotExist:
+                    messages.error(
+                        request,
+                        'This listing is no longer available.')
+                    order.delete()
+                    return redirect(reverse('bag'))
 
             try:
                 customer = stripe.Charge.create(
