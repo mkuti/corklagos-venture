@@ -237,7 +237,7 @@ For the listings page, I will have few images representing different categories 
 
 # Testing
 
-I created a separate document for Testing writeup which can be found [here](https://github.com/mkuti/..../blob/master/test.md)
+I created a separate document for Testing writeup which can be found [here](https://github.com/mkuti/corklagos-venture/blob/master/test.md)
 
 [Back to Top](#table-of-contents) 
 
