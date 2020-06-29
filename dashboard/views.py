@@ -73,7 +73,6 @@ def add_profile_details(request):
                 profile.save()
                 messages.success(request, 'Your profile has been saved')
                 if profile.user_type == 'dismantler':
-                    print(profile.user_type)
                     return redirect(reverse('addlisting'))
                 else:
                     return redirect(reverse('listings'))
