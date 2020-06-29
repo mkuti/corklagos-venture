@@ -1,11 +1,11 @@
 [![Build Status](https://travis-ci.org/mkuti/corklagos-venture.svg?branch=master)](https://travis-ci.org/mkuti/corklagos-venture)
 
 <h1 align="center">
-  <a href="" target="_blank"><img src="" target="_blank" alt="Multi Device Mockup"/></a>
+  <a href="https://corklagos-venture.herokuapp.com/" target="_blank"><img src="" target="_blank" alt="Multi Device Mockup"/></a>
 </h1>
 
 <div align="center">
-<a href="" target="_blank"><img src="static/images/logo.png" width='200' height='150'target="_blank" alt="logo"></a>
+<a href="https://corklagos-venture.herokuapp.com/" target="_blank"><img src="static/images/logo.png" width='200' height='150'target="_blank" alt="logo"></a>
 </div>
 
 CorkLagos Venture was imagined, designed, developed and deployed by MPia Kuti as her final project for the Code Institute Full Stack Web Development diploma.
@@ -319,7 +319,7 @@ SECRET_KEY | `<your_secret_key>`
 
 9. In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
 
-10. The site is now successfully deployed.
+10. The site is now successfully deployed [here](https://corklagos-venture.herokuapp.com/).
 
 [Back to Top](#table-of-contents) 
 
