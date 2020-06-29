@@ -318,6 +318,10 @@ hr {
     font-size: 1rem;
 }
 
+.links-item .fab {
+    font-size: 2rem;
+}
+
 .form-field {
     margin-bottom: 1rem;
 }
