@@ -8,10 +8,25 @@
 <a href="https://corklagos-venture.herokuapp.com/" target="_blank"><img src="static/images/logo.png" width='200' height='150' alt="logo"></a>
 </div>
 
-CorkLagos Venture was imagined, designed, developed and deployed by MPia Kuti as her final project for the Code Institute Full Stack Web Development diploma.
-I have used the opportunity of the Code Institute Milestone 4 project to build an ecommerce website which could potentially be used by an import/export business known through connections. Many Nigerians living in Ireland engage themselves in an import/export trade between Ireland and their home country. But often without any specific organisation, built network or online presence. They always have to rely on ephemere places where they hope to sell their goods once shipped to Nigeria. With an online presence, they could develop their reliable customer network in Nigeria while also targeting the car dismantlers here in Ireland so goods trade could almost be agreed from distance, saving time and precious funds.
+The website of CorkLagos Venture was designed, developed and deployed by MPia Kuti as her final project for the Code Institute Full Stack Web Development diploma.
 
-The website is built for an imaginary venture, formed of 3 different trade men in the business for many years. The website would be targeting two sorts of clients, one upstream advertising and selling goods, one downstream scrolling and buying goods before they get shipped. So a masculine audience with an interest in cars and a goal to make money.
+I have used the opportunity of the Code Institute Milestone 4 project to build an ecommerce website which would be used by an Nigerian import/export business known through connections. Many Nigerians living in Ireland engage themselves in an import/export trade between Ireland and their home country. But often without any specific organisation, built network or online presence. They always have to rely on ephemere places where they hope to sell their goods once shipped to Nigeria. 
+
+With an online presence, they could develop their reliable customer network in Nigeria while also targeting the car dismantlers here in Ireland so goods trade could almost be agreed from distance, saving time and precious funds.
+
+The website is built for this venture, formed of 3 different trade men in the business for many years. The website is targeting two sorts of clients, one upstream advertising and selling goods, one downstream scrolling and buying goods before they get shipped. So a masculine audience with an interest in cars and a goal to make money.
+
+### For the purpose of testing the website
+
+First, I have created a special superused with only-read priviledges to view the django-admin if needed.
+username: viewadmin
+password: testadmin789
+
+Since the website targets two types of users with different access, please note you might need to change the user_type when editing the profile details so you can test all features.
+
+Both users can edit their profile details and view the available listings.
+- A 'dealer' user type can then buy any listings and then views his past orders in his dashboard. A 'dealer' user type cannot add any, edit or delete listings and will be redirected if url is typed manually.
+- A 'dismantler' user type can then add a new listing, and view, edit or delete his own listings. A 'dismantler' user type cannot buy a listing and will be redirected to view listings if button is clicked or url is typed manually.
 
 ## Table of Contents
 
@@ -90,6 +105,7 @@ The website needs to be very streamline, traditional and classic. After speaking
 * Feature 9 - 
 
 ### 2. Features Left to Implement:
+* In the future, to be even more secure, we will remove the user_type field from the profile_form if profile exists already, so users cannot change their profile access themselves.
 * 
 
 [Back to Top](#table-of-contents) 
