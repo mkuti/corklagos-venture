@@ -28,7 +28,7 @@
       </li>
       <li class="navbar-brand m-0 d-none d-lg-block">
         <!-- If user is logged in, logo redirect to listings instead of home because only useful for logging in -->
-        <a href="{% if user.is_authenticated %}{% url 'listings' %}{% else %}{% url 'home' %}{% endif %}"><img id="logo-lg" src="{% static 'images/logo.png' %}" alt="Logo" width="150" height="100"></a>
+        <a href="{% if user.is_authenticated %}{% url 'listings' %}{% else %}{% url 'home' %}{% endif %}"><img id="logo-lg" src="{% static 'images/logo.png' %}" alt="Logo"></a>
       </li>  
       {% if user.is_authenticated %}     
       <!-- If user is not logged in, show login, if logged in, show account -->
