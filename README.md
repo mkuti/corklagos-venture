@@ -20,8 +20,8 @@ The website is built for this venture, formed of 3 different trade men in the bu
 
 First, to enable assessment of the backend/admin side of the app (if needed), a 'staff' account with read-only privileges has been created:
 
-username: viewadmin
-password: testadmin789
+username: __viewadmin__
+password: __testadmin789__
 
 Since the website targets two types of users with different access, please note you might need to change the user_type when editing the profile details so you can test all features.
 
