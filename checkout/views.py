@@ -78,47 +78,47 @@ def checkout_details(request):
                     order.total = total
                     order.save()
                     order_line_item.save()
+
+                    try:
+                        customer = stripe.Charge.create(
+                            amount=int(total * 100),
+                            currency="EUR",
+                            description=request.user.email,
+                            card=payment_form.cleaned_data['stripe_id']
+                        )
+                    except stripe.error.CardError:
+                        messages.error(request, 'Your card was declined!')
+
+                    if customer.paid:
+                        messages.error(request, 'You have successfully paid')
+                        request.session['bag'] = {}
+                        listing.is_active = False
+                        listing.save()
+                        send_mail(
+                            subject=render_to_string(
+                                'confirm_email/email_subject.txt',
+                                {'order': order}),
+                            message=render_to_string(
+                                'confirm_email/email_body.txt',
+                                {
+                                    'order': order,
+                                    'contact_email':
+                                    settings.DEFAULT_FROM_EMAIL}
+                            ),
+                            from_email=settings.DEFAULT_FROM_EMAIL,
+                            recipient_list=[request.user.email],
+                            fail_silently=False,
+                        )
+                        return render(request, 'payment_confirmed.html')
+                    else:
+                        messages.error(request, "Unable to take payment")
+
                 except Listing.DoesNotExist:
                     messages.error(
                         request,
                         'This listing is no longer available.')
                     order.delete()
                     return redirect(reverse('bag'))
-
-            try:
-                customer = stripe.Charge.create(
-                    # total multiplied by 100 as Stripe uses cents
-                    amount=int(total * 100),
-                    currency="EUR",
-                    # who the payment came from on Stripe dashboard
-                    description=request.user.email,
-                    card=payment_form.cleaned_data['stripe_id']
-                )
-            except stripe.error.CardError:
-                messages.error(request, 'Your card was declined!')
-
-            if customer.paid:
-                messages.error(request, 'You have successfully paid')
-                request.session['bag'] = {}
-                listing.is_active = False
-                listing.save()
-                send_mail(
-                    subject=render_to_string(
-                        'confirm_email/email_subject.txt',
-                        {'order': order}),
-                    message=render_to_string(
-                        'confirm_email/email_body.txt',
-                        {
-                            'order': order,
-                            'contact_email': settings.DEFAULT_FROM_EMAIL}
-                    ),
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[request.user.email],
-                    fail_silently=False,
-                )
-                return render(request, 'payment_confirmed.html')
-            else:
-                messages.error(request, "Unable to take payment")
 
         else:
             print(payment_form.errors)
