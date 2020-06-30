@@ -12,10 +12,10 @@ from .models import Profile
 def dashboard(request):
     '''
     Simple view for dashboard with two buttons
-    to redirect to edit profile or add listing'''
-    user = request.user
-    previous_orders = user.orders.all()
-
+    to redirect to edit profile.
+    One button changing for user type
+    - to add listing for dismantler
+    - to view past orders for dealer'''
     try:
         profile = Profile.objects.get(user=request.user)
         user_type = profile.user_type
@@ -23,7 +23,6 @@ def dashboard(request):
         context = {
             'profile': profile,
             'user_type': user_type,
-            'previous_orders': previous_orders,
         }
 
         return render(request, 'dashboard.html', context)
@@ -91,6 +90,19 @@ def add_profile_details(request):
             }
 
     return render(request, 'profile.html', context)
+
+
+@login_required
+def view_orders(request):
+    '''
+    View past orders for dealer'''
+    user = request.user
+    previous_orders = user.orders.all()
+
+    return render(
+        request,
+        'vieworders.html',
+        {'previous_orders': previous_orders})
 
 
 @login_required

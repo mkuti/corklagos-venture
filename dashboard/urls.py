@@ -5,6 +5,7 @@ from .views import (
     get_and_create_listing,
     view_and_edit_listing,
     delete_listing,
+    view_orders
 )
 
 urlpatterns = [
@@ -16,6 +17,10 @@ urlpatterns = [
         'profile/',
         add_profile_details,
         name='editprofile'),
+    path(
+        'vieworders/',
+        view_orders,
+        name='vieworders'),
     path(
         'addlisting/',
         get_and_create_listing,
