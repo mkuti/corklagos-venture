@@ -202,7 +202,7 @@ __Feature 12: Call to register__
 __Feature 13: Register Box__
 - A button to sign in if user has already registered.
 - Form to enter username, email address and twice password.
-- Form is designed by Django-Allauth package and we decided in the configuration settings to ask the password twice.
+- Form is designed by Django-Allauth package and we decided in the configuration __settings__ to ask the password twice.
 
 __Feature 14: What types of users__
 - Explain the types of users and their special accesses.
@@ -237,7 +237,7 @@ __Feature 18: View and add a new listing__
 - If no current listings, banner announcing no current listings.
 - Form to add listing displayed in two different columns on larger screens, one column on smaller screens.
 - Drop down menu for categories and makes.
-- An option to upload a product image which will be saved to the media folder in AWS as set up in settings.py.
+- An option to upload a product image which will be saved to the media folder in AWS as set up in __settings.py__.
 - As soon as the listing is added, it shows on the same page above and the page reload with blank form for a new listing.
 
 __Feature 19: Edit a listing__
@@ -338,7 +338,7 @@ If category or make are deleted, the listing does not get deleted and the relate
 Listing is also related to User model for its owner. If user gets deleted, all related listings also get deleted.
 The choice of user_type is defined within the same model.
 
-The Listing model uses Pillow to store all image files in an AWS S3 bucket via a media folder configured in settings.
+The Listing model uses Pillow to store all image files in an AWS S3 bucket via a media folder configured in __settings__.
 
 | Name         |  Validation     | Key type   |
 |---------------|----------|-------------------|
@@ -584,20 +584,15 @@ Ensue to create free accounts with the following online services in order to run
 ```pip3 install -r requirements.txt```
 5. In your local IDE create a file called `env.py`.
 6. Inside the env.py file, add all the following environment variables which you will need for the project and you will access via import env:
-- os.environ["DEVELOPMENT"] = "1"
-- os.environ.setdefault(
-    'SECRET_KEY', 'secretkeyhere')
-os.environ.setdefault(
-    'STRIPE_PUBLISHABLE', 'stripepublishablekey')
-os.environ.setdefault(
-    'STRIPE_SECRET', 'stripesecretkey')
-os.environ.setdefault(
-    'DATABASE_URL',
-    'postgresdatabaseurl')
-os.environ.setdefault(
-    'AWS_SECRET_ACCESS_KEY', 'awssecretkey')
-os.environ.setdefault(
-    'AWS_ACCESS_KEY_ID', 'awsaccesskey')
+
+`os.environ["DEVELOPMENT"] = "1"`
+`os.environ.setdefault('SECRET_KEY', 'secretkeyhere')`
+`os.environ.setdefault('STRIPE_PUBLISHABLE', 'stripepublishablekey')`
+`os.environ.setdefault('STRIPE_SECRET', 'stripesecretkey')`
+`os.environ.setdefault('DATABASE_URL','postgresdatabaseurl')`
+`os.environ.setdefault('AWS_SECRET_ACCESS_KEY', 'awssecretkey')`
+`os.environ.setdefault('AWS_ACCESS_KEY_ID', 'awsaccesskey')`
+
 7. Make sure to add env.py to a .gitignore file so it's not pushed to the repository.
 8. Enter the following command into the terminal to migrate models into database.
 `python3 manage.py migrate`
@@ -627,7 +622,7 @@ To deploy the app to heroku, you would need to follow the following steps:
 
 6. Confirm the linking of the heroku app to the correct GitHub repository.
 
-7. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+7. In the heroku dashboard for the application, click on __Settings__ > "Reveal Config Vars".
 
 8. Set the following config vars:
 
@@ -675,30 +670,30 @@ In my testing document, I have referred each resource, Slack thread or Stack Ove
 2. Logout functionality
 
 For the logout feature on POST without the confirmation page, I followed the recommendation of django-allauth documentation to use Javascript [here](https://django-allauth.readthedocs.io/en/latest/views.html#logout). I then used a number of different github and Stack Overflow discussions to implement the Javascript feature.
-- [https://stackoverflow.com/questions/43606056/proper-django-csrf-validation-using-fetch-post-request](https://stackoverflow.com/questions/43606056/proper-django-csrf-validation-using-fetch-post-request)
-- [https://stackoverflow.com/questions/3521290/logout-get-or-post](https://stackoverflow.com/questions/3521290/logout-get-or-post)
-- [https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-CSRF_COOKIE_HTTPONLY](https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-CSRF_COOKIE_HTTPONLY)
+- [Stack Overflow](https://stackoverflow.com/questions/43606056/proper-django-csrf-validation-using-fetch-post-request)
+- [Stack Overflow](https://stackoverflow.com/questions/3521290/logout-get-or-post)
+- [Django documentation](https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-CSRF_COOKIE_HTTPONLY)
 
 3. Shortening the order number on past orders view
 
-|truncatechars:10 from https://github.com/ckz8780/boutique_ado_v1/blob/master/profiles/templates/profiles/profile.html
+|truncatechars:10 from [Boutique Ado mini-project](https://github.com/ckz8780/boutique_ado_v1/blob/master/profiles/templates/profiles/profile.html).
 
 4. How to css flip card
 
-[https://www.w3schools.com/howto/howto_css_flip_card.asp](https://www.w3schools.com/howto/howto_css_flip_card.asp)
+[W3 Schools](https://www.w3schools.com/howto/howto_css_flip_card.asp)
 
 5. Navbar with centered logo
 
-[https://bootstrapcreative.com/pattern/navbar-centered-logo-links-left-right/](https://bootstrapcreative.com/pattern/navbar-centered-logo-links-left-right/)
+[Boostrap Creative](https://bootstrapcreative.com/pattern/navbar-centered-logo-links-left-right/)
 
 6. Remove asterisk from the crispy forms fields
 
-[https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=remove%20label_suffix%20on%20required#change-required-fields](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=remove%20label_suffix%20on%20required#change-required-fields)
+[Django Crispy Forms documentation](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=remove%20label_suffix%20on%20required#change-required-fields)
 
 7. Modify a boolean field in django
 
-- [https://stackoverflow.com/questions/42089277/how-to-modify-a-boolean-field-model-in-django](https://stackoverflow.com/questions/42089277/how-to-modify-a-boolean-field-model-in-django)
-- [https://www.geeksforgeeks.org/booleanfield-django-models/](https://www.geeksforgeeks.org/booleanfield-django-models/)
+- [Stack Overflow](https://stackoverflow.com/questions/42089277/how-to-modify-a-boolean-field-model-in-django)
+- [Geeks for Geeks](https://www.geeksforgeeks.org/booleanfield-django-models/)
 
 8. Credits to [Malia Havlicek](https://github.com/maliahavlicek) for providing the code of the border-image inside the body so the border banner could be beautifully rendered. See [commit 870d8241a11bc76b7439503c442b91802f7e45b3](https://github.com/mkuti/corklagos-venture/commit/870d8241a11bc76b7439503c442b91802f7e45b3).
 
@@ -717,7 +712,7 @@ To my study-buddy [Malia Havlicek](https://github.com/maliahavlicek) who has con
 To [Chris Z.](https://github.com/ckz8780) for always answering my questions, even when I am sinking under my own complexity, for trying to provide guidance and resources without giving solutions. This helped me to push further and resolve my own issues which was so great!
 
 To my two sons Léon and Seyi whose time with me has been sacrificed hugely lately, for being patient with me when I am tired after sleepless nights.
-To my husband who has provided support to me and care for our children in the past year.
+To my husband who has given so much support to me and care for our children in the past year.
 
 ##### Disclaimer:
 The content of the website is for educational purposes only.
