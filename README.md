@@ -31,7 +31,6 @@ Both users can edit their profile details and view the available listings.
 
 ## Table of Contents
 
-* [Introduction](#introduction)
 * [UX](#ux)
     * [Strategy Plane:](#why-and-what)
         * [What are the goals and needs of the user?](#4-what-are-the-goals-and-needs-of-the-user)
@@ -62,7 +61,7 @@ Both users can edit their profile details and view the available listings.
 
 The website needs to be very streamline, traditional and classic. After speaking with some clients on both sides, either the site owners or the clients are not very big internet users so are not interested in innovation or images, they're busy and want to go straight to their own particular tasks. 
 
-### 8. User stories
+### User stories
 
 #### Venture owner 
 1. As a user, I want to have a new online presence.
@@ -94,7 +93,7 @@ The website needs to be very streamline, traditional and classic. After speaking
 
 ## Scope plane: How?
 
-### 1. Existing Features:
+### Existing Features:
 ### Features which appear on every page:
 
 __Feature 1: Navbar__
@@ -267,16 +266,91 @@ __Feature 27: Submit payment button__
 
 [Back to Top](#table-of-contents) 
 
-## Structure plane: Organisation and functionality?
+## Database Architecture
+### Choice of Database
+- As a framework Django works with SQL databases. During development on GitPod, since Django is a Python Web framework, and Python includes a lightweight database called SQLite, this is what I used.
+- For the production, I installed the Heroku Postgres addon which is a managed SQL database service provided directly by Heroku.
 
-### 1. Organisation of functionality and content
+### Data model
 
+#### Users
+I have chosen to use the [Django-Allauth](https://django-allauth.readthedocs.io/en/latest/index.html) package to handle all authentication and registration.
 
-[Back to Top](#table-of-contents) 
+#### Profile
+From the user model, I have then created a profile model, associated with the user by a OneToOneField.
+The profile model exists within the dashboard app but is being imported and used throughout the project.
+The 2nd field for address is optional, the county is optional because not for Nigeria, country is optional for Irish dismantlers.
+A profile gets deleted when its related model, user, is deleted with the following validation: on_delete=models.CASCADE.
 
-### 2. Data structure
+| Name         |  Validation     | Key type   |
+|---------------|----------|-------------------|
+| user       |  on_delete=models.CASCADE | OneToOneField to User        |
+| user_type     |  max_length=15, choices=user_type, default=''   | CharField             |
+| business_name    |  max_length=50, blank=False   | CharField             |
+| phone |  max_length=20, blank=False   | CharField |
+| street_address |  max_length=50, blank=False   | CharField |
+| street_address2 |  max_length=50, blank=True   | CharField |
+| postcode |  max_length=20, blank=True   | CharField |
+| city |  max_length=30, blank=False   | CharField |
+| county |  max_length=30, blank=True   | CharField |
+| country |  max_length=30, blank=True   | CharField |
 
+#### Listing
+The Listing model was created within the listings app to contain all details for a listing which will then be used for adding and edit a listing, displaying all available listings with a filter to its related model, category and make.
+If category or make are deleted, the listing does not get deleted and the related fields can stay blank.
+Listing is also related to User model for its owner. If user gets deleted, all related listings also get deleted.
+The choice of user_type is defined within the same model.
 
+The Listing model uses Pillow to store all image files in an AWS S3 bucket via a media folder configured in settings.
+
+| Name         |  Validation     | Key type   |
+|---------------|----------|-------------------|
+| listing_owner       |  on_delete=models.CASCADE, null=True | ForeignKey to User         |
+| listing_category     |  on_delete=models.SET_NULL, null=True   | ForeignKey to Category             |
+| listing_make     |  on_delete=models.SET_NULL, null=True   | ForeignKey to Make             |
+| is_active    |  null=False, blank=False, default=True   | BooleanField             |
+| listing_name |  max_length=50,    | CharField |
+| listing_description |     | TextField |
+| listing_price |  max_digits=6, decimal_places=2, validators=[MinValueValidator(20.00)]   | DecimalField |
+| listing_image |  upload_to='images'   | ImageField |
+
+#### Category
+The choice of categories is defined within the same model. A class of filter "ListingFilter" is then defined in a [filters.py](https://github.com/mkuti/corklagos-venture/blob/master/listings/filters.py) file created in the listings app. This applies to Category and Make models.
+
+| Name         |  Validation     | Key type   |
+|---------------|----------|-------------------|
+| name       |  max_length=15, choices=makes, null=False | CharField         |
+
+#### Make
+The choice of makes is defined within the same model.
+
+| Name         |  Validation     | Key type   |
+|---------------|----------|-------------------|
+| name       |  max_length=15, choices=categories, null=False | CharField         |
+
+#### Order
+The Order and OrderItem models are the checkout app, and are strictly related. The OrderLineItem cannot be created without an order as it hold the items of each order created and can be called with a related name. Those models are needed for users to create and pay for their orders.
+The order is related to the User model and if user gets deleted, the order will stay in the database for record purpose.
+
+| Name         |  Validation     | Key type   |
+|---------------|----------|-------------------|
+| user       |  on_delete=models.SET_NULL, null=True, blank=True, related_name='orders' | ForeignKey to User         |
+| full_name    |  max_length=50, blank=False   | CharField             |
+| street_address |  max_length=40, blank=False   | CharField |
+| street_address2 |  max_length=40, blank=True   | CharField |
+| postcode |  max_length=20, blank=True   | CharField |
+| city |  max_length=40, blank=False   | CharField |
+| country |  max_length=40, blank=False   | CharField |
+| date |  | DateField |
+| total |  blank=False, null=True   | IntegerField |
+| order_number |  default=uuid.uuid4, editable=False   | UUIDField |
+
+#### OrderLineItem
+| Name         |  Validation     | Key type   |
+|---------------|----------|-------------------|
+| order       |  on_delete=models.CASCADE, null=False, related_name='orderitems') | ForeignKey to Order         |
+| listing    |  on_delete=models.CASCADE, null=False   | ForeignKey to Listing            |
+| quantity |  blank=False   | IntegerField |
 
 [Back to Top](#table-of-contents) 
 	
