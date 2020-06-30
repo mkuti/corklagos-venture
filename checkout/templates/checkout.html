@@ -37,9 +37,6 @@
         method="POST"
         action="{% url 'checkout_details' %}">
             
-        <div id="credit-card-errors" style="display:none;">
-            <div class="alert-message block-message error" id="stripe-error-message"></div>
-        </div>
         <div class="form-group col-md-6 px-md-1">
             {{ order_form|crispy }}
         </div>
@@ -50,6 +47,9 @@
         <div class="row text-right">
             <div class="form-group px-1 mx-right">
                 <input class="btn btn-gal btn-wheel py-1 mb-3" id="submit_payment_btn" name="commit" type="submit" value="Submit your payment!">
+        </div>
+        <div id="credit-card-errors">
+            <div class="alert-message block-message error" id="stripe-error-message"></div>
         </div>
         </div>
     </form>  
