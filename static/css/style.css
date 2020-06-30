@@ -150,14 +150,6 @@ hr {
     color: #ff4000;
 }
 
-.centered-error {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 5rem;
-}
-
 /* nav */
 
 .logo{
