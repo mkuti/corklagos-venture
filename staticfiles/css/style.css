@@ -133,7 +133,7 @@ hr {
     padding: 1rem;
 }
 
-/* cripsy forms https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=remove%20label_suffix%20on%20required#change-required-fields */
+/* errors and forms */
 .asteriskField {
     display: none;
 }
@@ -197,7 +197,7 @@ hr {
 	-ms-flex-pack: center;
 	justify-content: center;
 	width: 100%;
-	min-height: 350px;
+	height: 100%;
 	background: url(../images/404.png) no-repeat center center;
     background-size: cover;
 }
