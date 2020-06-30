@@ -179,6 +179,24 @@ hr {
     cursor: pointer;
 }
 
+/* 404 page */
+#error-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 350px;
+	background: url(../images/404.png) no-repeat center center;
+    background-size: cover;
+}
+
 /* home background image, code inspired from https://bootstrapmade.com/demo/Company/ */
 #home-img {
     display: -webkit-box;
