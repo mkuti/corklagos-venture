@@ -115,12 +115,25 @@ __Feature 2: Footer__
 __Feature 3: African print left banner__
 - Since the business owners' country of origin and the purpose of the website is to trade with an African country and maybe more, we have added an African print as a left border which shows on every page and every screens. Its colors match perfectly the rest of the website and logo.
 
+__Feature 4: Feedback messages__
+
+
+### Features on Home page:
+__Feature 5: Background image__
+- A rich and detailed image of an engine.
+
+__Feature 6: Calls for action__
+- Calling the different types of user
+- If dismantler, you might want to sell, so login or register.
+- If car dealer, you're wondering what parts are available so go to check the latest.
+- The call boxes have the rich wheel color with some opacity so we can still see the rich background image underneath.
+
 ### Features on expertise page:
-__Feature 4: Photo and pitch__
+__Feature 7: Photo and pitch__
 - Photo shows modern business team, professional but smiling, ready to support their clients.
 - Pitch or slogan confirms the commitment, purpose and availability, reminding the users that the business is about an international trade. It also reassure the users of their engagement towards both sides of the business which is unique in the trade. 
 
-__Feature 5: Flipping cards__
+__Feature 8: Flipping cards__
 -  Unique way to introduce the abilities of a business by revealing those behind iconic animals from the African continent. 
 - The idea is to attract the eyes and catch the attention of the user by only showing the content behind photos.
 - A leopard with fierce and determined eyes which can reassure the users of the expertise and impressive goals of expansion displayed by the business.
@@ -128,11 +141,102 @@ __Feature 5: Flipping cards__
 - Giraffes inviting the users to participate in this goal of expansion and network.
 
 ### Features on Spare parts page:
-* Feature 5 - 
-* Feature 6 - 
-* Feature 7 - 
-* Feature 8 - 
-* Feature 9 - 
+__Feature 9: Filters__
+- The user can quickly see that the business is trying to specialise in certain categories and makes.
+- **By category*: With 5 categories to choose, the user can filter different parts and go back to all available parts.
+- **By make*: The user can choose between 3 different makes to filter through the parts.
+- If no listings available in a certain category or make, a message comes up.
+
+__Feature 10: Listings__
+- In a bootstrap horizontal card using the unique website colors, the listing is displayed with its image, category, name, description and price. 
+- The user does not have to go to another page, he can add to bag with a button.
+- If dismantler user clicks on the button, he has a warning message to advise he does not have the correct profile and is redirected to listings.
+
+### Features on Login and Register pages:
+we have used Django-Allauth package to implement authentication features and we've then customised our own templates.
+
+__Feature 4: Background image__
+- A rich and detailed image of an engine. Same as home page.
+
+__Feature 11: Login Box__
+- The same call box and colors as home page are used.
+- A button to reset password if forgotten.
+
+__Feature 12: Call to register__
+- If user never registered before, invited to register
+- Suggest to user that by registering, he can enjoy great services.
+- Small reminder about the types of car makes we sell and that our business is to export to Nigeria so we depend of downstream demand too.
+
+__Feature 13: Register Box__
+- A button to sign in if user has already registered.
+- Form to enter username, email address and twice password.
+- Form is designed by Django-Allauth package and we decided in the configuration settings to ask the password twice.
+
+__Feature 14: What types of users__
+- Explain the types of users and their special accesses.
+
+### Features on Dashboard pages
+__Feature 4: Background image__
+- A rich and detailed image of an engine. Same as home page.
+
+__Feature 15: Welcome banner__
+- The same call box and colors as home page are used but taking the whole width of the screen.
+- Welcoming the user with his business name.
+- Showing the profile details: address, email address, phone number, using font awesome icons to give more attention to the section.
+
+__Feature 16: Calls for action__
+- Since we display the user's details, we then give them a button to go and edit the details if they want.
+- If user is dismantler, 2nd button is to add a new listing.
+- If user is dealer, 2nd button is to review past orders.
+
+__Feature 17: Edit Profile__
+- A form displayed in two different columns on larger screens, one column on smaller screens.
+- Form comes from the EditProfileForm and if user has already a profile, his details will be already pre-filled.
+- If user changes one or no details, the form will save what is already pre-filled.
+- Button to add a new listing if user is dismantler
+- Button to Review past orders if user is car dealer
+
+__Feature 18: View and add a new listing__
+- Only accessible for user with dismantler type.
+- View current listings of the user displayed as cards, with only the image and the name.
+- Button on the listing to edit or remove the listing.
+- If no current listings, banner announcing no current listings.
+- Form to add listing displayed in two different columns on larger screens, one column on smaller screens.
+- Drop down menu for categories and makes.
+- An option to upload a product image which will be saved to the media folder in AWS as set up in settings.py.
+- As soon as the listing is added, it shows on the same page above and the page reload with blank form for a new listing.
+
+__Feature 19: Edit a listing__
+- Only accessible for user with dismantler type.
+- Same form as add a listing is displayed in one column next to the listing details
+- All listing details are also pre-filled as an instance on the form.
+- If user changes one or no details, the form will save what is already pre-filled.
+- Once listing is edited, the user is redirect to view current listings.
+
+__Feature 20: Review past orders__
+- Only accessible for user with dealer type.
+- Looping through the user's past orders.
+- Past orders are displayed as a table.
+- Within each order, to loop through any items and display a single item on its own row.
+- Displaying the date, the order number, the listing name, make and price as well as the total of the order.
+
+### Features on Bag page
+__Feature 21: View bag items__
+- Looping through the bag, displaying each item on its own row, with same details as on the listings page
+- On the card, button to remove listing from shopping bag.
+
+__Feature 22: Remove from bag__
+- When user clicks on remove listing from the shopping bag, the listing pops out of the bag and the user gets redirected to the bag with the item not showing anymore.
+
+__Feature 23: Total__
+- Total made of the addition of number of listings and their respective price.
+
+__Feature 24: Checkout button__
+- Takes the user to the checkout form
+
+### Features on Checkout page
+
+
 
 ### 2. Features Left to Implement:
 * In the future, to be even more secure, we will remove the user_type field from the profile_form if profile exists already, so users cannot change their profile access themselves.
