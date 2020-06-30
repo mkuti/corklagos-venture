@@ -235,7 +235,7 @@ __Feature 24: Checkout button__
 - Takes the user to the checkout form
 
 ### Features on Checkout page
-
+__Feature 25: Checkout button__
 
 
 ### 2. Features Left to Implement:
