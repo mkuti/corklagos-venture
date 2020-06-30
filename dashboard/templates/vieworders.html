@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+<main class="container-fluid">
+    <div class="row mx-md-5 mx-1 my-3">
+        <div class="col-12 text-uppercase border-bottom">
+            <h2>Your past orders</h2>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row text-center">
+            {% for order in previous_orders %}
+            <div class="col-8 col-md-6 col-lg-4 mx-auto px-2">
+                <div class="card mx-md-2 mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-12 text-left">
+                            <h5 class="card-title px-3 text-oxford text-uppercase">{{ order.date|date:"d/m/y" }}</h5>
+                        </div>
+                        {% for item in order.orderitems.all %}
+                        <div class="col-12">
+                            <div class="row no-gutters">
+                                <div class="col-8">
+                                    <p class="text-oxford border-bottom">
+                                        {{ item.listing.listing_make }} {{ item.listing.listing_name }}
+                                    </p>
+                                </div>
+                                <div class="col-3">
+                                    <p class="text-oxford">
+                                        {{ item.listing.listing_price }}
+                                        <i class="fas fa-euro-sign"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="col-12">
+                            <h5 class="card-title px-3 text-wheel text-uppercase">Total: €{{ order.total }}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+{% endblock %}
