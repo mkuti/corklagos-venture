@@ -33,6 +33,7 @@
                 {% csrf_token %}
                 
                 <div class="row">
+                    <small class="pb-2 text-wheel">A car dealer can only view and buy listings while an Irish dismantler can only add listings to be sold.</small>
                     <div class="col-12 col-md-6 px-md-3">
                         {{ profile_form.user_type|as_crispy_field }}
                         {{ profile_form.business_name|as_crispy_field }}
