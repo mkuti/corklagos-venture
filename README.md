@@ -462,21 +462,22 @@ All test listings image and details were inspired from [CarPartsNigeria](https:/
 - [GitPod](gitpod.io) - I used __GitPod__ as my IDE for the development of this website.
 
 ### Languages:
-- __HTML__ language is used to create the structure of the website and game.
-- __CSS__ language is used to add styling on the structure of the website.
-- __Javascript__ functioning language is used to fetch external data and add interactivity on the website.
-- __Python__ Object-oriented programming and structured programming language which allows smooth communication between the backend and frontend. 
+- __HTML__ 
+- __CSS__ 
+- __Javascript__ 
+- __Python__ 
 
 ### Frameworks & Libraries:
 - [Django](https://www.djangoproject.com/)
 - [django-allauth](https://django-allauth.readthedocs.io/en/latest/index.html)
 - [django-filter](https://django-filter.readthedocs.io/en/latest/index.html)
+- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/)
 - [jQuery](https://jquery.com/) 
 - [Popper.js](https://popper.js.org/)
 - [Git](https://git-scm.com/)
-- [Bootstrap](https://getbootstrap.com/) - The website is using __Bootstrap__ as the basic structure and grid of the website and to increase the responsiveness of the website.
-- [FontAwesome](https://kit.fontawesome.com/f7e192f540.js) - The website is using __Font Awesome__ to display the social media icons in my footer
-- [Google Fonts](https://fonts.google.com/)- The website uses __Google font__- Url imported in CSS
+- [Bootstrap](https://getbootstrap.com/) 
+- [FontAwesome](https://kit.fontawesome.com/f7e192f540.js) 
+- [Google Fonts](https://fonts.google.com/)
 
 ### Tools
 - [AutoPrefixer](https://autoprefixer.github.io/) - I have used __AutoPrefixer__ to make sure the css code worked on all browsers
