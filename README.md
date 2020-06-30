@@ -486,6 +486,7 @@ This project used __HTML__, __CSS__, __Javascript__ and __Python__ as programmin
 - [Bootstrap](https://getbootstrap.com/) as a front-end open source toolkit, to handle the responsive grid system.
 - [jQuery](https://jquery.com/) to handle DOM traversal and manipulation, event handling, animation, and Ajax.
 - [Popper.js](https://popper.js.org/) used by Bootstrap for tooltip and popover positioning engine. 
+- [EmailJS](https://www.emailjs.com/) to send user's emails directly from JavaScript from the contact form.
 - [FontAwesome](https://fontawesome.com/) as an icon library.
 - [Google Fonts](https://fonts.google.com/) for the website fonts.
 
@@ -520,9 +521,7 @@ I went to Code Institute [full template repository](https://github.com/Code-Inst
 
 From that point, I could add, commit any update of my code and push it to the remote repository so it could be regularly backed up and accessed by others.
 
-### GitHub
-All versions and branches of the code are stored in github:
-
+__GitHub__: All versions and branches of the code are stored in github.
 
 ## How to run this project locally
 
@@ -536,25 +535,46 @@ The following **must be installed** on your machine:
 - [Python 3](https://www.python.org/downloads/)
 - [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
 - If you use Code Institute template, all the above will be already installed
-- [Django](https://docs.djangoproject.com/en/3.0/releases/3.0/)
-- 
-- 
-...
+
+Ensue to create free accounts with the following online services in order to run this project.
+- [Stripe](https://stripe.com/ie)
+- [EmailJS](https://www.emailjs.com/)
+- [Travis CI](https://travis-ci.org/) can be connected with GitHub credentials.
+- [AWS S3](https://s3.console.aws.amazon.com/s3)
 
 ### Instructions
-1. Install all required modules with the command 
+1. Clone the git repository by downloading it [here](https://github.com/mkuti/corklagos-venture) or typing the following command in your terminal:
+`git clone https://github.com/mkuti/corklagos-venture`
+2. Once you're in the new project, set virtual environments (You do not have to do this in GitPod) with the following command in your terminal:
+`python3 -m .venv venv`
+3. Initialize the environment by using the following command:
+`.venv\bin\activate`
+4. Install all required modules with the command 
 ```pip3 install -r requirements.txt```
-
-2. In your local IDE create a file called `env.py`
-
-3. Inside the env.py file, create a SECRET_KEY variable 
-
-4. Make sure to add env.py to a .gitignore file so it's not pushed to the repository
-
-4. You can now run the application with the command
+5. In your local IDE create a file called `env.py`.
+6. Inside the env.py file, add all the following environment variables which you will need for the project and you will access via import env:
+- os.environ["DEVELOPMENT"] = "1"
+- os.environ.setdefault(
+    'SECRET_KEY', 'secretkeyhere')
+os.environ.setdefault(
+    'STRIPE_PUBLISHABLE', 'stripepublishablekey')
+os.environ.setdefault(
+    'STRIPE_SECRET', 'stripesecretkey')
+os.environ.setdefault(
+    'DATABASE_URL',
+    'postgresdatabaseurl')
+os.environ.setdefault(
+    'AWS_SECRET_ACCESS_KEY', 'awssecretkey')
+os.environ.setdefault(
+    'AWS_ACCESS_KEY_ID', 'awsaccesskey')
+7. Make sure to add env.py to a .gitignore file so it's not pushed to the repository.
+8. Enter the following command into the terminal to migrate models into database.
+`python3 manage.py migrate`
+9. Create a 'superuser' for the project by entering the following command in the terminal and give all required credentials when prompted:
+`python3 manage.py createsuperuser`
+10. You can now run the application with the command
 ```python3 manage.py runserver```
-
-9. You can visit the website at ``
+11. The website is now running locally. 
 
 ## Heroku Deployment
 
@@ -568,23 +588,41 @@ To deploy the app to heroku, you would need to follow the following steps:
 
 3. Create a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in your dashboard. Give it a name and set the region to Europe.
 
-4. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+4. Install add-ons, Heroku Postgres database.
 
-5. Confirm the linking of the heroku app to the correct GitHub repository.
+5. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
 
-6. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+6. Confirm the linking of the heroku app to the correct GitHub repository.
 
-7. Set the following config vars:
+7. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+8. Set the following config vars:
 
 | Key | Value |
  --- | ---
-SECRET_KEY | `<your_secret_key>`
+SECRET_KEY | `your_secret_key`
+AWS_ACCESS_KEY_ID | `aws_access_key`
+AWS_SECRET_ACCESS_KEY | `aws_secret_key`
+DATABASE_URL | `postgres_database_url`
+EMAIL_HOST_PASS | `email_host_password`
+EMAIL_HOST_USER | `host_email_adddress`
+SECRET_KEY | `django_secret_key`
+STRIPE_PUBLISHABLE | `stripe_publishable`
+STRIPE_SECRET | `stripe_secret`
+USE_AWS | `True` (AWS Bucket name and region in [settings.py](https://github.com/mkuti/corklagos-venture/blob/master/corklagos/settings.py))
+EMAILJS_USER_ID | `email_js_user_id`
 
-8. In the heroku dashboard, click "Deploy".
+9. Move all models to the new heroku database by typing the following command in the terminal:
+`python3 manage.py migrate`
 
-9. In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
+10. Create a 'superuser' for the new database by entering the following command in the terminal and give all required credentials when prompted:
+`python3 manage.py createsuperuser`
 
-10. The site is now successfully deployed [here](https://corklagos-venture.herokuapp.com/).
+11. In the heroku dashboard, click "Deploy".
+
+12. In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
+
+13. The site is now successfully deployed [here](https://corklagos-venture.herokuapp.com/).
 
 [Back to Top](#table-of-contents) 
 
