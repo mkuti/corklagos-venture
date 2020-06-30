@@ -509,7 +509,7 @@ This project used __HTML__, __CSS__, __Javascript__ and __Python__ as programmin
 
 # Testing
 
-I created a separate document for Testing writeup which can be found [here](https://github.com/mkuti/corklagos-venture/blob/master/test.md)
+I created a separate document for Testing writeup which can be found [here](https://github.com/mkuti/corklagos-venture/blob/master/TESTING.md)
 
 [Back to Top](#table-of-contents) 
 
