@@ -366,6 +366,11 @@ hr {
     font-size: 1rem;
 }
 
+.links-item div a:hover {
+    text-decoration: none;
+    color: #ff4000;
+}
+
 .fa-github-square {
     font-size: 2rem;
 }
