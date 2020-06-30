@@ -403,14 +403,6 @@ Please find a few wireframes showing the main page, the Our Team, the signup and
 </div>
 
 <div align="center">
-    <img src="wireframes/account-desktop.png" alt="Wireframe of Account page on desktop" aria-label="Wireframe of Account page on desktop" />
-</div>
-
-<div align="center">
-    <img src="wireframes/account-mobile.png" alt="Wireframe of Account page on mobile" aria-label="Wireframe of Account page on mobile" />
-</div>
-
-<div align="center">
     <img src="wireframes/signup-desktop.png" alt="Wireframe of Signup page on desktop" aria-label="Wireframe of Signup page on desktop" />
 </div>
 
