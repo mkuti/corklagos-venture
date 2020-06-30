@@ -1,5 +1,4 @@
 const contactForm = document.getElementById('contact-form')
-console.log(contactForm)
 
 /**
  * Add event listener to send email via emailjs when contactform is submitted
