@@ -143,7 +143,9 @@ __Feature 3: African print left banner__
 - Since the business owners' country of origin and the purpose of the website is to trade with an African country and maybe more, we have added an African print as a left border which shows on every page and every screens. Its colors match perfectly the rest of the website and logo.
 
 __Feature 4: Feedback messages__
+- Using django messages, sending a warning, success or error message to the user whenever an action is being taken. On logout, I used Sweet Alert to have it styled differently and catch the attention of the user. Also used Sweet Alert to send a message to the user when contactform is submitted.
 
+[Back to Top](#table-of-contents) 
 
 ### Features on Home page:
 __Feature 5: Background image__
@@ -179,6 +181,8 @@ __Feature 10: Listings__
 - All active listings are displayed. When a product gets purchased, the products becomes inactive which means it cannot be purchased anymore.
 - The user does not have to go to another page, he can add to bag with a button.
 - If dismantler user clicks on the button, he has a warning message to advise he does not have the correct profile and is redirected to listings.
+
+[Back to Top](#table-of-contents) 
 
 ### Features on Login and Register pages:
 we have used Django-Allauth package to implement authentication features and we've then customised our own templates.
@@ -217,6 +221,8 @@ __Feature 16: Calls for action__
 - If user is dismantler, 2nd button is to add a new listing.
 - If user is dealer, 2nd button is to review past orders.
 
+[Back to Top](#table-of-contents) 
+
 __Feature 17: Edit Profile__
 - A form displayed in two different columns on larger screens, one column on smaller screens.
 - Form comes from the EditProfileForm and if user has already a profile, his details will be already pre-filled.
@@ -247,6 +253,8 @@ __Feature 20: Review past orders__
 - Past orders are displayed as a table.
 - Within each order, to loop through any items and display a single item on its own row.
 - Displaying the date, the order number, the listing name, make and price as well as the total of the order.
+
+[Back to Top](#table-of-contents) 
 
 ### Features on Bag page
 Bag items have been made available on all pages via a context.py file created inside bag app. We can call the bag_items and any of its arguments like total on any views or templates without importing the model.
@@ -281,6 +289,8 @@ __Feature 27: Submit payment button__
 - Django sends email to the user to confirm the payment.
 - Listing purchased becomes inactive in the backend so is not displayed anymore on listings page.
 
+[Back to Top](#table-of-contents) 
+
 ### 2. Features Left to Implement:
 * In the future, to be even more secure, we will remove the user_type field from the profile_form if profile exists already, so users cannot change their profile access themselves.
 * To have the user sign up with a full profile in one step. I tried to customise the user model with an adapter and create a customised signup form but could not save the profile and because of time, I chose to make the user create a full profile after registering and confirming their email address. But it would be faster to get them to sign up on the first step. 
@@ -290,7 +300,6 @@ __Feature 27: Submit payment button__
 * Add a currency converter for the Nigerian Car dealers to convert Euro to Naira
 * Add shipping costs and timelines when venture owners are more settled and have better visibility of shipping. Right now, it depends of so many factors they cannot control due to the ephemere networks. This website will hopefully help making a more regular and reliable shipping logistic.
 * Add more categories and makes when business starts booming.
-
 
 [Back to Top](#table-of-contents) 
 
@@ -342,6 +351,8 @@ The Listing model uses Pillow to store all image files in an AWS S3 bucket via a
 | listing_price |  max_digits=6, decimal_places=2, validators=[MinValueValidator(20.00)]   | DecimalField |
 | listing_image |  upload_to='images'   | ImageField |
 
+[Back to Top](#table-of-contents) 
+
 #### Category
 The choice of categories is defined within the same model. A class of filter "ListingFilter" is then defined in a [filters.py](https://github.com/mkuti/corklagos-venture/blob/master/listings/filters.py) file created in the listings app. This applies to Category and Make models.
 
@@ -381,8 +392,6 @@ A row of OrderLineItem is created for each item existing in the shopping bag whi
 | order       |  on_delete=models.CASCADE, null=False, related_name='orderitems') | ForeignKey to Order         |
 | listing    |  on_delete=models.CASCADE, null=False   | ForeignKey to Listing            |
 | quantity |  blank=False   | IntegerField |
-
-
 
 [Back to Top](#table-of-contents) 
 	
@@ -446,6 +455,8 @@ With a primary audience of men and the website main goal in attracting more user
 To add an extra tribal reminder for Africa, took a screenshot of a colorful print and placed it as a vertical banner on the left only for big screen sizes.
 [African print](https://images.fabric.com/images/605/605/0692828.jpg)
 
+[Back to Top](#table-of-contents) 
+
 ##### Logo:
 I used [Hatchful Shopify](https://hatchful.shopify.com/) to find the most suitable logo. With the keywords of the website in my head, I first selected the bold, reliable and energetic visual styles for the logo. I instantly picked one suggestion of logo with the earth and enveloppe going around. See [the original logo](https://raw.githubusercontent.com/mkuti/corklagos-venture/master/static/images/originallogo.png). It looked smart and bold. I changed slightly the style to have the business name outside the icon which gave a more professional look. I also straight away chose to have the contrast between blue and orange, which made me think of the bold colors of Africa. [JimLynx](https://github.com/JimLynx) in Slack re-worked on the logo for me to make it cleaner and brighter.
 
@@ -460,21 +471,7 @@ __[Crimson Text](https://fonts.google.com/specimen/Crimson+Text?preview.text=We%
 While Lato is representing the corporate and reliable character of the website, Crimson Text is giving that flash of innovation for small parts of the website without overwhelming the user with a different or unknown style. 
 It is used for the slogan and any direct messages to the user.
 
-##### Icons:
-Without flooding too much the website with icons everywhere, I am only mainly using the icons for the categories and brands associated with the product listings so the user can quickly identify the category even if the word itself does not give a meaning.
-
-##### Images:
-
-Again, I wanted to have the website as simple and effective as possible so used only a few images.
-I will have a full background image on the home page, slightly faded below the main elements of the page, showing a car dismantled.
-For the expertise page presenting the business, I downloaded an image of a business woman and man looking very professional and friendly. And I also downloaded the photos of animals from Pexels, referred with their author below.
-- [Photo of the car motor](https://www.pexels.com/photo/close-up-photo-of-black-and-silver-car-engine-3757226/) by [Hebert Santos](https://www.pexels.com/@hebert-santos-1346254) from Pexels
-- [Photo of business man and woman](https://www.pexels.com/photo/man-and-woman-smiling-inside-building-1367269/) by [Rebrand Cities](https://www.pexels.com/@rebrand-cities-581004) from Pexels
-- [Photo of leopard ](https://www.pexels.com/photo/animal-eyes-big-dangerous-87403/) by [Public Domain Pictures](https://www.pexels.com/@public-domain-pictures) from Pexels
-- [Photo of eagle](https://www.pexels.com/photo/flight-bird-beak-eagle-3959918/) by [Frank Cone](https://www.pexels.com/@frank-cone-140140) from Pexels
-- [Photo of giraffe](https://www.pexels.com/photo/pattern-formation-wild-animals-south-africa-34098/) by [Pixabay](https://www.pexels.com/@pixabay) from Pexels
-
-All test listings image and details were inspired from [CarPartsNigeria](https://www.carpartsnigeria.com).
+[Back to Top](#table-of-contents) 
 
 # Technologies Used: 
 
@@ -524,6 +521,19 @@ This project used __HTML__, __CSS__, __Javascript__ and __Python__ as programmin
 - [Sweetalert2](https://sweetalert2.github.io/)
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) to show content structure, margin and paddings and fix any offset
 - [Techsini Multi-Mockup](https://techsini.com/multi-mockup/index.php) to create multi-device photo of README
+
+[Back to Top](#table-of-contents) 
+
+# Media and content used:
+I have a full background image on the home page, slightly faded below the main elements of the page, showing a car dismantled.
+For the expertise page presenting the business, I downloaded an image of a business woman and man looking very professional and friendly. And I also downloaded the photos of animals from Pexels, referred with their author below.
+- [Photo of the car motor](https://www.pexels.com/photo/close-up-photo-of-black-and-silver-car-engine-3757226/) by [Hebert Santos](https://www.pexels.com/@hebert-santos-1346254) from Pexels
+- [Photo of business man and woman](https://www.pexels.com/photo/man-and-woman-smiling-inside-building-1367269/) by [Rebrand Cities](https://www.pexels.com/@rebrand-cities-581004) from Pexels
+- [Photo of leopard ](https://www.pexels.com/photo/animal-eyes-big-dangerous-87403/) by [Public Domain Pictures](https://www.pexels.com/@public-domain-pictures) from Pexels
+- [Photo of eagle](https://www.pexels.com/photo/flight-bird-beak-eagle-3959918/) by [Frank Cone](https://www.pexels.com/@frank-cone-140140) from Pexels
+- [Photo of giraffe](https://www.pexels.com/photo/pattern-formation-wild-animals-south-africa-34098/) by [Pixabay](https://www.pexels.com/@pixabay) from Pexels
+- All test listings image and details were inspired and taken from [CarPartsNigeria](https://www.carpartsnigeria.com).
+- [404 and 500 pages](https://www.kapwing.com/404-illustrations)
 
 [Back to Top](#table-of-contents) 
 
@@ -596,6 +606,8 @@ os.environ.setdefault(
 10. You can now run the application with the command
 ```python3 manage.py runserver```
 11. The website is now running locally. 
+
+[Back to Top](#table-of-contents) 
 
 ## Heroku Deployment
 
@@ -693,6 +705,8 @@ For the logout feature on POST without the confirmation page, I followed the rec
 9. Credits to [JimLynx](https://github.com/JimLynx) in Slack who re-worked on the logo for me to make it cleaner and brighter.
 
 10. Credits to [Simen Dehlin](https://github.com/Eventyret) for helping me to find the forgotten inline styling on the html logo element which could not render the logo well on large screens.
+
+[Back to Top](#table-of-contents) 
 
 # Special thanks
 
