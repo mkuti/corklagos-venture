@@ -157,6 +157,10 @@ hr {
     height: 70px;
 }
 
+.navbar-brand {
+    margin: 0;
+}
+
 .nav-item {
     color: #ff4000;
     text-decoration: none;

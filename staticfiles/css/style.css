@@ -142,11 +142,23 @@ hr {
     color: inherit;
 }
 
+#credit-card-errors {
+    display:none;
+}
+
+#stripe-error-message {
+    color: #ff4000;
+}
+
 /* nav */
 
 #logo-lg {
     margin: 0 3rem 0;
     height: 70px;
+}
+
+.navbar-brand {
+    margin: 0;
 }
 
 .nav-item {
