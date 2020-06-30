@@ -497,12 +497,6 @@ I created a separate document for Testing writeup which can be found [here](http
 
 [Back to Top](#table-of-contents) 
 
-# Media and Content origin
-1. 
-2. 
-
-[Back to Top](#table-of-contents) 
-
 # Deployment
 I have been using the Integrated development environment (IDE) [GitPod](gitpod.io) to develop this milestone project.
 As I used it for the first time and Code Institute changed the preferred IDE for the whole course, I was lucky to avail of the full template prepared by Code Institute at the time.
