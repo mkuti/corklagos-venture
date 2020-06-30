@@ -25,56 +25,12 @@
                 <div class="mx-md-5 my-3 crimson">
                     <a class="btn btn-head btn-oxford text-wheel text-uppercase" href="{% url 'addlisting' %}">Add a new listing</a>
                 </div>
+                {% else %}
+                <div class="mx-md-5 my-3 crimson">
+                    <a class="btn btn-head btn-oxford text-wheel text-uppercase" href="{% url 'vieworders' %}">View your past orders</a>
+                </div>
             </div>
         </div>
-         {% else %}
-         <div class="col-12">
-            <div class="row mx-md-5 mx-1 my-3">
-                <div class="col-12 text-uppercase text-oxford bg-wheel text-center">
-                    <h2>Your past orders:</h2>
-                    <hr>
-                </div>
-            </div>
-         </div>
-         <div class="col-12">
-            <div class="row text-center">
-                {% for order in previous_orders %}
-                <div class="col-12 col-md-4 px-2">
-                    <div class="listing-section mx-md-2 mb-3">
-                        <div class="row no-gutters">
-                            <div class="col-12">
-                                <h5 class="card-title px-3 text-wheel text-uppercase">{{ order.date }}</h5>
-                                <h5 class="card-title px-3 text-wheel text-uppercase">Order {{ order.order_number|truncatechars:10}}</h5>
-                            </div>
-                            {% for item in order.orderitems.all %}
-                            <div class="col-12">
-                                <div class="row no-gutters">
-                                    <div class="col-6">
-                                        <p class="text-wheel text-uppercase">
-                                            {{ item.listing.listing_name }}
-                                        </p>
-                                    </div>
-                                    <div class="col-3">
-                                        <p class="text-beige text-left"> {{ item.listing.listing_make }}</p>
-                                    </div>
-                                    <div class="col-3">
-                                        <p class="text-beige">
-                                            {{ item.listing.listing_price }}
-                                            <i class="fas fa-euro-sign"></i>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                            <div class="col-12">
-                                <h5 class="card-title px-3 text-wheel text-uppercase">Total: €{{ order.total }}</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-         </div>
         {% endif %}
     </div>        
 </section>
