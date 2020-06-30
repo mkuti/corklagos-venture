@@ -3,6 +3,7 @@
 /* general elements styling */
 
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -18,6 +19,7 @@ body {
     background-color: #feefdd;
     font-family: "Lato", sans-serif;
     border: 22px solid transparent;
+    -o-border-image: url(https://corklagos.s3.amazonaws.com/static/images/tribal.png) 33%;
     border-image: url(https://corklagos.s3.amazonaws.com/static/images/tribal.png) 33%;
     border-right: none;
     border-bottom: none;
@@ -67,7 +69,7 @@ hr {
     background-color: #03254e;
 }
 
-.bg-melon {
+.bg-sand {
     background-color: #d7af8e;
 }
 
@@ -87,7 +89,7 @@ hr {
     color: #ff4000;
 }
 
-.text-melon {
+.text-sand {
     color: #d7af8e;
 }
 
@@ -167,10 +169,17 @@ hr {
 
 /* home background image, code inspired from https://bootstrapmade.com/demo/Company/ */
 #home-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
-    width: 100%;
+	width: 100%;
 	min-height: 350px;
 	background: url(../images/engine.jpg) no-repeat center center;
     background-size: cover;
@@ -188,8 +197,15 @@ hr {
 
 /* flex and min/max-width required to allow bootstraps columns to work */
 .call-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     min-width: 300px;
     max-width: 500px;
@@ -202,7 +218,12 @@ hr {
 
 .listing-section {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     max-width: 100%;
     border: 5px solid #ff4000;
@@ -222,6 +243,7 @@ hr {
 .card-img {
     width: 100%;
     height: 190px;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -248,6 +270,8 @@ hr {
     width: 70%;
     background: url(../images/business.jpg) no-repeat center center;
     background-size: cover;
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
     transform: scaleX(-1);
     height: 40vh;
     opacity: 0.6;
@@ -265,39 +289,46 @@ hr {
 
 /* https://www.w3schools.com/howto/howto_css_flip_card.asp */
 .who-card {
-  background-color: transparent;
-  width: 100%;
-  height: 400px;
-  perspective: 1000px;
+    background-color: transparent;
+    width: 100%;
+    height: 400px;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
 }
 
 /* This container is needed to position the front and back side */
 .who-card-contain {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    -webkit-transition: -webkit-transform 0.8s;
+    transition: -webkit-transform 0.8s;
+    -o-transition: transform 0.8s;
+    transition: transform 0.8s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 /* Changed the flip to vertical to make it unique from copied code when you move the mouse over the flip box container */
 .who-card:hover .who-card-contain {
-  transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .who-card-reveal {
-  transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 /* Position the front and back side */
 .who-card-question, .who-card-reveal {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-  padding: 1rem;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    padding: 1rem;
 }
 
 .who-card-img {
