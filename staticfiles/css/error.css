@@ -1,6 +1,8 @@
 .container-error {
     position: relative;
     text-align: center;
+    font-family: "Crimson Text", sans-serif;
+    color: #ff4000;
 }
 
 .centered-error {
@@ -9,4 +11,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5rem;
+}
+
+.home-btn {
+    text-decoration: uppercase;
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: #03254e;
+    color: #ff4000;
+    margin-bottom: 100px;
+}
+
+div a {
+    text-decoration: none;
 }

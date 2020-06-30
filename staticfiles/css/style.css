@@ -124,8 +124,7 @@ hr {
 }
 
 .btn-wheel:hover {
-    background-color: #03254e;
-    color: #ff4000;
+    background-color:#d7af8e;
 }
 
 .btn-head {
@@ -367,7 +366,12 @@ hr {
     font-size: 1rem;
 }
 
-.links-item .fab {
+.links-item div a:hover {
+    text-decoration: none;
+    color: #ff4000;
+}
+
+.fa-github-square {
     font-size: 2rem;
 }
 
