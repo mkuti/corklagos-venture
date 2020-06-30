@@ -95,7 +95,7 @@ The website needs to be very streamline, traditional and classic. After speaking
 ## Scope plane: How?
 
 ### 1. Existing Features:
-#### Features which appear on every page:
+### Features which appear on every page:
 
 __Feature 1: Navbar__
 - The navbar provides the user a quick way to navigate around the website. 
@@ -115,7 +115,7 @@ __Feature 2: Footer__
 __Feature 3: African print left banner__
 - Since the business owners' country of origin and the purpose of the website is to trade with an African country and maybe more, we have added an African print as a left border which shows on every page and every screens. Its colors match perfectly the rest of the website and logo.
 
-#### Features on expertise page:
+### Features on expertise page:
 __Feature 4: Photo and pitch__
 - Photo shows modern business team, professional but smiling, ready to support their clients.
 - Pitch or slogan confirms the commitment, purpose and availability, reminding the users that the business is about an international trade. It also reassure the users of their engagement towards both sides of the business which is unique in the trade. 
@@ -127,6 +127,7 @@ __Feature 5: Flipping cards__
 - An eagle, showing the flexibility and connection of the business going beyond lands.
 - Giraffes inviting the users to participate in this goal of expansion and network.
 
+### Features on Spare parts page:
 * Feature 5 - 
 * Feature 6 - 
 * Feature 7 - 
