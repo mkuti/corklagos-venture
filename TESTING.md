@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-<a href="https://corklagos-venture.herokuapp.com/" target="_blank"><img src="static/images/logo.png" width='200' height='150' alt="logo"></a>
+<a href="https://corklagos-venture.herokuapp.com/" target="_blank"><img src="static/images/logo.png" width='400px' height='auto' alt="logo"></a>
 </div>
 
 <div align="center">
