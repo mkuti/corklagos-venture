@@ -346,11 +346,15 @@ The order is related to the User model and if user gets deleted, the order will 
 | order_number |  default=uuid.uuid4, editable=False   | UUIDField |
 
 #### OrderLineItem
+A row of OrderLineItem is created for each item existing in the shopping bag which then gets saved with the order. 
+
 | Name         |  Validation     | Key type   |
 |---------------|----------|-------------------|
 | order       |  on_delete=models.CASCADE, null=False, related_name='orderitems') | ForeignKey to Order         |
 | listing    |  on_delete=models.CASCADE, null=False   | ForeignKey to Listing            |
 | quantity |  blank=False   | IntegerField |
+
+
 
 [Back to Top](#table-of-contents) 
 	
