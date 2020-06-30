@@ -291,9 +291,16 @@ My log is showing the following: ```"GET /static/js/stripe.js HTTP/1.1" 304 0 <u
 
 ## Other issues found but yet unsolved
 
-### 1. 
-* __Issue__: Full background image not being displayed on Google Chrome of Huawei 
+### 1. Full background image not being displayed on Google Chrome of Huawei 
 * __Potential Fix__: Unsure as I did not have time to troubleshoot further.
+
+### 2. Rules required for password on signup form
+* __Issue__: Very strict rules for password but not displayed to the user. Only the message saying "password too common" is being displayed and the minimum of 8 characters. A tester compared the password finding to a guessing game!
+* __Potential Fix__: Since using Django-allauth package, and displaying whole form, did not manage to display specific message for passwords rules and did not find any resources on what are the exact rules.
+
+### 3. Input is invalid on the e-mail when submitting contactform
+* __Issue__: When submitting the contact form it's saying my input is invalid on the e-mail using a real email address however i got this to submit with all lowercase letters so looks it's not allowed Caps maybe?
+* __Potential Fix__: Would need to find another pattern for the email address but did not have the time to fix.
 
 I could not see any other issues or bugs during manually testing.
 
