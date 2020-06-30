@@ -140,9 +140,6 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
 WSGI_APPLICATION = 'corklagos.wsgi.application'
 
-CSRF_USE_SESSIONS = True
-CSRF_COOKIE_HTTPONLY = True
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
