@@ -1,34 +1,41 @@
 {% extends "account/base.html" %} {% load i18n %} {% block inner_content  %}
 
-  <!-- Sign up form -->
-  <div class="row text-center mx-2">
-    <div class="col-12 col-md-8 col-lg-6 mx-auto call-box">
-      <p>
-        {% blocktrans %}Already have an account? Then please
-        <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
-      </p>
-      <form
-        class="px-4 py-3 signup text-left"
-        id="signup_form"
-        method="POST"
-        action="{% url 'account_signup' %}"
-      >
-        {% csrf_token %}
 
-        {{ form|crispy }}
-
-        <div class="row text-center">
-          <div class="col-12">
-            <button
-              type="submit"
-              class="btn btn-gal btn-oxford text-wheel crimson text-uppercase"
-            >
-              Create my account
-            </button>
-          </div>
+    <div class="row mx-md-5 mx-1 my-3 text-center">
+        <div class="col-12 text-uppercase text-wheel border-bottom">
+            <h2>Register</h2>
         </div>
-      </form>
+    </div>  
+
+  <!-- Sign up form -->
+    <div class="row text-center mx-2">
+        <div class="col-12 col-md-8 col-lg-6 mx-auto call-box">
+            <h4>
+                {% blocktrans %}Already have an account? Then please
+                <a href="{{ login_url }}" class="text-oxford">sign in</a>.{% endblocktrans %}
+            </h4>
+            <form
+                class="px-4 py-3 signup text-left"
+                id="signup_form"
+                method="POST"
+                action="{% url 'account_signup' %}"
+            >
+                {% csrf_token %}
+
+                {{ form|crispy }}
+
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button
+                        type="submit"
+                        class="btn btn-gal btn-oxford text-wheel crimson text-uppercase"
+                        >
+                        Create my account
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
 
 {% endblock %}
