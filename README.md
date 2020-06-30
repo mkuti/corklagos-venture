@@ -427,7 +427,7 @@ To add an extra tribal reminder for Africa, took a screenshot of a colorful prin
 [African print](https://images.fabric.com/images/605/605/0692828.jpg)
 
 ##### Logo:
-I used [Hatchful Shopify](https://hatchful.shopify.com/) to find the most suitable logo. With the keywords of the website in my head, I first selected the bold, reliable and energetic visual styles for the logo. I instantly picked one suggestion of logo with the earth and enveloppe going around. See [the original logo](https://raw.githubusercontent.com/mkuti/corklagos-venture/master/static/images/originallogo.png). It looked smart and bold. I changed slightly the style to have the business name outside the icon which gave a more professional look. I also straight away chose to have the contrast between blue and orange, which made me think of the bold colors of Africa.
+I used [Hatchful Shopify](https://hatchful.shopify.com/) to find the most suitable logo. With the keywords of the website in my head, I first selected the bold, reliable and energetic visual styles for the logo. I instantly picked one suggestion of logo with the earth and enveloppe going around. See [the original logo](https://raw.githubusercontent.com/mkuti/corklagos-venture/master/static/images/originallogo.png). It looked smart and bold. I changed slightly the style to have the business name outside the icon which gave a more professional look. I also straight away chose to have the contrast between blue and orange, which made me think of the bold colors of Africa. [JimLynx](https://github.com/JimLynx) in Slack re-worked on the logo for me to make it cleaner and brighter.
 
 ##### Fonts: 
 Importing the fonts directly in my css file with the Import Url option.
@@ -447,31 +447,38 @@ Without flooding too much the website with icons everywhere, I am only mainly us
 
 Again, I wanted to have the website as simple and effective as possible so used only a few images.
 I will have a full background image on the home page, slightly faded below the main elements of the page, showing a car dismantled.
-For the listings page, I will have few images representing different categories and which can be changing everytime the user re-open the page.
+For the expertise page presenting the business, I downloaded an image of a business woman and man looking very professional and friendly. And I also downloaded the photos of animals from Pexels, referred with their author below.
 - [Photo of the car motor](https://www.pexels.com/photo/close-up-photo-of-black-and-silver-car-engine-3757226/) by [Hebert Santos](https://www.pexels.com/@hebert-santos-1346254) from Pexels
-- [Photo of a car engine hose](https://www.pexels.com/photo/automotive-car-engine-hose-42186/) by [Mali Maeder](https://www.pexels.com/@mali) from Pexels
-- [Photo of business man](https://www.pexels.com/photo/greyscale-photo-of-man-wearing-suit-and-fedora-hat-2963033/) by [Malcolm Garret](https://www.pexels.com/@bymalcolmgarret) from Pexels
 - [Photo of business man and woman](https://www.pexels.com/photo/man-and-woman-smiling-inside-building-1367269/) by [Rebrand Cities](https://www.pexels.com/@rebrand-cities-581004) from Pexels
-- [Photo of cheetah ](https://www.pexels.com/photo/animal-eyes-big-dangerous-87403/) by [Public Domain Pictures](https://www.pexels.com/@public-domain-pictures) from Pexels
+- [Photo of leopard ](https://www.pexels.com/photo/animal-eyes-big-dangerous-87403/) by [Public Domain Pictures](https://www.pexels.com/@public-domain-pictures) from Pexels
 - [Photo of eagle](https://www.pexels.com/photo/flight-bird-beak-eagle-3959918/) by [Frank Cone](https://www.pexels.com/@frank-cone-140140) from Pexels
 - [Photo of giraffe](https://www.pexels.com/photo/pattern-formation-wild-animals-south-africa-34098/) by [Pixabay](https://www.pexels.com/@pixabay) from Pexels
 
+All test listings image and details were inspired from [CarPartsNigeria](https://www.carpartsnigeria.com).
+
 # Technologies Used: 
 
-### Languages:
+### IDE:
+- [GitPod](gitpod.io) - I used __GitPod__ as my IDE for the development of this website.
 
+### Languages:
 - __HTML__ language is used to create the structure of the website and game.
 - __CSS__ language is used to add styling on the structure of the website.
 - __Javascript__ functioning language is used to fetch external data and add interactivity on the website.
 - __Python__ Object-oriented programming and structured programming language which allows smooth communication between the backend and frontend. 
 
-### Tools & Libraries:
-- [GitPod](gitpod.io) - I used __GitPod__ as my IDE for the development of this website.
-- [jQuery](https://jquery.com/) and [Popper.js](https://popper.js.org/) - The website uses __jQuery__ and __Popper.js__ to bring in Javascript which makes the navbar responsive
+### Frameworks & Libraries:
+- [Django](https://www.djangoproject.com/)
+- [django-allauth](https://django-allauth.readthedocs.io/en/latest/index.html)
+- [django-filter](https://django-filter.readthedocs.io/en/latest/index.html)
+- [jQuery](https://jquery.com/) 
+- [Popper.js](https://popper.js.org/)
 - [Git](https://git-scm.com/)
-- [BootstrapCDN](https://www.bootstrapcdn.com/) - The website is using __Bootstrap4__ as the basic structure and grid of the website and to increase the responsiveness of the website.
+- [Bootstrap](https://getbootstrap.com/) - The website is using __Bootstrap__ as the basic structure and grid of the website and to increase the responsiveness of the website.
 - [FontAwesome](https://kit.fontawesome.com/f7e192f540.js) - The website is using __Font Awesome__ to display the social media icons in my footer
 - [Google Fonts](https://fonts.google.com/)- The website uses __Google font__- Url imported in CSS
+
+### Tools
 - [AutoPrefixer](https://autoprefixer.github.io/) - I have used __AutoPrefixer__ to make sure the css code worked on all browsers
 - [Tiny.jpg](https://tinyjpg.com) - I have used __Tinyjpg__ to compress logo image of the website to increase the website loading on browser
 - [Coolors](https://coolors.co/) - I have used __Coolors__ to find matching colors for the website
@@ -479,10 +486,7 @@ For the listings page, I will have few images representing different categories 
 - [Favicon converter](https://favicon.io/favicon-converter/) - I used Favicon converter to convert the logo into a favicon which I was able to insert in the static folder and I tested it to be working
 - [Sweetalert2](https://sweetalert2.github.io/)
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) Chrome extension to show content structure, margin and paddings and fix any offset
-- [Lunapic](https://www2.lunapic.com/editor/) - to make the logo transparent
-- [Spinkit](https://tobiasahlin.com/spinkit/) - for the loader css and html
 - [Techsini Multi-Mockup](https://techsini.com/multi-mockup/index.php) - to create multi-device photo of README
-- [Tables Generator](https://www.tablesgenerator.com/markdown_tables#) for generating Markdown tables for README
 
 [Back to Top](#table-of-contents) 
 
