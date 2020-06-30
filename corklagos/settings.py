@@ -21,6 +21,22 @@ if os.environ.get("DEVELOPMENT"):
 else:
     development = False
 
+if 'DEVELOPMENT' in os.environ:
+    DEBUG = True
+    STATIC_URL = '/static/'
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'info@corklagos.com'
+else:
+    DEBUG = False
+    STATIC_URL = '/staticfiles/'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -34,12 +50,6 @@ if "SECRET_KEY" in os.environ:
 else:
     print("SECRET_KEY not found.")
 
-
-# SECURITY WARNING: don't run with debug turned on in production!
-if 'DEVELOPMENT' in os.environ:
-    DEBUG = True
-else:
-    DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -191,13 +201,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+# SECURITY WARNING: don't run with debug turned on in production!
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-if 'DEVELOPMENT' in os.environ:
-    STATIC_URL = '/static/'
-else:
-    STATIC_URL = '/staticfiles/'
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
@@ -232,16 +237,3 @@ if 'USE_AWS' in os.environ:
 # Stripe configuration
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
-
-# Django-email
-if 'DEVELOPMENT' in os.environ:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'info@corklagos.com'
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = True
-    EMAIL_PORT = 587
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
-    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
