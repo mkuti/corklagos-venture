@@ -152,6 +152,11 @@ hr {
 
 /* nav */
 
+.logo{
+    height: auto;
+    width: 180px;
+}
+
 #logo-lg {
     margin: 0 3rem 0;
     height: 70px;
