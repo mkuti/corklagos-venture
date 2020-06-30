@@ -56,7 +56,6 @@ ALLOWED_HOSTS = [
     'corklagos-venture.herokuapp.com'
     ]
 
-
 # Application definition
 
 INSTALLED_APPS = [

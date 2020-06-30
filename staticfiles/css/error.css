@@ -14,10 +14,11 @@
 }
 
 .home {
-    bottom: 50px;
+    position: absolute;
 }
 
 .home-btn {
+    
     text-decoration: uppercase;
     font-size: 2rem;
     padding: 1rem;

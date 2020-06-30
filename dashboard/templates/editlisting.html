@@ -4,13 +4,13 @@
 {% block content %}
 
 <main class="container-fluid">
-    <div class="row mx-md-5 mx-1 my-3 text-center">
+    <div class="row no-gutters mx-md-5 mx-1 my-3 text-center">
         <div class="col-12">
             <a href="{% url 'addlisting' %}" class="btn btn-gal btn-wheel py-1 mb-3">View all your listings</a>
         </div>
     </div>
     <!-- Page headers -->
-    <div class="row mx-md-5 mx-1 my-3">
+    <div class="row no-gutters mx-md-5 mx-1 my-3">
         <div class="col-12 col-md-4">
             <div class="row">
                 <div class="col-12 text-uppercase text-center">
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <!-- Listing section -->
-            <div class="row text-center">
+            <div class="row no-gutters text-center">
                 <div class="col-10 col-sm-6 col-md-12 col-lg-10 col-xl-8  px-1">
                     <div class="listing-section mx-md-2 mb-3">
                         <div class="row no-gutters">
@@ -39,13 +39,13 @@
             </div>
         </div>
         <div class="col-12 col-md-8">
-            <div class="row">
+            <div class="row no-gutters">
                 <div class="col-12 text-uppercase text-center">
                     <h1>Edit your listing?</h1>
                     <hr>
                 </div>
             </div>
-            <div class="row mx-4">
+            <div class="row no-gutters mx-4">
                 <div class="col-12">
                     <form
                         class="px-md-4 py-3 add_part text-left"
@@ -59,7 +59,7 @@
                         {{ editform|crispy }}
           
 
-                        <div class="row text-center">
+                        <div class="row no-gutters text-center">
                             <div class="col-12">
                                 <button
                                     type="submit"

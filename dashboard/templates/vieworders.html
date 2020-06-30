@@ -4,13 +4,13 @@
 {% block content %}
 
 <main class="container-fluid my-3">
-    <div class="row mx-md-5 mx-1 my-3">
+    <div class="row no-gutters mx-md-5 mx-1 my-3">
         <div class="col-12 text-uppercase border-bottom">
             <h2>Your past orders</h2>
         </div>
     </div>
     <div class="col-12">
-        <div class="row text-center">
+        <div class="row no-gutters text-center">
             {% for order in previous_orders %}
             <div class="col-12 col-sm-8 col-md-6 col-lg-4 mx-auto px-2">
                 <div class="card mx-md-2 mb-3">
@@ -44,7 +44,7 @@
             {% endfor %}
         </div>
     </div>
-    <div class="row text-center">
+    <div class="row no-gutters text-center">
         <div class="col-12">
             <a class="btn btn-gal btn-oxford text-wheel text-uppercase" href="{% url 'dashboard' %}">Go back to dashboard</a>
         </div>

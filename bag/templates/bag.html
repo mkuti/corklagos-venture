@@ -5,7 +5,7 @@
 
 <main class="container-fluid">
     <!-- Page headers -->
-    <div class="row mx-md-5 mx-1 my-3">
+    <div class="row no-gutters mx-md-5 mx-1 my-3">
         <div class="col-12 text-uppercase text-center">
             <h1>Your shopping bag</h1>
             <hr>
@@ -14,7 +14,7 @@
     <!-- Listing section -->
     
     {% if bag_items %}
-    <div class="row mx-md-5 mx-1 my-3">
+    <div class="row no-gutters mx-md-5 mx-1 my-3">
         {% for item in bag_items %}
         <div class="col-12">
             <div class="listing-section mx-4 mx-md-2 mb-3">
@@ -44,7 +44,7 @@
         </div>
         {% endfor %}
     </div>
-    <div class="row text-right mr-5 my-5">
+    <div class="row no-gutters text-right mr-5 my-5">
         <div class="col-12">
             <h1>Total: {{ total }}<i class="fas fa-euro-sign"></i></h1>
         </div>
@@ -53,7 +53,7 @@
         </div>
     </div>      
     {% else %}
-    <div class="row mx-md-5 mx-1 my-3">
+    <div class="row no-gutters mx-md-5 mx-1 my-3">
         <div class="col-12 col-md-8 col-lg-6 mx-auto call-box text-left">
             <p class="text-oxford">Your bag is empty</p>
             <div class="row text-center my-2">

@@ -14,7 +14,7 @@
 {% block content %}
 
 <main class="container-fluid">
-    <div class="row text-right mr-5 my-5">
+    <div class="row no-gutters text-right mr-5 my-5">
         <div class="col-12">
             <h1>Total: {{ total }}<i class="fas fa-euro-sign"></i></h1>
         </div>
@@ -23,7 +23,7 @@
         </div>
     </div>
     <!-- Page headers -->
-    <div class="row mx-md-5 mx-1 my-3">
+    <div class="row no-gutters mx-md-5 mx-1 my-3">
         <div class="col-12 text-uppercase text-center">
             <h1>Please confirm your billing details for the payment</h1>
             <hr>
@@ -32,7 +32,7 @@
     
     <form
         role="form"
-        class="row py-3 mx-2 mx-md-5"
+        class="row no-gutters py-3 mx-2 mx-md-5"
         id="payment-form"
         method="POST"
         action="{% url 'checkout_details' %}">
@@ -44,7 +44,7 @@
             {{ payment_form|crispy }}
         </div>
         {% csrf_token %}
-        <div class="row text-right">
+        <div class="row no-gutters text-right">
             <div class="form-group px-1 mx-right">
                 <input class="btn btn-gal btn-wheel py-1 mb-3" id="submit_payment_btn" name="commit" type="submit" value="Submit your payment!">
         </div>
