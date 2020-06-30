@@ -462,32 +462,47 @@ All test listings image and details were inspired from [CarPartsNigeria](https:/
 - [GitPod](gitpod.io) - I used __GitPod__ as my IDE for the development of this website.
 
 ### Languages:
-- __HTML__ 
-- __CSS__ 
-- __Javascript__ 
-- __Python__ 
+This project used __HTML__, __CSS__, __Javascript__ and __Python__ as programming languages.
 
 ### Frameworks & Libraries:
-- [Django](https://www.djangoproject.com/)
-- [django-allauth](https://django-allauth.readthedocs.io/en/latest/index.html)
-- [django-filter](https://django-filter.readthedocs.io/en/latest/index.html)
-- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/)
-- [jQuery](https://jquery.com/) 
-- [Popper.js](https://popper.js.org/)
-- [Git](https://git-scm.com/)
-- [Bootstrap](https://getbootstrap.com/) 
-- [FontAwesome](https://kit.fontawesome.com/f7e192f540.js) 
-- [Google Fonts](https://fonts.google.com/)
+- [Django](https://www.djangoproject.com/) as a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+- [django-allauth](https://django-allauth.readthedocs.io/en/latest/index.html) to address authentication, registration, account management.
+- [django-filter](https://django-filter.readthedocs.io/en/latest/index.html) to filter down a queryset based on a model’s fields, displaying the form to let them do this.
+- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) to control the rendering behavior of your Django forms in a very elegant and DRY way.
+- [django-storages](https://django-storages.readthedocs.io/en/latest/) to collect custom storage backends for Django.
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) to create, configure, and manage AWS services.
+- [DJ-Database-URL](https://github.com/jacobian/dj-database-url) to utilize the DATABASE_URL environment variable to configure Django application.
+- [Pillow](https://pillow.readthedocs.io/en/stable/index.html) to add image processing capabilities to Python interpreter.
+- [Heroku](https://dashboard.heroku.com/apps) to build, deploy, and manage your apps
+- [gunicorn](https://docs.gunicorn.org/en/stable/#) to connect Django to Heroku.
+- [psycopg2](https://pypi.org/project/psycopg2/) as a PostgreSQL database adapter.
+- [Stripe](https://stripe.com/ie) to handle the payments.
+- [Travis CI](https://travis-ci.org/) for continuous integration.
+- [AWS S3 Buckets](https://s3.console.aws.amazon.com/s3) for storing the static files and data uploaded by the website users.
+- [AWS IAM](https://console.aws.amazon.com/iam) for S3 buckets Identity and Access Management.
+- [PIP](https://pypi.org/project/pip/) for installing all Python libraries and packages needed in this project.
+- [Git](https://git-scm.com/) to track changes in source code during software development and for version control.
+- [GitHub](https://github.com/) to store and share all project code remotely.
+- [Bootstrap](https://getbootstrap.com/) as a front-end open source toolkit, to handle the responsive grid system.
+- [jQuery](https://jquery.com/) to handle DOM traversal and manipulation, event handling, animation, and Ajax.
+- [Popper.js](https://popper.js.org/) used by Bootstrap for tooltip and popover positioning engine. 
+- [FontAwesome](https://fontawesome.com/) as an icon library.
+- [Google Fonts](https://fonts.google.com/) for the website fonts.
+
+### Databases
+
+- [PostgreSQL](https://devcenter.heroku.com/categories/heroku-postgres) for production database, as addon of heroku.
+- [SQlite3](https://www.sqlite.org/index.html) for development database, included with django.
 
 ### Tools
-- [AutoPrefixer](https://autoprefixer.github.io/) - I have used __AutoPrefixer__ to make sure the css code worked on all browsers
-- [Tiny.jpg](https://tinyjpg.com) - I have used __Tinyjpg__ to compress logo image of the website to increase the website loading on browser
-- [Coolors](https://coolors.co/) - I have used __Coolors__ to find matching colors for the website
-- [Balsamiq](https://balsamiq.cloud) - I have used __Balsamic__ to build the wireframes which I then exported to the IDE
-- [Favicon converter](https://favicon.io/favicon-converter/) - I used Favicon converter to convert the logo into a favicon which I was able to insert in the static folder and I tested it to be working
+- [AutoPrefixer](https://autoprefixer.github.io/) to make sure the css code worked on all browsers.
+- [Tiny.jpg](https://tinyjpg.com) to compress logo image of the website to increase the website loading on browser
+- [Coolors](https://coolors.co/) to find matching colors for the website
+- [Balsamiq](https://balsamiq.cloud) to build the wireframes which I then exported to the IDE
+- [Favicon converter](https://favicon.io/favicon-converter/) to convert the logo into a favicon which I was able to insert in the static folder and I tested it to be working
 - [Sweetalert2](https://sweetalert2.github.io/)
-- [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) Chrome extension to show content structure, margin and paddings and fix any offset
-- [Techsini Multi-Mockup](https://techsini.com/multi-mockup/index.php) - to create multi-device photo of README
+- [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) to show content structure, margin and paddings and fix any offset
+- [Techsini Multi-Mockup](https://techsini.com/multi-mockup/index.php) to create multi-device photo of README
 
 [Back to Top](#table-of-contents) 
 
