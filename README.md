@@ -674,8 +674,6 @@ For the logout feature on POST without the confirmation page, I followed the rec
 
 10. Credits to [Simen Dehlin](https://github.com/Eventyret) for helping me to find the forgotten inline styling on the html logo element which could not render the logo well on large screens.
 
-I have honestly tried to do all the coding as independently as I could once my understanding of Django and of documentation broadened, but at this stage of my coding education building a full Django app of this size completely independently would have been impossible, especially in the given timeframe.
-
 # Special thanks
 
 To my mentor, [Simen Dehlin](https://github.com/Eventyret), who has accompanied me for the past 9months along this coding journey, who has always provided professional guidance, who has given so much time, support and encouragement, pushing and challenging me to go further and beyond so I could deliver great project!
