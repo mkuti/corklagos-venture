@@ -5,7 +5,7 @@
 </h1>
 
 <div align="center">
-<a href="https://corklagos-venture.herokuapp.com/" target="_blank"><img src="static/images/logo.png" width='180px' height='auto' alt="logo"></a>
+<a href="https://corklagos-venture.herokuapp.com/" target="_blank"><img src="static/images/logo.png" width='400px' height='auto' alt="logo"></a>
 </div>
 
 The website of CorkLagos Venture was designed, developed and deployed by MPia Kuti as her final project for the Code Institute Full Stack Web Development diploma.
