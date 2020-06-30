@@ -15,6 +15,7 @@ html {
     font-size: 1rem;
 }
 
+/* Added a left border image of an African pattern directly inside body tag */
 body {
     background-color: #feefdd;
     font-family: "Lato", sans-serif;
@@ -30,11 +31,6 @@ body {
 .container-fluid {
     padding: 0;
     margin: 0;
-}
-
-.row {
-    margin-left: 0;
-    margin-right: 0;
 }
 
 div a {
@@ -70,10 +66,6 @@ hr {
 
 .bg-wheel {
     background-color: #ff4000;
-}
-
-.bg-white {
-    background-color: #feefdd;
 }
 
 .text-oxford {
@@ -122,6 +114,7 @@ hr {
     background-color:#d7af8e;
 }
 
+/* bigger button for dashboard */
 .btn-head {
     font-size: 2rem;
     padding: 1rem;
@@ -170,6 +163,7 @@ hr {
     color: #d7af8e;
 }
 
+/* Replace traditional burger menu */
 .fa-road {
     font-size: 3rem;
 }
@@ -196,10 +190,12 @@ hr {
     background-size: cover;
 }
 
+/* Move it down from navbar to avoid overflow */
 .call-section {
     padding-top: 50px;
 }
 
+/* Class to only set color design of the box used for home, login and register, dashboard pages on top of full background image */
 .call-box {
     border: 5px solid #03254e;
     background-color: rgba(255,64,0,0.7);
@@ -282,7 +278,7 @@ hr {
     position: relative;
 }
 
-/* https://css-tricks.com/snippets/css/flip-an-image/ */
+/* float right, width of 70% and opacity allow the slogan to be displayed on top of banner image */
 .banner-img {
     float: right;
     width: 70%;
