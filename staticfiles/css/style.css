@@ -150,6 +150,14 @@ hr {
     color: #ff4000;
 }
 
+.centered-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+}
+
 /* nav */
 
 .logo{
@@ -182,24 +190,6 @@ hr {
 
 #logoutbtn {
     cursor: pointer;
-}
-
-/* 404 page */
-#error-img {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	background: url(../images/404.png) no-repeat center center;
-    background-size: cover;
 }
 
 /* home background image, code inspired from https://bootstrapmade.com/demo/Company/ */
