@@ -13,13 +13,16 @@
   font-size: 5rem;
 }
 
+.home {
+    bottom: 50px;
+}
+
 .home-btn {
     text-decoration: uppercase;
     font-size: 2rem;
     padding: 1rem;
     background-color: #03254e;
     color: #ff4000;
-    margin-bottom: 100px;
 }
 
 div a {
