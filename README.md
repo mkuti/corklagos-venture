@@ -413,15 +413,15 @@ With a primary audience of men and the website main goal in attracting more user
     <img src="wireframes/color-palette.png" alt="CorkLagos Venture Brand Colours" aria-label="CorkLagos Venture Brand colours" />
 </div>
 
-- Eerie Black: #201e1f;
-- Red-Orange (Color Wheel): #ff4000;
-- Antique White: #feefdd;
-- Oxford Blue: #03254e;
-- Melon: #ffb49a;
+- Eerie Black: #201E1F;
+- Red-Orange (Color Wheel): #FF4000;
+- Antique White: #FEEFDD;
+- Oxford Blue: #03254E;
+- Tumbleweed: #D7AF8E;
 
 * Primary:  <strong>Oxford Blue</strong> I chose this as the primary colour as blue's psychological perception is associated with competence, reliability and high quality which is the main message we want to communicate here for our clients and users. The website need to trigger a feeling that the business owners are reliable partners whom they can trust to sell or buy. The color works also perfectly in association with the secondary color, reminding the users the African colors.
 * Secondary:  <strong>Red-Orange (Color Wheel)</strong>I chose this as the secondary colour as red and orange conveys a sense of speed and excitement which can be associated with anything related to car. Also its bright color associated with blue is reminding that the trade is done with Nigeria where the site owners are from. The two colors remind the sun, the spectacular landscapes, the beautiful colors used in native clothes proudly wore by the Nigerians.
-* Tertiary:  <strong>Melon</strong> This tertiary colour will compliment the main orange color and will be used for small parts, such as icons or the text color of box or buttons highlighted by the primary color. This color is also a reminder of the sand hugely present in Africa.
+* Tertiary:  <strong>Tumbleweed</strong> This tertiary colour will compliment the main orange color and will be used for small parts, such as icons or the text color of box or buttons highlighted by the primary color. This color is also a reminder of the sand hugely present in Africa.
 
 To add an extra tribal reminder for Africa, took a screenshot of a colorful print and placed it as a vertical banner on the left only for big screen sizes.
 [African print](https://images.fabric.com/images/605/605/0692828.jpg)
