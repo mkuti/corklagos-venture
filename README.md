@@ -149,6 +149,7 @@ __Feature 9: Filters__
 
 __Feature 10: Listings__
 - In a bootstrap horizontal card using the unique website colors, the listing is displayed with its image, category, name, description and price. 
+- All active listings are displayed. When a product gets purchased, the products becomes inactive which means it cannot be purchased anymore.
 - The user does not have to go to another page, he can add to bag with a button.
 - If dismantler user clicks on the button, he has a warning message to advise he does not have the correct profile and is redirected to listings.
 
@@ -221,6 +222,9 @@ __Feature 20: Review past orders__
 - Displaying the date, the order number, the listing name, make and price as well as the total of the order.
 
 ### Features on Bag page
+Bag items have been made available on all pages via a context.py file created inside bag app. We can call the bag_items and any of its arguments like total on any views or templates without importing the model.
+Bag in session which empties itself when user logs out.
+
 __Feature 21: View bag items__
 - Looping through the bag, displaying each item on its own row, with same details as on the listings page
 - On the card, button to remove listing from shopping bag.
@@ -235,12 +239,31 @@ __Feature 24: Checkout button__
 - Takes the user to the checkout form
 
 ### Features on Checkout page
-__Feature 25: Checkout button__
+__Feature 23: Total__
+- Total made of the addition of number of listings in the bag and their respective price.
 
+__Feature 25: Edit bag button__
+- Takes the user back to view the shopping bag.
+
+__Feature 26: Two forms in one__
+- OrderForm which creates an order associated with the user for viewing later, which contains the details of the profile, which user can edit if needed.
+- PaymentForm which contains a stripe id for stripe to process the payment with the credit card provided in the form.
+
+__Feature 27: Submit payment button__
+- By submitting payment, saves the order and its items associated, and stripe process the payment.
+- Django sends email to the user to confirm the payment.
+- Listing purchased becomes inactive in the backend so is not displayed anymore on listings page.
 
 ### 2. Features Left to Implement:
 * In the future, to be even more secure, we will remove the user_type field from the profile_form if profile exists already, so users cannot change their profile access themselves.
-* 
+* To have the user sign up with a full profile in one step. I tried to customise the user model with an adapter and create a customised signup form but could not save the profile and because of time, I chose to make the user create a full profile after registering and confirming their email address. But it would be faster to get them to sign up on the first step. 
+* Add a system for the car dealers where they show their interest for a car part before even buying it. This way, the CorKLagos Venture owners can base their movement on the downstream demand and could then make contact with the sellers to confirm the part and add more details for the dealer.
+* Privacy Policy and more details about the business to add more trust for the users and clients.
+* Add pagination to the listings. Could not make it work with the time I add.
+* Add a currency converter for the Nigerian Car dealers to convert Euro to Naira
+* Add shipping costs and timelines when venture owners are more settled and have better visibility of shipping. Right now, it depends of so many factors they cannot control due to the ephemere networks. This website will hopefully help making a more regular and reliable shipping logistic.
+* Add more categories and makes when business starts booming.
+
 
 [Back to Top](#table-of-contents) 
 
