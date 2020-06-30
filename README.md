@@ -14,14 +14,14 @@ I have used the opportunity of the Code Institute Milestone 4 project to build a
 
 With an online presence, they could develop their reliable customer network in Nigeria while also targeting the car dismantlers here in Ireland so goods trade could almost be agreed from distance, saving time and precious funds.
 
-The website is built for this venture, formed of 3 different trade men in the business for many years. The website is targeting two sorts of clients, one upstream advertising and selling goods, one downstream scrolling and buying goods before they get shipped. So a masculine audience with an interest in cars and a goal to make money.
+The website is built for this venture, formed of 3 different trade men in the business for many years. The website is targeting two sorts of clients, one upstream advertising and selling goods, one downstream scrolling and buying goods before they get shipped. So we have a masculine audience with an interest in cars and a goal to make money.
 
 ### Note to Assessors:
 
 First, to enable assessment of the backend/admin side of the app (if needed), a 'staff' account with read-only privileges has been created:
 
-username: __viewadmin__
-password: __testadmin789__
+- username: __viewadmin__
+- password: __testadmin789__
 
 Since the website targets two types of users with different access, please note you might need to change the user_type when editing the profile details so you can test all features.
 
@@ -539,6 +539,7 @@ The following **must be installed** on your machine:
 Ensue to create free accounts with the following online services in order to run this project.
 - [Stripe](https://stripe.com/ie)
 - [EmailJS](https://www.emailjs.com/)
+- Change security settings of an email account so Django can send emails via your email address.
 - [Travis CI](https://travis-ci.org/) can be connected with GitHub credentials.
 - [AWS S3](https://s3.console.aws.amazon.com/s3)
 
@@ -627,17 +628,64 @@ EMAILJS_USER_ID | `email_js_user_id`
 [Back to Top](#table-of-contents) 
 
 # Credits
-* [How to css flip card](https://www.w3schools.com/howto/howto_css_flip_card.asp)
+1. General credits
+
+I first relied a lot on the course videos and previous mini-projects to fully understand the Django structures and functionality.
+
+While I never litterally copied-pasted the code from the course, at the start of building the django apps (the user/profile app and the initial stages of the listings app) I did code along with the tutorials a lot. But I always ensured to understand it before applying to my own project and the specific needs of my app. Later I relied constantly on Django and different django-packages documentation to implement the desired functionality.
+
+I relied heavily on django-allauth and django-filter documentation to understand how to implement each feature. 
+
+I read and used the written tutorials of [Simple is better than complex](https://simpleisbetterthancomplex.com/tutorial/2016/11/28/how-to-filter-querysets-dynamically.html) on django-filter and [The complete django-allauth guide](https://dev.to/gajesh/the-complete-django-allauth-guide-la3) on django-allauth for guidance.
+
+In my testing document, I have referred each resource, Slack thread or Stack Overflow discussions I have used to debug my code and resolve any founds issues.
+
+2. Logout functionality
+
+For the logout feature on POST without the confirmation page, I followed the recommendation of django-allauth documentation to use Javascript [here](https://django-allauth.readthedocs.io/en/latest/views.html#logout). I then used a number of different github and Stack Overflow discussions to implement the Javascript feature.
+- [https://stackoverflow.com/questions/43606056/proper-django-csrf-validation-using-fetch-post-request](https://stackoverflow.com/questions/43606056/proper-django-csrf-validation-using-fetch-post-request)
+- [https://stackoverflow.com/questions/3521290/logout-get-or-post](https://stackoverflow.com/questions/3521290/logout-get-or-post)
+- [https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-CSRF_COOKIE_HTTPONLY](https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-CSRF_COOKIE_HTTPONLY)
+
+3. Shortening the order number on past orders view
+
+|truncatechars:10 from https://github.com/ckz8780/boutique_ado_v1/blob/master/profiles/templates/profiles/profile.html
+
+4. How to css flip card
+
+[https://www.w3schools.com/howto/howto_css_flip_card.asp](https://www.w3schools.com/howto/howto_css_flip_card.asp)
+
+5. Navbar with centered logo
+
+[https://bootstrapcreative.com/pattern/navbar-centered-logo-links-left-right/](https://bootstrapcreative.com/pattern/navbar-centered-logo-links-left-right/)
+
+6. Remove asterisk from the crispy forms fields
+
+[https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=remove%20label_suffix%20on%20required#change-required-fields](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=remove%20label_suffix%20on%20required#change-required-fields)
+
+7. Modify a boolean field in django
+
+- [https://stackoverflow.com/questions/42089277/how-to-modify-a-boolean-field-model-in-django](https://stackoverflow.com/questions/42089277/how-to-modify-a-boolean-field-model-in-django)
+- [https://www.geeksforgeeks.org/booleanfield-django-models/](https://www.geeksforgeeks.org/booleanfield-django-models/)
+
+8. Credits to [Malia Havlicek](https://github.com/maliahavlicek) for providing the code of the border-image inside the body so the border banner could be beautifully rendered. See [commit 870d8241a11bc76b7439503c442b91802f7e45b3](https://github.com/mkuti/corklagos-venture/commit/870d8241a11bc76b7439503c442b91802f7e45b3).
+
+9. Credits to [JimLynx](https://github.com/JimLynx) in Slack who re-worked on the logo for me to make it cleaner and brighter.
+
+10. Credits to [Simen Dehlin](https://github.com/Eventyret) for helping me to find the forgotten inline styling on the html logo element which could not render the logo well on large screens.
+
+I have honestly tried to do all the coding as independently as I could once my understanding of Django and of documentation broadened, but at this stage of my coding education building a full Django app of this size completely independently would have been impossible, especially in the given timeframe.
 
 # Special thanks
 
-To my mentor, [Simen Dehlin](https://github.com/Eventyret), 
+To my mentor, [Simen Dehlin](https://github.com/Eventyret), who has accompanied me for the past 9months along this coding journey, who has always provided professional guidance, who has given so much time, support and encouragement, pushing and challenging me to go further and beyond so I could deliver great project!
 
+To my study-buddy [Malia Havlicek](https://github.com/maliahavlicek) who has constantly encouraged me during the project development, who has tested the website when deployed and helped me to find various bugs and guidance on how to resolve them.
 
+To [Chris Z.](https://github.com/ckz8780) for always answering my questions, even when I am sinking under my own complexity, for trying to provide guidance and resources without giving solutions. This helped me to push further and resolve my own issues which was so great!
 
-To all in the #peer-code-review channel of Slack who were kind enough to provide their feedback and find bugs or provide solution.
-
-To my two sons Léon and Seyi whose time with me is being sacrificed currently, for being patient with me when I am tired after sleepless nights.
+To my two sons Léon and Seyi whose time with me has been sacrificed hugely lately, for being patient with me when I am tired after sleepless nights.
+To my husband who has provided support to me and care to our children in the past year.
 
 ##### Disclaimer:
 The content of the website is for educational purposes only.
