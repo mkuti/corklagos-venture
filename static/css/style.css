@@ -206,6 +206,13 @@ hr {
     color: #feefdd;
 }
 
+/* Different box color for payment confirmed */
+.success-box {
+    border: 5px solid#ff4000;
+    background-color: #307351;
+    color: #feefdd;
+}
+
 /* flex and min/max-width required to allow bootstraps columns to work */
 .call-container {
     display: -webkit-box;
