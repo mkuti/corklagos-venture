@@ -5,7 +5,7 @@
 </h1>
 
 <div align="center">
-<a href="https://corklagos-venture.herokuapp.com/" target="_blank"><img src="static/images/logo.png" width='50%' height='auto' alt="logo"></a>
+<a href="https://corklagos-venture.herokuapp.com/" target="_blank"><img src="static/images/logo.png" width='180px' height='auto' alt="logo"></a>
 </div>
 
 The website of CorkLagos Venture was designed, developed and deployed by MPia Kuti as her final project for the Code Institute Full Stack Web Development diploma.
@@ -717,7 +717,7 @@ To my study-buddy [Malia Havlicek](https://github.com/maliahavlicek) who has con
 To [Chris Z.](https://github.com/ckz8780) for always answering my questions, even when I am sinking under my own complexity, for trying to provide guidance and resources without giving solutions. This helped me to push further and resolve my own issues which was so great!
 
 To my two sons Léon and Seyi whose time with me has been sacrificed hugely lately, for being patient with me when I am tired after sleepless nights.
-To my husband who has provided support to me and care to our children in the past year.
+To my husband who has provided support to me and care for our children in the past year.
 
 ##### Disclaimer:
 The content of the website is for educational purposes only.
