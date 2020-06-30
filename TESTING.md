@@ -64,6 +64,8 @@ For Javascript, I did get errors for 'const' or 'let being available in ES6 (use
 
 For Python, I ran python3 manage.py flake8 in my terminal and received a list of errors which I worked to clear on each django app. I removed all the unused python files for testing, admin or models. The other main errors were lines being too long which I have all corrected and "Missing namespace in urls include()". I have tried to correct this one by following the suggestion of adding a namespace and an app_name for each included module but the app then failed in Heroku and I did not find any solution to clear the error and avoid the build failing in Heroku. So this can be considered an unsolved bug. Finally there are 4 lines being too long on the django project settings.py but this is not a code written by me and while it was been reported to Django [here](https://code.djangoproject.com/ticket/28163), Django has chosen not to fix it. 
 
+[Back to Top](#table-of-contents) 
+
 ## General testing:
 As I did not have a lot of time and I was not really expert in Jasmine or any automated testing, I decided to do all the testing manually via the browser, Chrome Developer tools and testing each feature one by one.
 My strategy is very simple: as soon as I write a line of code, I open the page in my browser to test it, make sure it works until I am fully happy with what I see and how it functions. After the whole project was written and working, I went back to each feature and re-tested it to ensure nothing I added made it fail later. I also asked people in Slack community to test the website for me. 
@@ -73,6 +75,8 @@ Through my own testing and with views of others, I have fixed a lot of design fl
 ## Testing in different browsers:
 I used Google Chrome as my primary browser and constantly tested it on my mobile phone also using the same browser. 
 I also tested the website on Safari via an iMac with a very big screen, on an iPhone XR and an iPod touch with probably the smallest screen regularly and never found any specific issue. 
+
+[Back to Top](#table-of-contents) 
 
 ## Issues found and solved
 
@@ -117,6 +121,8 @@ I also tested the website on Safari via an iMac with a very big screen, on an iP
 Changed to decimal field and worked.
 * __Verdict__: Adding to bag is successful.
 
+[Back to Top](#table-of-contents) 
+
 ### 6. Login url redirect
 * __Issue__: Login url for redirect causing error.
 * __Fix__: Go to [allauth doc](https://django-allauth.readthedocs.io/en/latest/views.html?highlight=login%20url#login-account-login) and found the correct name: ```account_login```.
@@ -147,6 +153,8 @@ Item removed from bag as I could find [in this Slack thread](https://code-instit
 * __Fix__: Trying to display profile details if exists by adding instance argument when instantiating the form
 Try/except worked with EditProfileForm but when using OrderForm. Replaced instance by initial as found on [documentation](https://docs.djangoproject.com/en/dev/topics/forms/modelforms/) on using forms and providing initial values.
 * __Verdict__: Confirmed that the profile details show on checkout.html when profile exists already for user in session
+
+[Back to Top](#table-of-contents) 
 
 ### 11. OrderForm not rendered
 * __Issue__: When displaying the checkout.html, throwing error: ```Exception Type KeyError at /checkout/ Exception Value full_name```
@@ -182,6 +190,8 @@ My log is showing the following: ```"GET /static/js/stripe.js HTTP/1.1" 304 0 <u
 * __Fix__: Used following resources to redirect users just registered with their email address verified. [github](https://github.com/pennersr/django-allauth/issues/633) and [django-allauth](https://django-allauth.readthedocs.io/en/latest/configuration.html).
 * __Verdict__: User redirected to add profile details after email address is verified.
 
+[Back to Top](#table-of-contents) 
+
 ### 16. User verification of email address
 * __Issue__: Server Error (500) in production environment when sending email to user for confirming email address: SMTPSenderRefused
 * __Fix__: Changed DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER'). Added EMAIL_HOST_PASS and EMAIL_HOST_USER as heroku env variables.
@@ -208,6 +218,8 @@ My log is showing the following: ```"GET /static/js/stripe.js HTTP/1.1" 304 0 <u
 - ```logout.js:1 Uncaught TypeError: Cannot read property 'value' of null at logout.js:1```, I added an if statement inside template tag on nav.html to only show js script if user is in session.
 * __Verdict__: User clicks on logout button, alert shows "You've been logged out", page reload and user is logged out.
 
+[Back to Top](#table-of-contents) 
+
 ### 21. Invalid email address on contactform
 * __Issue__: Contact form, email can be sent with an invalid email address.
 * __Fix__: Searched and found that email html input type allows email addresses without a TLD (the “example.com” part of “email@example.com”). This is because RFC822, the standard for email addresses, allows for localhost emails which don’t need one. Found solution to add a pattern to the input [here](https://www.w3schools.com/TAGS/att_input_pattern.asp). Added it on footer.html
@@ -232,6 +244,8 @@ My log is showing the following: ```"GET /static/js/stripe.js HTTP/1.1" 304 0 <u
 * __Issue__: Login or register error messages show in unreadable color
 * __Fix__: Added django-allauth message 'invalid-feedback' class in style.css and set text color to inherit.
 * __Verdict__: Error messages show clearly for user.
+
+[Back to Top](#table-of-contents) 
 
 ### 26. Buttons styling issues on Safari
 * __Issue__: Buttons styling not showing on Safari browser.
@@ -258,6 +272,8 @@ My log is showing the following: ```"GET /static/js/stripe.js HTTP/1.1" 304 0 <u
 * __Fix__: In listings/models.view, added imported MaxValueValidator from django.core.validators and updated Listing model with listing_price = DecimalField(validators=[MinValueValidator(20.00)])].
 * __Verdict__: A listing cannot be entered below 20.00.
 
+[Back to Top](#table-of-contents) 
+
 ### 31. Car dealer adding a listing
 * __Issue__: A car dealer in Nigeria can also add a listing or see the button to add a listing when this feature is only for Irish car dismantlers user type.
 * __Fix__: For home page, added if user.is_authenticated: return redirect(reverse('listings')) so users already logged in cannot access the homepage. Changed the text for call action on home page to "login or register". On dashboard/views.py, added statement `if user_type == 'dealer': messages.error( request, 'You do not have the correct profile to add a listing')return redirect(reverse('dashboard'))` to redirect car dealer user if url is manually typed in. Added a main page for dashboard which is different for car dealer or dismantler. 
@@ -280,3 +296,5 @@ My log is showing the following: ```"GET /static/js/stripe.js HTTP/1.1" 304 0 <u
 * __Potential Fix__: Unsure as I did not have time to troubleshoot further.
 
 I could not see any other issues or bugs during manually testing.
+
+[Back to Top](#table-of-contents)
